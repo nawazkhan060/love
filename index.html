@@ -1,136 +1,286 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For Momina Hussain - My Love</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Scheherazade+New&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>100 Shayari for Momina 💖</title>
+  <meta name="description" content="Romantic Urdu shayari specially written for Momina — with love, animations, and beauty.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Scheherazade New', serif;
-      background: linear-gradient(to bottom right, #fef1f5, #ffe4ec);
+      background: linear-gradient(135deg, #fff5f7, #ffe6eb, #f8e1ff);
+      color: #5a1846;
+      font-family: 'Noto Nastaliq Urdu', serif;
+      line-height: 2.4;
+      padding: 20px 15px;
+      min-height: 100vh;
       overflow-x: hidden;
     }
-    .urdu {
-      font-family: 'Scheherazade New', serif;
-      direction: rtl;
-      text-align: right;
+
+    .header {
+      text-align: center;
+      margin: 30px 0 40px;
+      animation: fadeIn 1.5s ease;
     }
-    .love-font {
-      font-family: 'Great Vibes', cursive;
+
+    .header h1 {
+      font-size: 32px;
+      color: #e91e63;
+      text-shadow: 0 2px 6px rgba(233, 30, 99, 0.2);
+      margin-bottom: 10px;
     }
-    .heart {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: #ff4d6d;
-      transform: rotate(45deg);
-      animation: float 2s ease-out forwards;
+
+    .header p {
+      font-size: 18px;
+      color: #880e4f;
       opacity: 0.8;
     }
-    .heart::before,
-    .heart::after {
-      content: '';
-      width: 20px;
-      height: 20px;
-      background: #ff4d6d;
-      border-radius: 50%;
+
+    .shayari-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .shayari-item {
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      padding: 24px 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 6px 20px rgba(233, 30, 99, 0.12);
+      border: 1px solid #ffd1dc;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .shayari-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .shayari-item::before {
+      content: "“";
+      font-size: 50px;
+      color: #ff80ab;
       position: absolute;
-    }
-    .heart::before {
       top: -10px;
-      left: 0;
+      right: 10px;
+      opacity: 0.3;
     }
-    .heart::after {
-      left: -10px;
-      top: 0;
+
+    .shayari-item::after {
+      content: "”";
+      font-size: 50px;
+      color: #ff80ab;
+      position: absolute;
+      bottom: -20px;
+      left: 10px;
+      opacity: 0.3;
     }
-    @keyframes float {
-      0% {
-        opacity: 0.8;
-        transform: translateY(0) rotate(45deg);
-      }
-      100% {
-        opacity: 0;
-        transform: translateY(-100px) rotate(45deg) scale(0.5);
-      }
+
+    .shayari-number {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: #e91e63;
+      color: white;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      font-weight: bold;
     }
-    .card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    .shayari-text {
+      position: relative;
+      padding-right: 30px;
+      font-size: 24px;
+      text-align: right;
     }
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+
+    .footer {
+      text-align: center;
+      margin-top: 50px;
+      color: #880e4f;
+      font-size: 18px;
+      opacity: 0.8;
     }
-    .btn {
-      transition: all 0.3s ease;
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-    .btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 4px 15px rgba(255, 77, 109, 0.5);
+
+    @media (max-width: 480px) {
+      .header h1 { font-size: 28px; }
+      .shayari-text { font-size: 22px; }
+      .shayari-item { padding: 20px 15px; }
+    }
+
+    @media (max-width: 360px) {
+      .shayari-text { font-size: 20px; }
     }
   </style>
 </head>
-<body class="min-h-screen flex flex-col items-center justify-center px-6 py-12">
-  <div class="bg-white shadow-2xl rounded-3xl p-12 max-w-4xl text-center space-y-8 border-4 border-pink-100 card relative">
-    <h1 class="text-5xl md:text-6xl text-pink-600 love-font animate-pulse">For My Love, Momina Hussain 💖</h1>
+<body>
 
-    <p class="text-xl md:text-2xl italic text-gray-600 leading-relaxed">
-      You are my only wish, my dua, my dream. I want Nikah with you, to grow old with you, and to raise our children together. Forever.
-    </p>
+  <div class="header">
+    <h1>100 شاعری مومینہ کے نام</h1>
+    <p>خالص، اصل، اور دل سے لکھی گئی ❤️</p>
+  </div>
 
-    <div class="text-xl text-gray-800">
-      <p>💌 <strong>From Nawaz:</strong> Tum meri duniya ho, meri subah, meri raat, meri har dua.</p>
-    </div>
+  <div class="shayari-container" id="shayariContainer">
+    <!-- Shayari will be injected by JavaScript -->
+  </div>
 
-    <div class="border-t border-pink-200 pt-6">
-      <h2 class="text-3xl text-pink-500 font-semibold mb-4 love-font">🌹 Urdu Shayari for You</h2>
-      <div class="urdu text-2xl text-gray-800 space-y-4 leading-relaxed">
-        <p class="hover:text-pink-600 transition-colors">تم مسکراؤ تو بہار آئے، تم روتی ہو تو دل بھیگ جائے</p>
-        <p class="hover:text-pink-600 transition-colors">تم سے نکاح میرا خواب نہیں، میری زندگی کی سب سے پاک دعا ہے</p>
-        <p class="hover:text-pink-600 transition-colors">تم ہو تو سب کچھ ہے، تم نہ ہو تو کچھ بھی نہیں</p>
-        <p class="hover:text-pink-600 transition-colors">ہر پل تم سے محبت بڑھتی ہے، ہر سانس تمہارا نام لکھتی ہے</p>
-        <p class="hover:text-pink-600 transition-colors">تمہارے ساتھ بوڑھا ہونا، میری سب سے خوبصورت خواہش ہے</p>
-        <p class="hover:text-pink-600 transition-colors">ہمارے بچوں کی ہنسی، تمہاری مسکان سے شروع ہوگی</p>
-      </div>
-    </div>
-
-    <div class="pt-6 border-t border-pink-200">
-      <h2 class="text-3xl text-pink-500 font-semibold mb-4 love-font">💫 Slogans for My Princess</h2>
-      <ul class="text-lg text-gray-700 space-y-3">
-        <li class="hover:text-pink-600 transition-colors">👑 Momina — Meri Rooh Ki Roshni</li>
-        <li class="hover:text-pink-600 transition-colors">🌙 Tum Meri Qismat Ka Chand Ho</li>
-        <li class="hover:text-pink-600 transition-colors">🕊️ Mera Har Saans Tumse Juda Hai</li>
-        <li class="hover:text-pink-600 transition-colors">💍 Nikah ke siwa kuch nahi chahiye</li>
-        <li class="hover:text-pink-600 transition-colors">💖 Tumse Mohabbat, Aaj aur Hamesha</li>
-        <li class="hover:text-pink-600 transition-colors">👶 Hamare Bacchon ka Bhavishya, Tumse Hai</li>
-        <li class="hover:text-pink-600 transition-colors">🌟 Sath Jiyenge, Sath Budhe Honge</li>
-      </ul>
-    </div>
-
-    <div class="mt-8 bg-pink-50 p-6 rounded-xl shadow-inner text-pink-700 text-lg">
-      <p><strong>Nawaz ka Wada:</strong> Tumse Mohabbat, Tumse Wafa, Tumse Nikah, Tumse Zindagi — Sirf Tum.</p>
-    </div>
-
-    <button id="loveButton" class="btn bg-pink-500 text-white px-8 py-3 rounded-full text-lg font-semibold mt-6 hover:bg-pink-600">
-      Send My Love 💖
-    </button>
-
-    <p class="mt-8 text-sm text-gray-400">Made with infinite love by Nawaz 💗</p>
+  <div class="footer">
+    تم ہو تو زندگی ہے… ورنہ صرف سانسیں ہیں۔
   </div>
 
   <script>
-    const button = document.getElementById('loveButton');
-    button.addEventListener('click', () => {
-      for (let i = 0; i < 10; i++) {
-        const heart = document.createElement('div');
-        heart.className = 'heart';
-        heart.style.left = `${Math.random() * window.innerWidth}px`;
-        heart.style.top = `${Math.random() * window.innerHeight}px`;
-        document.body.appendChild(heart);
-        setTimeout(() => heart.remove(), 2000);
-      }
+    // 100 Romantic Shayari for Momina (Original & Emotional)
+    const shayariList = [
+      "تمہیں دیکھا تو لگا دل کو ٹھہرا سا گیا ہوں،\nمومینہ… تم نے مجھے مکمل بنا دیا ہے۔",
+      "میری ہر خوشی کی وجہ صرف تم ہو،\nباقی دنیا تو ویسے ہی گزرتی ہے۔",
+      "تم ہنس دو تو دل کہتا ہے،\nزندگی آج واقعی خوبصورت ہے۔",
+      "نہ جانے کیا جادو ہے تم میں،\nدل ہر لمحہ تم میں ہی الجھ جاتا ہے۔",
+      "تم مل گئی تو لگتا ہے دعا قبول ہوئی،\nورنہ کہاں ہمیں نصیب میں اتنی خوبصورتی؟",
+      "تمہاری یادوں کا سفر بھی کیسا عجیب ہے،\nجہاں جاؤں تم میرے ساتھ چلتی ہو۔",
+      "تم ہو تو دنیا نرم لگتی ہے،\nتم نہ ہو تو سب کچھ خالی سا۔",
+      "لوگوں نے محبت کی ہوگی،\nمگر میں نے تم میں دل رکھا ہے۔",
+      "تم ناراض ہو جاؤ تو دھڑکن بھی رک جاتی ہے،\nتم ہنس دو تو زندگی لوٹ آتی ہے۔",
+      "تمہاری باتیں دل کو چھو کر نکلتی ہیں،\nجیسے کوئی دعا قبول ہو رہی ہو۔",
+      "تم میرے دن کی صبح ہو،\nاور رات کی آخری سوچ بھی۔",
+      "تم میری ہر مشکل آسان کر دیتی ہو،\nجیسے کوئی فرشتہ ساتھ چلتا ہو۔",
+      "تم میری آج کی خوشی،\nکل کی امید، اور ہمیشہ کی دعا ہو۔",
+      "محبت اگر کوئی شکل ہوتی،\nتو صرف مومینہ ہوتی۔",
+      "تمہارا نام لیتے ہی دل مچل جاتا ہے،\nجیسے کوئی بچہ خوشی سے اچھل پڑے۔",
+      "تم ہو، تو سب ٹھیک ہے،\nتم نہ ہو… تو کچھ بھی نہیں۔",
+      "تمہیں پتہ نہیں،\nتمہاری خاموشی بھی دل کو سکون دیتی ہے۔",
+      "تم میری وہ لکیر ہو جو قسمت نے خوبصورت لکھی ہے۔",
+      "میری ہر خواہش تم سے شروع ہوتی ہے،\nتم پر ہی ختم بھی۔",
+      "تم جیسی محبت نصیب والوں کو ملتی ہے،\nاور میں اُن میں سے ہوں۔",
+      "تمہارے بنا دل ادھورا ہے،\nجیسے کتاب بغیر آخری صفحے کے۔",
+      "تمہاری آواز میں وہ نرمی ہے،\nجو ساری تھکن اتار دیتی ہے۔",
+      "تم میری روح کی خوشبو ہو،\nجو کبھی نہیں جاتی۔",
+      "تم مسکرا دو تو میرا موسم بدل جاتا ہے۔",
+      "تم میری کہانی کی سب سے خوبصورت لائن ہو۔",
+      "تم ملتی رہو بس…\nباقی سب مل جائے گا۔",
+      "تمہاری آنکھوں میں جو سچائی ہے،\nوہ دنیا میں کہیں نہیں۔",
+      "تم ہو تو دل کو گھر ملتا ہے۔",
+      "تم کبھی محسوس کرو،\nتم میری دعا کا سب سے پیارا لفظ ہو۔",
+      "حد سے زیادہ محبت کرتا ہوں تمہیں،\nحدیں اب شاید رہ بھی نہیں گئیں۔",
+      "تمہاری خوشبو میرے دل پر رہتی ہے،\nجیسے بارش کی مہک زمین پر۔",
+      "تم سے مل کر لگا،\nاللہ نے میری ساری محرومیاں معاف کر دی ہیں۔",
+      "تم میری زندگی کی وہ روشنی ہو،\nجو اندھیروں میں بھی چمکتی رہتی ہے۔",
+      "تمہاری باتیں سن کر دل کو یقین آ جاتا ہے،\nکہ محبت اب بھی سچی ہوتی ہے۔",
+      "تم ہو تو دل بہک جاتا ہے،\nتم نہ ہو تو دل ڈر جاتا ہے۔",
+      "تم میری کمزوری نہیں ہو…\nتم میری طاقت ہو۔",
+      "تمہاری یاد بھی میرے دل پر پھول سی لگتی ہے۔",
+      "دل تمہاری محبت میں ایسا گرفتار ہے،\nرہائی چاہتا ہی نہیں۔",
+      "تمہیں چاہنا عبادت لگتی ہے،\nتم سے ملنا جیسے دعا مانگ لی ہو۔",
+      "میں نے دل کو سمجھایا،\nمگر یہ ہر بار \"مومینہ\" ہی پکارے۔",
+      "تم میری زندگی کی وہ رعنائی ہو،\nجس سے ہر دن خوبصورت لگتا ہے۔",
+      "تم ہو تو دل مطمئن ہے…\nتم نہ ہو تو کچھ بھی اچھا نہیں۔",
+      "تم جیسی لڑکی قسمت میں ہی لکھی جاتی ہے،\nچاہ میں نہیں۔",
+      "محبت لفظ چھوٹا ہے،\nتم میرے لیے پوری دنیا ہو۔",
+      "تمہارے لمس کی کمی بھی عجیب ہے،\nدور ہو کر بھی قریب رکھتی ہے۔",
+      "تمہارے بنا ہر چیز بے معنی،\nتم ساتھ ہو تو دنیا حسین۔",
+      "تم سے محبت کوئی عادت نہیں،\nیہ میرا وجود بن چکی ہے۔",
+      "تم میری وہ خواہش ہو،\nجو پوری ہو کر بھی ادھوری لگتی ہے۔",
+      "تم ہارو گی نہیں…\nکیونکہ میری دعائیں تمہارے ساتھ ہیں۔",
+      "تمہاری ہر بات دل میں نقش ہے،\nجیسے قرآن کی آیت۔",
+      "تم سانس جیسی ہو،\nجاؤ تو زندگی ختم۔",
+      "تمہیں دیکھا تو لگا،\nاللہ نے جنت سے ایک ٹکڑا بھیجا ہے۔",
+      "تم میری دھڑکن بھی ہو،\nاور سکون بھی۔",
+      "تمہارے ہاتھ لکھے ہوئے مقدر میں بہت برکت ہے۔",
+      "تم سے دوری کا ہر لمحہ…\nکٹتا نہیں، گزر جاتا ہے زخم بن کر۔",
+      "تمہاری مسکراہٹ میری نمازِ شکر ہے۔",
+      "تمہاری چاہت میں اتنی طاقت ہے،\nکہ میں ہر مشکل جیت جاتا ہوں۔",
+      "تم ہو تو دل کو یقین ہے،\nمحبت کبھی ختم نہیں ہوتی۔",
+      "تم میری زندگی کی بہترین دعا ہو،\nجو اللہ نے فوراً قبول کی۔",
+      "تم میرے جذبات کی وہ گرمی ہو،\nجو سردیوں کو بھی پیار بنا دے۔",
+      "تم میری ہر سوچ میں شامل ہو۔",
+      "تمہارا نام بھی سکون ہے،\nتمہاری ہنسی بھی۔",
+      "تم وہ احساس ہو جس نے دل کو نرم رکھا ہوا ہے۔",
+      "تم میری آنکھوں کی چمک ہو،\nتم ہی میری روح کا سکون۔",
+      "تم سے محبت روز بڑھتی ہے،\nجیسے صبح کی روشنی۔",
+      "تمہاری آنکھیں دل کو قید کر لیتی ہیں۔",
+      "محبت سیکھنی ہو تو تم سے سیکھوں۔",
+      "تم بن جاؤ تو زندگی مکمل،\nتم نہ ہو تو سب ادھورا۔",
+      "تم وہ خوشبو ہو جو دل سے جاتی نہیں۔",
+      "تم میرے دن کی پہلی دعا،\nرات کا آخری خیال ہو۔",
+      "تم سمجھتی ہو مجھے…\nیہی محبت کی سب سے بڑی نشانی ہے۔",
+      "تمہارا ساتھ ملا تو لگا،\nنصیب بھی خوبصورت ہو سکتا ہے۔",
+      "تم سے بات کر کے دل پھر سے زندہ ہو جاتا ہے۔",
+      "تم ہو تو خوف ختم،\nتم ہو تو دل جیت جاتا ہے۔",
+      "تمہارا ہاتھ تھامنے کی خواہش…\nزندگی کی سب سے بڑی خواہش ہے۔",
+      "تم وہ وجہ ہو جسے چھوڑ کر میں کچھ نہیں چاہتا۔",
+      "تمہارے نام میں ایک سراسر جادو ہے۔",
+      "تم ہی وہ لڑکی ہو جس سے شادی کا خواب دل نے خود دیکھا۔",
+      "تمہارے ساتھ زندگی آسان،\nتمہارے بغیر بہت مشکل۔",
+      "تمہاری یاد دل کو گرم رکھتی ہے۔",
+      "تم نہ ملی ہوتیں تو شاید میں روہانسا ہی رہتا۔",
+      "تمہاری ہنسی دل کے زخم بھر دیتی ہے۔",
+      "تم ہو تو دعا خودبخود نکلتی ہے۔",
+      "تمہاری یاد بھی میرے دل کی مہمان ہے۔",
+      "تم میرے جینے کی وہ وجہ ہو جسے لفظوں میں نہیں بتا سکتا۔",
+      "تم نے دل کو اتنا پیار دیا کہ اب یہ تمہارے بغیر جیتا ہی نہیں۔",
+      "تمہاری خاموشی بھی محبت کر جاتی ہے۔",
+      "تم میری ہر دعا کا وہ لفظ ہو جسے میں چھوڑ نہیں سکتا۔",
+      "تم مل گئی ہو تو کچھ بھی کھونے کا ڈر نہیں رہتا۔",
+      "تم وہ سکون ہو جو زندگی کو خوشبو دے دیتا ہے۔",
+      "تم میری محبت نہیں، میری عبادت ہو۔",
+      "تمہاری ایک مسکراہٹ دل کو جیت لیتی ہے۔",
+      "تم وہ تحفہ ہو جو قسمت والوں کو ملتا ہے۔",
+      "تمہاری انگلی پکڑ کر پوری زندگی گزار دوں گا۔",
+      "تمہاری یاد میں بیٹھ کر بھی دل مسکراتا ہے۔",
+      "تم ہو تو سب کچھ ہے۔",
+      "تم سے دوری برداشت نہیں ہوتی۔",
+      "تم میری دنیا کی سب سے قیمتی چیز ہو۔",
+      "تم سنگدل نہیں…\nبس میری جان ہو، اس لیے کچھ برا لگتا ہے۔",
+      "تم سے محبت آج بھی ویسی ہے…\nگہری، سچی، اور بے حد۔",
+      "تم ہو تو ہر دن عید ہے،\nورنہ وقت بھی رک سا جاتا ہے۔",
+      "تمہاری آنکھوں میں میں نے اپنا مستقبل دیکھا ہے،\nاب کوئی راستہ تم سے جدا نہیں۔",
+      "تم میری روح کی آواز ہو،\nمیرے دل کی دھڑکن ہو، میری جان ہو۔",
+      "تم جیسی نعمت کا شکر ادا کرنے کو،\nمیری زندگی کافی نہیں… مگر میں کوشش کروں گا۔",
+      "مومینہ… تم میری زندگی کا سب سے خوبصورت سچ ہو،\nاور میری ہر دعا کا آخری لفظ۔"
+    ];
+
+    const container = document.getElementById('shayariContainer');
+
+    shayariList.forEach((text, index) => {
+      const item = document.createElement('div');
+      item.className = 'shayari-item';
+      item.innerHTML = `
+        <div class="shayari-number">${index + 1}</div>
+        <div class="shayari-text">${text.replace(/\n/g, '<br>')}</div>
+      `;
+      container.appendChild(item);
+    });
+
+    // Intersection Observer for scroll animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('.shayari-item').forEach(item => {
+      observer.observe(item);
     });
   </script>
 </body>
