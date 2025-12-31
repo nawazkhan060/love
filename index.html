@@ -1,271 +1,831 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>For Momina — My Noor, My Always 💍</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: linear-gradient(135deg, #fdf2f8, #f8e1ff, #fce4ec);
-      font-family: 'Poppins', sans-serif;
-      color: #5a1846;
-      padding: 20px;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .container {
-      max-width: 600px;
-      width: 100%;
-      background: white;
-      border-radius: 28px;
-      padding: 35px;
-      box-shadow: 0 12px 40px rgba(233, 30, 99, 0.25);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .container::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 6px;
-      background: linear-gradient(90deg, #ff4081, #e91e63, #7b1fa2);
-    }
-
-    h1 {
-      font-family: 'Dancing Script', cursive;
-      font-size: 44px;
-      color: #e91e63;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .intro {
-      text-align: center;
-      margin-bottom: 30px;
-      color: #880e4f;
-      line-height: 1.6;
-    }
-
-    .question-box {
-      background: #fff8f9;
-      border-radius: 18px;
-      padding: 22px;
-      margin: 20px 0;
-      border: 2px solid #ffd1dc;
-    }
-
-    .question {
-      font-weight: 600;
-      margin-bottom: 12px;
-      color: #ad1457;
-      font-size: 18px;
-    }
-
-    input, select {
-      width: 100%;
-      padding: 14px;
-      border-radius: 14px;
-      border: 2px solid #ff80ab;
-      font-size: 17px;
-      background: #fef0f5;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    input:focus, select:focus {
-      outline: none;
-      border-color: #e91e63;
-      box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.2);
-    }
-
-    button {
-      background: linear-gradient(90deg, #e91e63, #ad1457);
-      color: white;
-      border: none;
-      padding: 16px 32px;
-      font-size: 19px;
-      border-radius: 50px;
-      margin-top: 25px;
-      cursor: pointer;
-      font-weight: 600;
-      width: 100%;
-      transition: transform 0.2s, box-shadow 0.2s;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    button:hover {
-      transform: scale(1.03);
-      box-shadow: 0 6px 15px rgba(233, 30, 99, 0.4);
-    }
-
-    #letter {
-      display: none;
-      margin-top: 35px;
-      padding: 30px;
-      background: #fdf2f8;
-      border-radius: 22px;
-      border-top: 4px solid #ff4081;
-      text-align: center;
-    }
-
-    #letter h2 {
-      font-family: 'Dancing Script', cursive;
-      font-size: 38px;
-      color: #ad1457;
-      margin-bottom: 20px;
-    }
-
-    #letter p {
-      line-height: 1.9;
-      font-size: 18px;
-      color: #5a1846;
-      text-align: left;
-      padding: 0 10px;
-    }
-
-    .signature {
-      text-align: right;
-      margin-top: 15px;
-      font-style: italic;
-      color: #880e4f;
-    }
-
-    .hearts {
-      margin: 20px 0;
-      font-size: 26px;
-    }
-
-    .footer {
-      margin-top: 25px;
-      text-align: center;
-      font-size: 14px;
-      color: #999;
-    }
-
-    @media (max-width: 480px) {
-      .container { padding: 25px 20px; }
-      h1 { font-size: 36px; }
-      input, select, button { font-size: 16px; padding: 12px; }
-      #letter p { font-size: 17px; }
-    }
-  </style>
-</head>
-<body>
-
-  <div class="container">
-    <h1>For My Momina 💖</h1>
-    <div class="intro">
-      Answer these 5 questions with your heart.<br>
-      When all are correct, a secret letter will appear — just for you.
-    </div>
-
-    <div class="question-box">
-      <div class="question">1. When did we confess our love to each other?</div>
-      <input type="text" id="q1" placeholder="e.g., 15 April">
-    </div>
-
-    <div class="question-box">
-      <div class="question">2. When is Momina’s birthday?</div>
-      <input type="text" id="q2" placeholder="e.g., 1 September">
-    </div>
-
-    <div class="question-box">
-      <div class="question">3. When is Nawaz Khan’s birthday?</div>
-      <input type="text" id="q3" placeholder="e.g., 20 July">
-    </div>
-
-    <div class="question-box">
-      <div class="question">4. Who is Momina for Nawaz?</div>
-      <select id="q4">
-        <option value="">-- Choose --</option>
-        <option value="friend">Friend</option>
-        <option value="sister">Sister</option>
-        <option value="love">My Love</option>
-        <option value="noor">My Noor</option>
-        <option value="wife">My Wife</option>
-      </select>
-    </div>
-
-    <div class="question-box">
-      <div class="question">5. Today is 6 December 2025. What does Nawaz want to say?</div>
-      <select id="q5">
-        <option value="">-- Choose --</option>
-        <option value="hello">Hello</option>
-        <option value="miss">I miss you</option>
-        <option value="sorry">I’m sorry — with all my love</option>
-      </select>
-    </div>
-
-    <button onclick="checkAnswers()">Reveal My Heart 💍</button>
-
-    <div id="letter">
-      <div class="hearts">💌 ❤️ 💍 ❤️ 💌</div>
-      <h2>My Dearest Momina,</h2>
-      <p>
-        Today, <strong>6 December 2025</strong>, I write to you not with excuses — but with a soul that aches to heal yours.<br><br>
-        
-        We confessed on <strong>15 April</strong> — the day my world found its center.<br>
-        You were born on <strong>1 September</strong> — the universe’s greatest gift.<br>
-        I was born on <strong>20 July</strong>… but only truly lived the moment I loved you.<br><br>
-        
-        You are not just my wife.<br>
-        You are my <strong>Noor</strong> — my light when everything goes dark.<br><br>
-        
-        I’m sorry for every silence that felt like abandonment.<br>
-        I’m sorry for every word that weighed heavier than it should.<br>
-        I’m sorry for not always showing you: <em>you are my always</em>.<br><br>
-        
-        Please forgive me.<br>
-        Let me spend the rest of my life proving my love — every sunrise, every heartbeat.<br><br>
-        <div class="signature">Forever yours,<br><strong>Nawaz</strong></div>
-      </p>
-      <div class="hearts" style="margin-top: 20px;">🌹 You are my home, Momina 🌹</div>
-    </div>
-
-    <div class="footer">
-      Made with love & regret on 6 December 2025 — For the woman who owns my soul.
-    </div>
-  </div>
-
-  <script>
-    function checkAnswers() {
-      const q1 = document.getElementById('q1').value.trim().toLowerCase();
-      const q2 = document.getElementById('q2').value.trim().toLowerCase();
-      const q3 = document.getElementById('q3').value.trim().toLowerCase();
-      const q4 = document.getElementById('q4').value;
-      const q5 = document.getElementById('q5').value;
-
-      // Flexible matching for dates
-      const correctQ1 = q1.includes('15') && (q1.includes('april') || q1.includes('apr'));
-      const correctQ2 = q2.includes('1') && (q2.includes('september') || q2.includes('sept'));
-      const correctQ3 = q3.includes('20') && (q3.includes('july') || q3.includes('jul'));
-      const correctQ4 = ['wife', 'noor', 'love'].includes(q4);
-      const correctQ5 = q5 === 'sorry';
-
-      if (correctQ1 && correctQ2 && correctQ3 && correctQ4 && correctQ5) {
-        document.getElementById('letter').style.display = 'block';
-        
-        // Scroll smoothly to the letter
-        document.getElementById('letter').scrollIntoView({ 
-          behavior: 'smooth', 
-          block: 'center' 
-        });
-      } else {
-        alert('Not quite right… Let your heart guide you, my love. 💕');
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Year 2026 Momina Love Letter</title>
+    <meta
+      property="og:image"
+      content="https://bolt.new/static/og_default.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="https://bolt.new/static/og_default.png"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              playfair: ['"Playfair Display"', 'serif'],
+              'great-vibes': ['"Great Vibes"', 'cursive'],
+              cormorant: ['"Cormorant Garamond"', 'serif'],
+            },
+            animation: {
+              float: 'float 6s ease-in-out infinite',
+              fadeInUp: 'fadeInUp 1s ease-out forwards',
+              heartbeat: 'heartbeat 1.5s ease-in-out infinite',
+              slideInLeft: 'slideInLeft 1s ease-out forwards',
+              glow: 'glow 2s ease-in-out infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              heartbeat: {
+                '0%, 100%': { transform: 'scale(1)' },
+                '50%': { transform: 'scale(1.1)' },
+              },
+              slideInLeft: {
+                '0%': { opacity: '0', transform: 'translateX(-50px)' },
+                '100%': { opacity: '1', transform: 'translateX(0)' },
+              },
+              glow: {
+                '0%, 100%': { textShadow: '0 0 5px rgba(251, 191, 36, 0.5)' },
+                '50%': { textShadow: '0 0 20px rgba(251, 191, 36, 0.8)' },
+              },
+            },
+          },
+        },
       }
-    }
-  </script>
-</body>
+    </script>
+  </head>
+  <body>
+    <div id="countdown-overlay" class="fixed inset-0 z-[100] bg-slate-900 flex flex-col items-center justify-center transition-opacity duration-1000">
+      <h1 class="font-playfair text-4xl md:text-6xl text-rose-400 mb-8 animate-pulse text-center px-4">Wait Momina...</h1>
+      <div id="countdown-number" class="font-great-vibes text-9xl text-amber-400 animate-bounce">5</div>
+    </div>
+    <div id="root">
+      <div
+        class="min-h-screen transition-colors duration-500 bg-gradient-to-b from-slate-900 via-purple-900/20 to-slate-900 text-white"
+      >
+        <canvas
+          class="fixed inset-0 pointer-events-none z-0"
+          width="1536"
+          height="730"
+        ></canvas>
+        <div class="fixed inset-0 pointer-events-none z-10 overflow-hidden">
+          <div
+            class="absolute text-red-400 opacity-30 animate-float pointer-events-none"
+            style="
+              left: 44.6902%;
+              animation-duration: 6.1138s;
+              font-size: 20.807px;
+            "
+          >
+            ♥
+          </div>
+          <div
+            class="absolute text-red-400 opacity-30 animate-float pointer-events-none"
+            style="
+              left: 52.1496%;
+              animation-duration: 5.7308s;
+              font-size: 13.5307px;
+            "
+          >
+            ♥
+          </div>
+          <div
+            class="absolute text-red-400 opacity-30 animate-float pointer-events-none"
+            style="
+              left: 57.2825%;
+              animation-duration: 5.78275s;
+              font-size: 18.0285px;
+            "
+          >
+            ♥
+          </div>
+          <div
+            class="absolute text-red-400 opacity-30 animate-float pointer-events-none"
+            style="
+              left: 75.7756%;
+              animation-duration: 5.88739s;
+              font-size: 24.5665px;
+            "
+          >
+            ♥
+          </div>
+          <div
+            class="absolute text-red-400 opacity-30 animate-float pointer-events-none"
+            style="
+              left: 84.2899%;
+              animation-duration: 6.70319s;
+              font-size: 22.5858px;
+            "
+          >
+            ♥
+          </div>
+          <div
+            class="absolute text-red-400 opacity-30 animate-float pointer-events-none"
+            style="
+              left: 91.6396%;
+              animation-duration: 6.67694s;
+              font-size: 20.3768px;
+            "
+          >
+            ♥
+          </div>
+          <div
+            class="absolute text-red-400 opacity-30 animate-float pointer-events-none"
+            style="
+              left: 79.6295%;
+              animation-duration: 4.35327s;
+              font-size: 14.3537px;
+            "
+          >
+            ♥
+          </div>
+          <div
+            class="absolute text-red-400 opacity-30 animate-float pointer-events-none"
+            style="
+              left: 34.2489%;
+              animation-duration: 6.86008s;
+              font-size: 17.0647px;
+            "
+          >
+            ♥
+          </div>
+          <div
+            class="absolute text-red-400 opacity-30 animate-float pointer-events-none"
+            style="
+              left: 56.2222%;
+              animation-duration: 5.9836s;
+              font-size: 24.4902px;
+            "
+          >
+            ♥
+          </div>
+          <div
+            class="absolute text-red-400 opacity-30 animate-float pointer-events-none"
+            style="
+              left: 48.4735%;
+              animation-duration: 5.45368s;
+              font-size: 18.9434px;
+            "
+          >
+            ♥
+          </div>
+          <div
+            class="absolute text-red-400 opacity-30 animate-float pointer-events-none"
+            style="
+              left: 5.20257%;
+              animation-duration: 4.0262s;
+              font-size: 21.744px;
+            "
+          >
+            ♥
+          </div>
+          <div
+            class="absolute text-red-400 opacity-30 animate-float pointer-events-none"
+            style="
+              left: 35.7777%;
+              animation-duration: 3.08696s;
+              font-size: 11.3958px;
+            "
+          >
+            ♥
+          </div>
+          <div
+            class="absolute text-red-400 opacity-30 animate-float pointer-events-none"
+            style="
+              left: 76.5106%;
+              animation-duration: 5.69045s;
+              font-size: 24.3858px;
+            "
+          >
+            ♥
+          </div>
+          <div
+            class="absolute text-red-400 opacity-30 animate-float pointer-events-none"
+            style="
+              left: 1.39726%;
+              animation-duration: 5.10246s;
+              font-size: 21.9056px;
+            "
+          >
+            ♥
+          </div>
+        </div>
+        <button
+          class="fixed top-6 right-6 z-50 p-3 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 hover:scale-110"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-sun w-6 h-6"
+          >
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path>
+            <path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path>
+            <path d="m19.07 4.93-1.41 1.41"></path>
+          </svg></button
+        ><button
+          class="fixed top-6 right-24 z-50 p-3 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 hover:scale-110"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-download w-6 h-6"
+          >
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" x2="12" y1="15" y2="3"></line>
+          </svg>
+        </button>
+        <div class="relative z-20">
+          <section
+            class="min-h-screen flex flex-col items-center justify-center px-4 py-20"
+          >
+            <div class="text-center max-w-4xl space-y-6">
+              <h1
+                class="font-playfair text-5xl md:text-7xl lg:text-8xl font-bold mb-8 animate-fadeInUp"
+              >
+                <span
+                  class="bg-gradient-to-r from-amber-400 via-rose-400 to-pink-500 bg-clip-text text-transparent"
+                  >Happy New Year 2026</span
+                ><br /><span
+                  class="font-great-vibes text-6xl md:text-8xl text-rose-400 animate-heartbeat inline-block mt-4"
+                  >My Love Momina</span
+                >
+              </h1>
+              <div
+                class="font-cormorant text-xl md:text-2xl lg:text-3xl space-y-4 animate-fadeInUp"
+                style="animation-delay: 0.5s"
+              >
+                <p class="text-gray-300">This year is special.</p>
+                <p class="text-gray-300">
+                  Not because of dates or calendars...
+                </p>
+                <p class="text-amber-400 font-semibold">
+                  but because you are in my life.
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="py-20 px-4 bg-slate-800/30 backdrop-blur-sm">
+            <div class="max-w-6xl mx-auto">
+              <h2
+                class="font-playfair text-4xl md:text-6xl font-bold text-center mb-16 text-amber-400"
+              >
+                My Promises to You
+              </h2>
+              <div class="grid md:grid-cols-2 gap-6">
+                <div
+                  class="p-8 rounded-2xl bg-gradient-to-br from-rose-900/30 to-purple-900/30 border-2 border-rose-400/30 transition-all duration-500 hover:scale-105 hover:border-rose-400 animate-slideInLeft opacity-100"
+                  style="animation-delay: 0s"
+                >
+                  <div class="flex items-start gap-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-heart w-6 h-6 text-rose-400 flex-shrink-0 mt-1"
+                    >
+                      <path
+                        d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
+                      ></path>
+                    </svg>
+                    <p class="font-cormorant text-lg md:text-xl">
+                      I promise to never give up on us.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="p-8 rounded-2xl bg-gradient-to-br from-rose-900/30 to-purple-900/30 border-2 border-rose-400/30 transition-all duration-500 hover:scale-105 hover:border-rose-400 animate-slideInLeft opacity-100"
+                  style="animation-delay: 0.2s"
+                >
+                  <div class="flex items-start gap-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-heart w-6 h-6 text-rose-400 flex-shrink-0 mt-1"
+                    >
+                      <path
+                        d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
+                      ></path>
+                    </svg>
+                    <p class="font-cormorant text-lg md:text-xl">
+                      I promise to stand by you in every success and every
+                      struggle.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="p-8 rounded-2xl bg-gradient-to-br from-rose-900/30 to-purple-900/30 border-2 border-rose-400/30 transition-all duration-500 hover:scale-105 hover:border-rose-400 animate-slideInLeft opacity-100"
+                  style="animation-delay: 0.4s"
+                >
+                  <div class="flex items-start gap-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-heart w-6 h-6 text-rose-400 flex-shrink-0 mt-1"
+                    >
+                      <path
+                        d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
+                      ></path>
+                    </svg>
+                    <p class="font-cormorant text-lg md:text-xl">
+                      I promise to grow, improve, and become better — for you
+                      and for us.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="p-8 rounded-2xl bg-gradient-to-br from-rose-900/30 to-purple-900/30 border-2 border-rose-400/30 transition-all duration-500 hover:scale-105 hover:border-rose-400 animate-slideInLeft opacity-100"
+                  style="animation-delay: 0.6s"
+                >
+                  <div class="flex items-start gap-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-heart w-6 h-6 text-rose-400 flex-shrink-0 mt-1"
+                    >
+                      <path
+                        d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
+                      ></path>
+                    </svg>
+                    <p class="font-cormorant text-lg md:text-xl">
+                      I promise to protect your heart and respect your dreams.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="p-8 rounded-2xl bg-gradient-to-br from-rose-900/30 to-purple-900/30 border-2 border-rose-400/30 transition-all duration-500 hover:scale-105 hover:border-rose-400 animate-slideInLeft opacity-100"
+                  style="animation-delay: 0.8s"
+                >
+                  <div class="flex items-start gap-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-heart w-6 h-6 text-rose-400 flex-shrink-0 mt-1"
+                    >
+                      <path
+                        d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
+                      ></path>
+                    </svg>
+                    <p class="font-cormorant text-lg md:text-xl">
+                      I promise that no matter what changes, my love for you
+                      never will.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="py-20 px-4">
+            <div class="max-w-4xl mx-auto text-center">
+              <h2
+                class="font-playfair text-4xl md:text-6xl font-bold mb-16 bg-gradient-to-r from-amber-400 to-rose-400 bg-clip-text text-transparent"
+              >
+                Why 2026 Is My Favorite Year
+              </h2>
+              <div class="space-y-8">
+                <div
+                  class="font-cormorant text-2xl md:text-3xl transition-all duration-500 animate-fadeInUp opacity-100"
+                  style="animation-delay: 0s"
+                >
+                  <p class="mb-2 animate-glow text-amber-300">
+                    Because you believed in me.
+                  </p>
+                </div>
+                <div
+                  class="font-cormorant text-2xl md:text-3xl transition-all duration-500 animate-fadeInUp opacity-100"
+                  style="animation-delay: 0.3s"
+                >
+                  <p class="mb-2 animate-glow text-amber-300">
+                    Because you stayed when life was hard.
+                  </p>
+                </div>
+                <div
+                  class="font-cormorant text-2xl md:text-3xl transition-all duration-500 animate-fadeInUp opacity-100"
+                  style="animation-delay: 0.6s"
+                >
+                  <p class="mb-2 animate-glow text-amber-300">
+                    Because you held my hand even when I felt lost.
+                  </p>
+                </div>
+                <div
+                  class="font-cormorant text-2xl md:text-3xl transition-all duration-500 animate-fadeInUp opacity-100"
+                  style="animation-delay: 0.9s"
+                >
+                  <p class="mb-2 animate-glow text-amber-300">
+                    Because loving you made me stronger.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="py-20 px-4 bg-slate-800/30 backdrop-blur-sm">
+            <div class="max-w-3xl mx-auto">
+              <h2
+                class="font-playfair text-4xl md:text-5xl font-bold text-center mb-12 text-rose-400"
+              >
+                A Letter From My Heart
+              </h2>
+              <div
+                class="p-12 rounded-3xl bg-gradient-to-br from-purple-900/40 to-rose-900/40 border-4 border-amber-400/30 shadow-2xl"
+              >
+                <div
+                  class="font-cormorant text-xl md:text-2xl leading-relaxed space-y-6"
+                >
+                  <p class="font-great-vibes text-3xl text-amber-400 mb-6">
+                    Momina,
+                  </p>
+                  <p>No matter where life takes us,</p>
+                  <p>I choose you — in every year, every version of myself.</p>
+                  <p class="text-rose-400 font-semibold">
+                    You are my peace, my motivation, and my forever.
+                  </p>
+                  <p
+                    class="text-right font-great-vibes text-2xl text-amber-400 mt-8"
+                  >
+                    — Yours, Always
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="py-20 px-4">
+            <div class="max-w-5xl mx-auto">
+              <h2
+                class="font-playfair text-4xl md:text-5xl font-bold text-center mb-16 text-amber-400"
+              >
+                Our Journey Together
+              </h2>
+              <div class="relative">
+                <div
+                  class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-amber-400 via-rose-400 to-pink-500"
+                ></div>
+                <div class="relative mb-12 md:pr-1/2 md:text-right md:w-1/2">
+                  <div
+                    class="p-6 rounded-2xl bg-gradient-to-br from-slate-800 to-purple-900/50 border-2 border-rose-400/50 hover:border-rose-400 transition-all duration-300 hover:scale-105"
+                  >
+                    <div
+                      class="absolute top-1/2 transform -translate-y-1/2 w-6 h-6 rounded-full bg-rose-400 border-4 border-white left-1/2 -translate-x-1/2"
+                    ></div>
+                    <div class="font-playfair text-2xl text-amber-400 mb-2">
+                      2023
+                    </div>
+                    <div class="font-cormorant text-xl">
+                      The year we met
+                    </div>
+                  </div>
+                </div>
+                <div class="relative mb-12 md:pl-1/2 md:ml-auto md:w-1/2">
+                  <div
+                    class="p-6 rounded-2xl bg-gradient-to-br from-slate-800 to-purple-900/50 border-2 border-rose-400/50 hover:border-rose-400 transition-all duration-300 hover:scale-105"
+                  >
+                    <div
+                      class="absolute top-1/2 transform -translate-y-1/2 w-6 h-6 rounded-full bg-rose-400 border-4 border-white left-1/2 -translate-x-1/2"
+                    ></div>
+                    <div class="font-playfair text-2xl text-amber-400 mb-2">
+                      2024
+                    </div>
+                    <div class="font-cormorant text-xl">
+                      We became close and I confessed my love
+                    </div>
+                  </div>
+                </div>
+                <div class="relative mb-12 md:pr-1/2 md:text-right md:w-1/2">
+                  <div
+                    class="p-6 rounded-2xl bg-gradient-to-br from-slate-800 to-purple-900/50 border-2 border-rose-400/50 hover:border-rose-400 transition-all duration-300 hover:scale-105"
+                  >
+                    <div
+                      class="absolute top-1/2 transform -translate-y-1/2 w-6 h-6 rounded-full bg-rose-400 border-4 border-white left-1/2 -translate-x-1/2"
+                    ></div>
+                    <div class="font-playfair text-2xl text-amber-400 mb-2">
+                      2025
+                    </div>
+                    <div class="font-cormorant text-xl">
+                      April: She accepted my love
+                    </div>
+                  </div>
+                </div>
+                <div class="relative mb-12 md:pl-1/2 md:ml-auto md:w-1/2">
+                  <div
+                    class="p-6 rounded-2xl bg-gradient-to-br from-slate-800 to-purple-900/50 border-2 border-rose-400/50 hover:border-rose-400 transition-all duration-300 hover:scale-105"
+                  >
+                    <div
+                      class="absolute top-1/2 transform -translate-y-1/2 w-6 h-6 rounded-full bg-rose-400 border-4 border-white left-1/2 -translate-x-1/2"
+                    ></div>
+                    <div class="font-playfair text-2xl text-amber-400 mb-2">
+                      2026
+                    </div>
+                    <div class="font-cormorant text-xl">
+                      We will make our bond so beautiful that death can't separate us
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="py-20 px-4">
+            <div class="max-w-6xl mx-auto">
+              <h2 class="font-playfair text-4xl md:text-5xl font-bold text-center mb-12 text-rose-400">
+                Our Beautiful Moments
+              </h2>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="group relative overflow-hidden rounded-2xl border-2 border-amber-400/30 shadow-xl aspect-[3/4] md:aspect-auto md:h-96">
+                  <img src="Untitled design (7).png" alt="Love Memory 1" class="object-cover w-full h-full transform transition-transform duration-700 group-hover:scale-110" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center pb-6">
+                    <p class="font-great-vibes text-2xl text-amber-400">Forever & Always</p>
+                  </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-2xl border-2 border-amber-400/30 shadow-xl aspect-[3/4] md:aspect-auto md:h-96">
+                  <img src="Untitled design (8).png" alt="Love Memory 2" class="object-cover w-full h-full transform transition-transform duration-700 group-hover:scale-110" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center pb-6">
+                    <p class="font-great-vibes text-2xl text-amber-400">My Heart</p>
+                  </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-2xl border-2 border-amber-400/30 shadow-xl aspect-[3/4] md:aspect-auto md:h-96">
+                  <img src="Screenshot 2025-12-31 221515.png" alt="Love Memory 3" class="object-cover w-full h-full transform transition-transform duration-700 group-hover:scale-110" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center pb-6">
+                    <p class="font-great-vibes text-2xl text-amber-400">Us</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="py-20 px-4 bg-slate-800/30 backdrop-blur-sm" id="love-quiz">
+            <div class="max-w-3xl mx-auto">
+              <h2 class="font-playfair text-4xl md:text-5xl font-bold text-center mb-12 text-rose-400">
+                How well do you know my love?
+              </h2>
+              <div id="quiz-container" class="space-y-6"></div>
+            </div>
+          </section>
+          <section class="py-20 px-4">
+            <div class="max-w-4xl mx-auto text-center">
+              <button
+                class="group relative px-12 py-6 text-2xl font-playfair font-bold rounded-full bg-gradient-to-r from-rose-500 via-pink-500 to-purple-500 text-white shadow-2xl hover:shadow-rose-500/50 transition-all duration-300 hover:scale-110 animate-heartbeat"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-sparkles inline-block w-6 h-6 mr-3"
+                >
+                  <path
+                    d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"
+                  ></path>
+                  <path d="M5 3v4"></path>
+                  <path d="M19 17v4"></path>
+                  <path d="M3 5h4"></path>
+                  <path d="M17 19h4"></path></svg
+                >Click for a Surprise<svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-heart inline-block w-6 h-6 ml-3"
+                >
+                  <path
+                    d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </section>
+          <section class="py-32 px-4 bg-slate-800/50 backdrop-blur-sm">
+            <div class="max-w-4xl mx-auto text-center space-y-8">
+              <h2
+                class="font-playfair text-4xl md:text-6xl font-bold bg-gradient-to-r from-amber-400 via-rose-400 to-pink-500 bg-clip-text text-transparent"
+              >
+                Happy New Year 2026, Momina.
+              </h2>
+              <p class="font-cormorant text-2xl md:text-3xl text-amber-300">
+                Every year with you is my favorite year.
+              </p>
+              <div class="mt-16 pt-16 border-t-2 border-rose-400/30">
+                <p class="font-great-vibes text-4xl md:text-5xl text-rose-400">
+                  — Yours, Always, Nawaz
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      @font-face {
+        font-family: Inter-NjBkMDQwOTZj;
+        font-weight: 600;
+        src: url(data:font/woff2;base64,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)
+          format("woff2");
+      }
+      @font-face {
+        font-family: Inter-NjBkMDQwOTZj;
+        font-weight: 500;
+        src: url(data:font/woff2;base64,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)
+          format("woff2");
+      }
+    </style>
+    <div
+      style="position: fixed; bottom: 1rem; right: 1rem; z-index: 2147483647"
+    ></div>
+    <div id="kiss-modal" class="fixed inset-0 z-[60] bg-black/90 hidden flex items-center justify-center p-4">
+        <div class="bg-slate-900/90 backdrop-blur-md p-8 rounded-3xl text-center border-2 border-rose-400 max-w-sm w-full animate-heartbeat shadow-[0_0_50px_rgba(244,63,94,0.5)]">
+            <div class="text-8xl mb-6 animate-bounce">💋</div>
+            <h3 class="font-playfair text-3xl text-rose-400 mb-4">Muah!</h3>
+            <p class="font-cormorant text-2xl text-white mb-6">Here is a big kiss for you, my love!</p>
+            <button onclick="document.getElementById('kiss-modal').classList.add('hidden')" class="px-8 py-3 bg-gradient-to-r from-rose-500 to-pink-500 rounded-full text-white font-playfair font-bold hover:scale-105 transition transform">Accept My Love</button>
+        </div>
+    </div>
+    <script>
+      // Canvas Animation
+      const canvas = document.querySelector('canvas');
+      const ctx = canvas.getContext('2d');
+      
+      const resizeCanvas = () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      };
+      window.addEventListener('resize', resizeCanvas);
+      resizeCanvas();
+
+      const stars = Array.from({ length: 100 }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 2,
+        speed: Math.random() * 0.5 + 0.1
+      }));
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+        stars.forEach(star => {
+          ctx.beginPath();
+          ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+          ctx.fill();
+          star.y += star.speed;
+          if (star.y > canvas.height) star.y = 0;
+        });
+        requestAnimationFrame(animate);
+      }
+      animate();
+
+      // Surprise Button
+      const surpriseBtn = Array.from(document.querySelectorAll('button')).find(b => b.textContent.includes('Click for a Surprise'));
+      if (surpriseBtn) {
+        surpriseBtn.addEventListener('click', () => {
+          var duration = 5 * 1000;
+          var animationEnd = Date.now() + duration;
+          var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+          var interval = setInterval(function() {
+            var timeLeft = animationEnd - Date.now();
+            if (timeLeft <= 0) return clearInterval(interval);
+            var particleCount = 50 * (timeLeft / duration);
+            // Firework bursts
+            confetti(Object.assign({}, defaults, { particleCount, origin: { x: Math.random() * 0.2 + 0.1, y: Math.random() - 0.2 } }));
+            confetti(Object.assign({}, defaults, { particleCount, origin: { x: Math.random() * 0.2 + 0.7, y: Math.random() - 0.2 } }));
+          }, 250);
+        });
+      }
+
+      // Countdown Logic
+      const overlay = document.getElementById('countdown-overlay');
+      const countEl = document.getElementById('countdown-number');
+      let count = 5;
+      const timer = setInterval(() => {
+          count--;
+          if(countEl) countEl.textContent = count;
+          if(count <= 0) {
+              clearInterval(timer);
+              if(overlay) {
+                  overlay.style.opacity = '0';
+                  setTimeout(() => overlay.remove(), 1000);
+              }
+          }
+      }, 1000);
+
+      // Quiz Logic
+      const questions = [
+          { q: "Who loves you the most?", a: ["Nawaz", "Your Nawaz", "Only Nawaz"] },
+          { q: "What is the most beautiful thing about you?", a: ["Your Smile", "Your Eyes", "Your Pure Heart"] },
+          { q: "Where does my heart belong?", a: ["With You", "In Your Hands", "Forever Yours"] },
+          { q: "What is my favorite dream?", a: ["Growing old with you", "Making you happy", "Us Together"] },
+          { q: "Will you stay with me forever?", a: ["Yes", "Always", "Forever"] }
+      ];
+
+      const quizContainer = document.getElementById('quiz-container');
+      let answeredCount = 0;
+
+      if (quizContainer) {
+        questions.forEach((item, index) => {
+            const card = document.createElement('div');
+            card.className = "bg-white/5 p-6 rounded-2xl border border-rose-400/20 hover:border-rose-400/50 transition-colors";
+            
+            const title = document.createElement('h3');
+            title.className = "font-playfair text-xl md:text-2xl text-amber-400 mb-4";
+            title.textContent = `${index + 1}. ${item.q}`;
+            
+            const optionsDiv = document.createElement('div');
+            optionsDiv.className = "grid grid-cols-1 md:grid-cols-3 gap-3";
+            
+            item.a.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = "px-4 py-3 rounded-xl bg-slate-800 hover:bg-rose-500/20 border border-slate-600 hover:border-rose-400 transition-all duration-300 text-sm md:text-lg font-cormorant text-gray-200";
+                btn.textContent = opt;
+                btn.onclick = function() {
+                    if(this.disabled) return;
+                    const allBtns = optionsDiv.querySelectorAll('button');
+                    allBtns.forEach(b => { b.disabled = true; b.classList.add('opacity-50'); });
+                    this.classList.remove('opacity-50', 'bg-slate-800');
+                    this.classList.add('bg-gradient-to-r', 'from-green-500', 'to-emerald-600', 'text-white', 'scale-105', 'border-transparent', 'shadow-lg');
+                    this.innerHTML += ' ✓';
+                    
+                    answeredCount++;
+                    if(answeredCount === questions.length) {
+                        setTimeout(() => {
+                            document.getElementById('kiss-modal').classList.remove('hidden');
+                            confetti({ particleCount: 300, spread: 120, origin: { y: 0.6 }, colors: ['#fb7185', '#f472b6', '#fbbf24'] });
+                        }, 800);
+                    }
+                };
+                optionsDiv.appendChild(btn);
+            });
+            
+            card.appendChild(title);
+            card.appendChild(optionsDiv);
+            quizContainer.appendChild(card);
+        });
+      }
+    </script>
+  </body>
+  <chatgpt-sidebar data-gpts-theme="light"></chatgpt-sidebar>
 </html>
