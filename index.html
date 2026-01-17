@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To My Love Momina - A Letter From My Heart</title>
-    <meta property="og:image" content="https://bolt.new/static/og_default.png" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://bolt.new/static/og_default.png" />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script>
@@ -29,464 +30,784 @@
               pulseLove: 'pulseLove 2s ease-in-out infinite',
               shimmer: 'shimmer 3s ease-in-out infinite',
               twinkle: 'twinkle 1.5s ease-in-out infinite',
+              bounceSlow: 'bounceSlow 2s ease-in-out infinite',
+              spinSlow: 'spinSlow 20s linear infinite',
+              wave: 'wave 1.5s ease-in-out infinite',
+              ripple: 'ripple 2s linear infinite',
             },
             keyframes: {
               float: {
-                '0%, 100%': { transform: 'translateY(0)' },
-                '50%': { transform: 'translateY(-20px)' },
+                '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+                '50%': { transform: 'translateY(-20px) rotate(5deg)' },
               },
               fadeInUp: {
-                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '0%': { opacity: '0', transform: 'translateY(30px)' },
                 '100%': { opacity: '1', transform: 'translateY(0)' },
               },
               heartbeat: {
                 '0%, 100%': { transform: 'scale(1)' },
-                '50%': { transform: 'scale(1.1)' },
+                '25%': { transform: 'scale(1.1)' },
+                '50%': { transform: 'scale(1)' },
+                '75%': { transform: 'scale(1.05)' },
               },
               slideInLeft: {
                 '0%': { opacity: '0', transform: 'translateX(-50px)' },
                 '100%': { opacity: '1', transform: 'translateX(0)' },
               },
               glow: {
-                '0%, 100%': { textShadow: '0 0 5px rgba(251, 191, 36, 0.5)' },
-                '50%': { textShadow: '0 0 20px rgba(251, 191, 36, 0.8)' },
+                '0%, 100%': { 
+                  textShadow: '0 0 5px rgba(251, 191, 36, 0.5), 0 0 10px rgba(251, 191, 36, 0.3)',
+                  boxShadow: '0 0 5px rgba(251, 191, 36, 0.5)'
+                },
+                '50%': { 
+                  textShadow: '0 0 20px rgba(251, 191, 36, 0.8), 0 0 30px rgba(251, 191, 36, 0.6)',
+                  boxShadow: '0 0 20px rgba(251, 191, 36, 0.8)'
+                },
               },
               pulseLove: {
                 '0%, 100%': { transform: 'scale(1)', opacity: '1' },
-                '50%': { transform: 'scale(1.05)', opacity: '0.9' },
+                '50%': { transform: 'scale(1.05)', opacity: '0.8' },
               },
               shimmer: {
                 '0%, 100%': { backgroundPosition: '0% 50%' },
                 '50%': { backgroundPosition: '100% 50%' },
               },
               twinkle: {
-                '0%, 100%': { opacity: '1' },
-                '50%': { opacity: '0.3' },
+                '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+                '50%': { opacity: '0.3', transform: 'scale(0.95)' },
+              },
+              bounceSlow: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              spinSlow: {
+                '0%': { transform: 'rotate(0deg)' },
+                '100%': { transform: 'rotate(360deg)' },
+              },
+              wave: {
+                '0%, 100%': { transform: 'rotate(0deg)' },
+                '25%': { transform: 'rotate(5deg)' },
+                '75%': { transform: 'rotate(-5deg)' },
+              },
+              ripple: {
+                '0%': { 
+                  transform: 'scale(0.8)',
+                  opacity: '1'
+                },
+                '100%': { 
+                  transform: 'scale(2)',
+                  opacity: '0'
+                },
               },
             },
             backgroundImage: {
               'romantic-gradient': 'linear-gradient(135deg, #f9a8d4 0%, #f472b6 25%, #ec4899 50%, #db2777 75%, #be185d 100%)',
               'love-pattern': 'radial-gradient(circle at 20% 30%, rgba(251, 191, 36, 0.1) 0%, transparent 20%), radial-gradient(circle at 80% 70%, rgba(244, 114, 182, 0.1) 0%, transparent 20%)',
+              'velvet-texture': 'linear-gradient(rgba(30, 27, 75, 0.9), rgba(30, 27, 75, 0.9)), url("https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80")',
             },
           },
         },
       }
     </script>
     <style>
+      /* Custom Cursor */
       .romantic-cursor {
-        cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath fill='%23ec4899' d='M23.6,2c-2.4,0-4.6,1-6.2,2.8c-0.4,0.4-0.3,1.1,0.1,1.4c0.4,0.4,1.1,0.3,1.4-0.1C20.2,4.5,21.8,4,23.6,4 c4.4,0,8,3.6,8,8c0,4.4-3.6,8-8,8c-1.8,0-3.5-0.6-4.8-1.6c-0.4-0.3-1.1-0.3-1.4,0.1c-0.3,0.4-0.3,1.1,0.1,1.4 C18.9,29,21.2,30,23.6,30c5.5,0,10-4.5,10-10C33.6,14.5,29.1,10,23.6,10z'/%3E%3Cpath fill='%23ec4899' d='M16.4,22c-1.8,0-3.5-0.6-4.8-1.6c-0.4-0.3-1.1-0.3-1.4,0.1c-0.3,0.4-0.3,1.1,0.1,1.4C12.9,23,15.2,24,17.6,24 c5.5,0,10-4.5,10-10c0-5.5-4.5-10-10-10c-2.4,0-4.6,1-6.2,2.8c-0.4,0.4-0.3,1.1,0.1,1.4c0.4,0.4,1.1,0.3,1.4-0.1 C14.2,8.5,15.8,8,17.6,8c4.4,0,8,3.6,8,8C25.6,19.6,22,23.2,17.6,23.2z'/%3E%3Cpath fill='%23ec4899' d='M0,16c0,8.8,7.2,16,16,16c3.2,0,6.2-0.9,8.8-2.6c-4.9-1.8-8.8-6.5-8.8-12.1c0-5.6,3.9-10.3,8.8-12.1 C22.2,0.9,19.2,0,16,0C7.2,0,0,7.2,0,16z'/%3E%3C/svg%3E") 16 16, auto;
+        cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath fill='%23ec4899' d='M23.6,2c-2.4,0-4.6,1-6.2,2.8c-0.4,0.4-0.3,1.1,0.1,1.4c0.4,0.4,1.1,0.3,1.4-0.1C20.2,4.5,21.8,4,23.6,4 c4.4,0,8,3.6,8,8c0,4.4-3.6,8-8,8c-1.8,0-3.5-0.6-4.8-1.6c-0.4-0.3-1.1-0.3-1.4,0.1c-0.3,0.4-0.3,1.1,0.1,1.4 C18.9,29,21.2,30,23.6,30c5.5,0,10-4.5,10-10C33.6,14.5,29.1,10,23.6,10z'/%3E%3C/svg%3E") 16 16, auto;
       }
+      
       .love-text-shadow {
-        text-shadow: 0 0 10px rgba(236, 72, 153, 0.5);
+        text-shadow: 0 0 10px rgba(236, 72, 153, 0.5), 0 0 20px rgba(236, 72, 153, 0.3);
       }
+      
       .romantic-border {
         border-image: linear-gradient(45deg, #f9a8d4, #ec4899, #f472b6) 1;
       }
+      
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      /* Hide scrollbar but keep functionality */
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      
+      /* Custom scrollbar for love theme */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: rgba(244, 114, 182, 0.1);
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(to bottom, #f472b6, #ec4899);
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(to bottom, #ec4899, #db2777);
+      }
+      
+      /* Glass effect */
+      .glass-effect {
+        background: rgba(15, 23, 42, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(244, 114, 182, 0.2);
+      }
+      
+      /* Heartbeat animation for elements */
+      @keyframes heartbeat-element {
+        0%, 100% { transform: scale(1); }
+        25% { transform: scale(1.1); }
+        50% { transform: scale(1); }
+        75% { transform: scale(1.05); }
+      }
+      
+      .heartbeat-element {
+        animation: heartbeat-element 1.5s ease-in-out infinite;
+      }
+      
+      /* Rose petal animation */
+      @keyframes fall {
+        0% {
+          top: -10%;
+          opacity: 1;
+          transform: rotate(0deg);
+        }
+        100% {
+          top: 100%;
+          opacity: 0;
+          transform: rotate(360deg);
+        }
+      }
+      
+      .rose-petal {
+        position: fixed;
+        top: -10%;
+        z-index: 9999;
+        pointer-events: none;
+        animation-name: fall;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+      
+      /* Love letter envelope effect */
+      .envelope {
+        position: relative;
+        background: linear-gradient(145deg, #f8fafc, #e2e8f0);
+        border-radius: 10px;
+        padding: 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transform-style: preserve-3d;
+      }
+      
+      .envelope:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 20px;
+        background: linear-gradient(145deg, #f472b6, #ec4899);
+        border-radius: 10px 10px 0 0;
+      }
+      
+      /* Fix for 3D cards */
+      .preserve-3d {
+        transform-style: preserve-3d;
+      }
+      
+      .backface-hidden {
+        backface-visibility: hidden;
+      }
+      
+      .rotate-y-180 {
+        transform: rotateY(180deg);
+      }
+      
+      /* Love message typing effect */
+      .typewriter {
+        overflow: hidden;
+        border-right: .15em solid #f472b6;
+        white-space: nowrap;
+        margin: 0 auto;
+        letter-spacing: .15em;
+        animation: 
+          typing 3.5s steps(40, end),
+          blink-caret .75s step-end infinite;
+      }
+      
+      @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+      }
+      
+      @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: #f472b6; }
+      }
     </style>
 </head>
-<body class="romantic-cursor">
+<body class="romantic-cursor bg-gradient-to-br from-slate-900 via-purple-900/30 to-rose-900/20 text-white overflow-x-hidden">
     <!-- Countdown Overlay -->
-    <div id="countdown-overlay" class="fixed inset-0 z-[100] bg-gradient-to-br from-purple-900 via-pink-900 to-rose-900 flex flex-col items-center justify-center transition-opacity duration-1000">
+    <div id="countdown-overlay" class="fixed inset-0 z-50 bg-gradient-to-br from-purple-900 via-pink-900 to-rose-900 flex flex-col items-center justify-center transition-all duration-1000">
       <div class="relative">
-        <div class="absolute -inset-4 bg-rose-500/30 rounded-full blur-xl animate-pulse"></div>
-        <h1 class="font-playfair text-4xl md:text-6xl text-rose-100 mb-8 animate-pulse text-center px-4 relative">My Dearest Momina</h1>
+        <!-- Ripple effect -->
+        <div class="absolute -inset-8">
+          <div class="absolute inset-0 rounded-full bg-rose-500/20 animate-ripple"></div>
+          <div class="absolute inset-0 rounded-full bg-rose-500/20 animate-ripple" style="animation-delay: 0.5s"></div>
+          <div class="absolute inset-0 rounded-full bg-rose-500/20 animate-ripple" style="animation-delay: 1s"></div>
+        </div>
+        
+        <h1 class="font-playfair text-4xl md:text-6xl text-rose-100 mb-8 text-center px-4 relative animate-pulseLove">
+          <span class="bg-gradient-to-r from-rose-200 to-pink-200 bg-clip-text text-transparent">My Dearest Momina</span>
+        </h1>
       </div>
-      <div id="countdown-number" class="font-great-vibes text-9xl text-rose-200 animate-heartbeat relative">
-        <div class="absolute inset-0 text-rose-500/30 blur-sm">5</div>
-        <div class="relative">5</div>
+      <div id="countdown-number" class="relative">
+        <div class="absolute inset-0 text-rose-500/30 blur-xl animate-pulse">5</div>
+        <div class="font-great-vibes text-9xl text-rose-200 relative animate-heartbeat">5</div>
       </div>
-      <p class="font-cormorant text-xl text-rose-300 mt-8 animate-pulse">This letter is for you, my love...</p>
+      <p class="font-cormorant text-xl text-rose-300 mt-8 animate-pulse opacity-0" id="countdown-text">This letter is for you, my love...</p>
+    </div>
+
+    <!-- Rose Petals Container -->
+    <div id="rose-petals"></div>
+
+    <!-- Navigation Menu -->
+    <nav class="fixed top-0 left-0 right-0 z-40 glass-effect py-4 px-6 flex justify-between items-center">
+      <div class="font-great-vibes text-2xl text-rose-400 animate-glow">
+        <i class="fas fa-heart mr-2"></i> For Momina
+      </div>
+      <div class="flex items-center space-x-4">
+        <button id="theme-toggle" class="p-2 rounded-full bg-rose-500/20 hover:bg-rose-500/30 transition-all duration-300 hover:scale-110 group">
+          <i class="fas fa-moon text-rose-300 group-hover:rotate-12 transition-transform"></i>
+        </button>
+        <button id="music-toggle" class="p-2 rounded-full bg-rose-500/20 hover:bg-rose-500/30 transition-all duration-300 hover:scale-110 group">
+          <i class="fas fa-music text-rose-300"></i>
+        </button>
+        <button id="petal-toggle" class="p-2 rounded-full bg-rose-500/20 hover:bg-rose-500/30 transition-all duration-300 hover:scale-110 group">
+          <i class="fas fa-feather-alt text-rose-300"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Progress Indicator -->
+    <div class="fixed top-20 right-6 z-30 hidden md:block">
+      <div class="flex flex-col items-center space-y-2">
+        <div class="h-40 w-1 bg-rose-900/30 rounded-full overflow-hidden">
+          <div id="progress-bar" class="w-full bg-gradient-to-b from-rose-500 to-pink-500 rounded-full transition-all duration-300" style="height: 0%"></div>
+        </div>
+        <span class="font-cormorant text-sm text-rose-300">Our Love Journey</span>
+      </div>
     </div>
 
     <!-- Main Content -->
-    <div id="root">
-      <div class="min-h-screen transition-colors duration-500 bg-gradient-to-br from-slate-900 via-purple-900/30 to-rose-900/20 text-white relative overflow-hidden">
+    <main class="relative z-10">
+      <!-- Hero Section -->
+      <section id="hero" class="min-h-screen flex flex-col items-center justify-center px-4 py-20 relative">
+        <!-- Background Decorative Elements -->
+        <div class="absolute top-1/4 left-10 text-rose-400/10 text-8xl animate-spinSlow">
+          <i class="fas fa-heart"></i>
+        </div>
+        <div class="absolute bottom-1/4 right-10 text-pink-400/10 text-6xl animate-spinSlow" style="animation-direction: reverse">
+          <i class="fas fa-heart"></i>
+        </div>
         
-        <!-- Animated Background Elements -->
-        <div class="absolute inset-0 overflow-hidden pointer-events-none">
-          <!-- Floating Hearts -->
-          <div class="absolute w-full h-full">
-            <div class="absolute text-rose-500/20 animate-float" style="left: 10%; top: 20%; animation-delay: 0s; font-size: 40px;">♥</div>
-            <div class="absolute text-pink-500/20 animate-float" style="left: 85%; top: 40%; animation-delay: 1s; font-size: 60px;">♥</div>
-            <div class="absolute text-rose-400/20 animate-float" style="left: 30%; top: 70%; animation-delay: 2s; font-size: 50px;">♥</div>
-            <div class="absolute text-pink-400/20 animate-float" style="left: 70%; top: 15%; animation-delay: 3s; font-size: 45px;">♥</div>
-            <div class="absolute text-rose-300/20 animate-float" style="left: 20%; top: 50%; animation-delay: 4s; font-size: 55px;">♥</div>
-            <div class="absolute text-pink-300/20 animate-float" style="left: 60%; top: 80%; animation-delay: 5s; font-size: 35px;">♥</div>
+        <div class="text-center max-w-5xl space-y-10">
+          <div class="animate-fadeInUp">
+            <h1 class="font-playfair text-5xl md:text-7xl lg:text-8xl font-bold mb-4">
+              <span class="bg-gradient-to-r from-rose-300 via-pink-400 to-rose-500 bg-clip-text text-transparent animate-shimmer bg-[length:200%_auto]">
+                My Eternal Love
+              </span>
+            </h1>
+            <div class="h-1 w-32 bg-gradient-to-r from-rose-500 to-pink-500 mx-auto my-6"></div>
+            <h2 class="font-great-vibes text-5xl md:text-7xl text-rose-300 animate-heartbeat">
+              For Momina
+            </h2>
           </div>
           
-          <!-- Shimmering Particles -->
-          <div class="absolute inset-0 bg-love-pattern"></div>
+          <div class="font-cormorant text-xl md:text-2xl lg:text-3xl space-y-6 animate-fadeInUp" style="animation-delay: 0.3s">
+            <p class="text-rose-200">"In a world of billions, I found my universe in you."</p>
+            <p class="text-rose-200 italic">"This isn't just a page, it's a piece of my heart."</p>
+            <p class="text-amber-300 font-semibold text-3xl animate-glow mt-8">
+              "You are my today and all of my tomorrows."
+            </p>
+          </div>
+          
+          <div class="pt-12 animate-fadeInUp" style="animation-delay: 0.6s">
+            <button id="love-sound" class="group px-10 py-5 rounded-full bg-gradient-to-r from-rose-500 via-pink-500 to-rose-600 text-white font-playfair text-xl hover:shadow-[0_0_40px_rgba(236,72,153,0.7)] transition-all duration-500 hover:scale-110 transform hover:-translate-y-1">
+              <span class="flex items-center justify-center gap-4">
+                <i class="fas fa-heartbeat text-2xl group-hover:scale-125 transition-transform"></i>
+                <span>Hear My Heartbeat For You</span>
+                <i class="fas fa-heart text-2xl group-hover:scale-125 transition-transform"></i>
+              </span>
+            </button>
+          </div>
+          
+          <div class="animate-fadeInUp" style="animation-delay: 0.9s">
+            <a href="#promises" class="inline-block mt-12 animate-bounceSlow">
+              <i class="fas fa-chevron-down text-rose-400 text-3xl"></i>
+            </a>
+          </div>
         </div>
+      </section>
 
-        <!-- Theme Toggle Button -->
-        <button id="theme-toggle" class="fixed top-6 right-6 z-50 p-3 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 hover:scale-110 group">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="lucide lucide-moon w-6 h-6 group-hover:rotate-30 transition-transform">
-            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
-          </svg>
-        </button>
-
-        <!-- Music Toggle -->
-        <button id="music-toggle" class="fixed top-6 right-20 z-50 p-3 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 hover:scale-110 group">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="lucide lucide-music w-6 h-6">
-            <path d="M9 18V5l12-2v13"></path>
-            <circle cx="6" cy="18" r="3"></circle>
-            <circle cx="18" cy="16" r="3"></circle>
-          </svg>
-        </button>
-
-        <div class="relative z-20">
-          <!-- Hero Section -->
-          <section class="min-h-screen flex flex-col items-center justify-center px-4 py-20 relative">
-            <div class="absolute top-10 left-10 text-rose-400/20 animate-pulse">
-              <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="currentColor">
-                <path d="m12 21.35-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-              </svg>
-            </div>
-            <div class="text-center max-w-4xl space-y-8">
-              <h1 class="font-playfair text-5xl md:text-7xl lg:text-8xl font-bold mb-8 animate-fadeInUp">
-                <span class="bg-gradient-to-r from-rose-300 via-pink-400 to-rose-500 bg-clip-text text-transparent animate-shimmer bg-[length:200%_auto]">My Eternal Love</span><br/>
-                <span class="font-great-vibes text-6xl md:text-8xl text-rose-300 animate-heartbeat inline-block mt-8">For Momina</span>
-              </h1>
-              <div class="font-cormorant text-xl md:text-2xl lg:text-3xl space-y-6 animate-fadeInUp" style="animation-delay: 0.5s">
-                <p class="text-rose-200">In a world of billions, I found my universe in you.</p>
-                <p class="text-rose-200">This isn't just another page...</p>
-                <p class="text-amber-300 font-semibold text-3xl animate-glow">It's a piece of my heart, dedicated to you.</p>
-              </div>
-              <div class="pt-12">
-                <button id="love-sound" class="group px-8 py-4 rounded-full bg-gradient-to-r from-rose-500 to-pink-500 text-white font-playfair text-xl hover:shadow-[0_0_30px_rgba(236,72,153,0.6)] transition-all duration-300 hover:scale-105">
-                  <span class="flex items-center gap-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-hover:scale-125 transition-transform">
-                      <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
-                    </svg>
-                    Hear My Heartbeat
-                  </span>
-                </button>
-              </div>
-            </div>
-          </section>
-
-          <!-- Promises Section -->
-          <section class="py-20 px-4 bg-gradient-to-b from-rose-900/20 to-purple-900/20 backdrop-blur-sm">
-            <div class="max-w-6xl mx-auto">
-              <h2 class="font-playfair text-4xl md:text-6xl font-bold text-center mb-16">
-                <span class="bg-gradient-to-r from-amber-300 to-rose-400 bg-clip-text text-transparent">My Sacred Promises</span>
-              </h2>
-              <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Promise Cards -->
-                <div class="group perspective-1000">
-                  <div class="relative h-full transform-style-preserve-3d transition-transform duration-700 group-hover:rotate-y-180">
-                    <!-- Front -->
-                    <div class="absolute inset-0 backface-hidden p-8 rounded-3xl bg-gradient-to-br from-rose-900/40 to-purple-900/40 border-2 border-rose-400/30 flex flex-col items-center justify-center">
-                      <div class="text-5xl mb-4 text-rose-400 animate-pulse">💝</div>
-                      <h3 class="font-playfair text-2xl text-center text-amber-300">Promise 1</h3>
-                    </div>
-                    <!-- Back -->
-                    <div class="absolute inset-0 backface-hidden p-8 rounded-3xl bg-gradient-to-br from-purple-900/40 to-rose-900/40 border-2 border-amber-400/30 transform rotate-y-180 flex items-center justify-center">
-                      <p class="font-cormorant text-xl text-center text-white">I promise to love you more with each passing day</p>
-                    </div>
+      <!-- Promises Section (Fixed) -->
+      <section id="promises" class="py-24 px-4 bg-gradient-to-b from-rose-900/20 via-purple-900/20 to-slate-900/10">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mb-16 animate-fadeInUp">
+            <h2 class="font-playfair text-4xl md:text-6xl font-bold mb-6">
+              <span class="bg-gradient-to-r from-amber-300 to-rose-400 bg-clip-text text-transparent">
+                My Sacred Promises To You
+              </span>
+            </h2>
+            <p class="font-cormorant text-xl md:text-2xl text-rose-200 max-w-3xl mx-auto">
+              These are not just words, but vows from the deepest corners of my heart
+            </p>
+          </div>
+          
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Promise 1 -->
+            <div class="promise-card group h-80 perspective-1000" data-delay="0">
+              <div class="relative w-full h-full preserve-3d transition-all duration-700 group-hover:rotate-y-180">
+                <!-- Front -->
+                <div class="absolute inset-0 backface-hidden rounded-2xl bg-gradient-to-br from-rose-900/40 to-purple-900/40 border-2 border-rose-400/30 p-8 flex flex-col items-center justify-center shadow-xl">
+                  <div class="text-6xl mb-6 text-rose-400 animate-pulse">
+                    <i class="fas fa-heart"></i>
+                  </div>
+                  <h3 class="font-playfair text-2xl text-center text-amber-300 mb-4">Promise One</h3>
+                  <p class="font-cormorant text-lg text-center text-rose-200">To Love You Eternally</p>
+                  <div class="absolute bottom-4 text-rose-400/50">
+                    <i class="fas fa-hand-point-up animate-bounceSlow"></i> Click to reveal
                   </div>
                 </div>
-
-                <div class="group perspective-1000">
-                  <div class="relative h-full transform-style-preserve-3d transition-transform duration-700 group-hover:rotate-y-180">
-                    <div class="absolute inset-0 backface-hidden p-8 rounded-3xl bg-gradient-to-br from-rose-900/40 to-purple-900/40 border-2 border-rose-400/30 flex flex-col items-center justify-center">
-                      <div class="text-5xl mb-4 text-rose-400 animate-pulse">✨</div>
-                      <h3 class="font-playfair text-2xl text-center text-amber-300">Promise 2</h3>
-                    </div>
-                    <div class="absolute inset-0 backface-hidden p-8 rounded-3xl bg-gradient-to-br from-purple-900/40 to-rose-900/40 border-2 border-amber-400/30 transform rotate-y-180 flex items-center justify-center">
-                      <p class="font-cormorant text-xl text-center text-white">I promise to be your safe haven in every storm</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="group perspective-1000">
-                  <div class="relative h-full transform-style-preserve-3d transition-transform duration-700 group-hover:rotate-y-180">
-                    <div class="absolute inset-0 backface-hidden p-8 rounded-3xl bg-gradient-to-br from-rose-900/40 to-purple-900/40 border-2 border-rose-400/30 flex flex-col items-center justify-center">
-                      <div class="text-5xl mb-4 text-rose-400 animate-pulse">🌹</div>
-                      <h3 class="font-playfair text-2xl text-center text-amber-300">Promise 3</h3>
-                    </div>
-                    <div class="absolute inset-0 backface-hidden p-8 rounded-3xl bg-gradient-to-br from-purple-900/40 to-rose-900/40 border-2 border-amber-400/30 transform rotate-y-180 flex items-center justify-center">
-                      <p class="font-cormorant text-xl text-center text-white">I promise to cherish every moment with you</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="group perspective-1000">
-                  <div class="relative h-full transform-style-preserve-3d transition-transform duration-700 group-hover:rotate-y-180">
-                    <div class="absolute inset-0 backface-hidden p-8 rounded-3xl bg-gradient-to-br from-rose-900/40 to-purple-900/40 border-2 border-rose-400/30 flex flex-col items-center justify-center">
-                      <div class="text-5xl mb-4 text-rose-400 animate-pulse">💫</div>
-                      <h3 class="font-playfair text-2xl text-center text-amber-300">Promise 4</h3>
-                    </div>
-                    <div class="absolute inset-0 backface-hidden p-8 rounded-3xl bg-gradient-to-br from-purple-900/40 to-rose-900/40 border-2 border-amber-400/30 transform rotate-y-180 flex items-center justify-center">
-                      <p class="font-cormorant text-xl text-center text-white">I promise to grow old with you, lovingly</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="group perspective-1000">
-                  <div class="relative h-full transform-style-preserve-3d transition-transform duration-700 group-hover:rotate-y-180">
-                    <div class="absolute inset-0 backface-hidden p-8 rounded-3xl bg-gradient-to-br from-rose-900/40 to-purple-900/40 border-2 border-rose-400/30 flex flex-col items-center justify-center">
-                      <div class="text-5xl mb-4 text-rose-400 animate-pulse">🕊️</div>
-                      <h3 class="font-playfair text-2xl text-center text-amber-300">Promise 5</h3>
-                    </div>
-                    <div class="absolute inset-0 backface-hidden p-8 rounded-3xl bg-gradient-to-br from-purple-900/40 to-rose-900/40 border-2 border-amber-400/30 transform rotate-y-180 flex items-center justify-center">
-                      <p class="font-cormorant text-xl text-center text-white">I promise my heart will always be yours</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="group perspective-1000">
-                  <div class="relative h-full transform-style-preserve-3d transition-transform duration-700 group-hover:rotate-y-180">
-                    <div class="absolute inset-0 backface-hidden p-8 rounded-3xl bg-gradient-to-br from-rose-900/40 to-purple-900/40 border-2 border-rose-400/30 flex flex-col items-center justify-center">
-                      <div class="text-5xl mb-4 text-rose-400 animate-pulse">💖</div>
-                      <h3 class="font-playfair text-2xl text-center text-amber-300">Promise 6</h3>
-                    </div>
-                    <div class="absolute inset-0 backface-hidden p-8 rounded-3xl bg-gradient-to-br from-purple-900/40 to-rose-900/40 border-2 border-amber-400/30 transform rotate-y-180 flex items-center justify-center">
-                      <p class="font-cormorant text-xl text-center text-white">I promise forever starts and ends with you</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- Love Letter Section -->
-          <section class="py-20 px-4 relative">
-            <div class="max-w-4xl mx-auto">
-              <div class="relative">
-                <!-- Decorative Elements -->
-                <div class="absolute -top-10 -left-10 text-6xl text-rose-400/20 animate-twinkle">❦</div>
-                <div class="absolute -bottom-10 -right-10 text-6xl text-rose-400/20 animate-twinkle" style="animation-delay: 0.5s">❧</div>
                 
-                <div class="p-12 rounded-3xl bg-gradient-to-br from-slate-900/80 to-purple-900/50 border-2 border-amber-400/30 shadow-2xl shadow-rose-500/20 relative overflow-hidden">
-                  <!-- Wax Seal -->
-                  <div class="absolute top-4 right-4 w-16 h-16 rounded-full bg-gradient-to-br from-amber-400 to-rose-500 flex items-center justify-center shadow-lg animate-pulseLove">
-                    <span class="text-2xl">💌</span>
+                <!-- Back -->
+                <div class="absolute inset-0 backface-hidden rotate-y-180 rounded-2xl bg-gradient-to-br from-purple-900/50 to-rose-900/50 border-2 border-amber-400/30 p-8 flex flex-col items-center justify-center shadow-xl">
+                  <div class="text-4xl mb-4 text-amber-300">
+                    <i class="fas fa-heart"></i>
                   </div>
-                  
-                  <div class="font-cormorant text-xl md:text-2xl leading-relaxed space-y-8">
-                    <p class="font-great-vibes text-4xl text-rose-400 mb-6 animate-fadeInUp">My Dearest Momina,</p>
-                    
-                    <p class="animate-fadeInUp" style="animation-delay: 0.2s">
-                      As I sit to write these words, my heart overflows with emotions that no language can fully capture. 
-                      You are not just a person in my life; you are the melody that makes my soul dance, the light that guides me through darkness, 
-                      and the warmth that makes every moment worth living.
-                    </p>
-                    
-                    <p class="animate-fadeInUp" style="animation-delay: 0.4s">
-                      I remember the first time our eyes met, and in that moment, I knew my search was over. 
-                      The universe had conspired to bring us together, and every day since has been a beautiful chapter in our love story.
-                    </p>
-                    
-                    <p class="text-rose-300 font-semibold animate-fadeInUp" style="animation-delay: 0.6s">
-                      Your smile is my favorite sunrise, your laughter my favorite symphony, and your love my greatest treasure.
-                    </p>
-                    
-                    <p class="animate-fadeInUp" style="animation-delay: 0.8s">
-                      I promise to hold your hand through every storm, to wipe your tears when you're sad, 
-                      to celebrate your victories as if they were my own, and to love you more deeply with each passing day.
-                    </p>
-                    
-                    <div class="pt-8 border-t border-rose-400/30 animate-fadeInUp" style="animation-delay: 1s">
-                      <p class="text-right font-great-vibes text-3xl text-amber-400">
-                        Forever and Always,<br/>
-                        <span class="text-2xl">Your Nawaz</span>
-                      </p>
-                    </div>
-                  </div>
+                  <p class="font-cormorant text-xl text-center text-white leading-relaxed">
+                    I promise to love you more with each sunrise, cherishing every moment we share.
+                  </p>
                 </div>
               </div>
-            </div>
-          </section>
-
-          <!-- Interactive Love Quiz -->
-          <section class="py-20 px-4 bg-gradient-to-t from-purple-900/20 to-rose-900/20 backdrop-blur-sm">
-            <div class="max-w-4xl mx-auto">
-              <h2 class="font-playfair text-4xl md:text-5xl font-bold text-center mb-12">
-                <span class="bg-gradient-to-r from-amber-400 to-rose-400 bg-clip-text text-transparent">Our Love Quiz</span>
-              </h2>
-              <p class="font-cormorant text-xl text-center text-rose-200 mb-12">Let's see how well you know my heart's deepest feelings...</p>
-              
-              <div id="quiz-container" class="space-y-8">
-                <!-- Quiz questions will be inserted here -->
-              </div>
-
-              <div class="text-center mt-12">
-                <button id="reveal-love" class="px-10 py-4 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-playfair text-xl hover:shadow-[0_0_30px_rgba(192,132,252,0.6)] transition-all duration-300 hover:scale-105">
-                  Reveal My Secret Love Message
-                </button>
-              </div>
-            </div>
-          </section>
-
-          <!-- Memory Timeline -->
-          <section class="py-20 px-4">
-            <div class="max-w-6xl mx-auto">
-              <h2 class="font-playfair text-4xl md:text-5xl font-bold text-center mb-16">
-                <span class="bg-gradient-to-r from-rose-400 to-pink-500 bg-clip-text text-transparent">Our Journey</span>
-              </h2>
-              
-              <div class="relative">
-                <!-- Timeline Line -->
-                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-amber-400 via-rose-400 to-pink-500"></div>
-                
-                <!-- Timeline Items -->
-                <div class="space-y-12 relative">
-                  <!-- Memory 1 -->
-                  <div class="flex items-center gap-8">
-                    <div class="w-1/2"></div>
-                    <div class="w-8 h-8 rounded-full bg-rose-500 border-4 border-white absolute left-1/2 transform -translate-x-1/2"></div>
-                    <div class="w-1/2 pl-12">
-                      <div class="p-6 rounded-2xl bg-gradient-to-r from-rose-900/30 to-purple-900/30 border-2 border-rose-400/30 hover:border-rose-400 transition-all duration-300 hover:scale-[1.02]">
-                        <div class="flex items-center gap-4 mb-4">
-                          <div class="text-3xl">💘</div>
-                          <div>
-                            <div class="font-playfair text-2xl text-amber-400">When We First Met</div>
-                            <div class="font-cormorant text-lg text-rose-300">My world changed forever</div>
-                          </div>
-                        </div>
-                        <p class="font-cormorant text-lg text-white">That moment when our eyes met, I knew I had found my missing piece. Your smile lit up the room, and my heart knew it was home.</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Memory 2 -->
-                  <div class="flex items-center gap-8">
-                    <div class="w-1/2 pr-12 text-right">
-                      <div class="p-6 rounded-2xl bg-gradient-to-r from-purple-900/30 to-rose-900/30 border-2 border-amber-400/30 hover:border-amber-400 transition-all duration-300 hover:scale-[1.02]">
-                        <div class="flex items-center justify-end gap-4 mb-4">
-                          <div>
-                            <div class="font-playfair text-2xl text-amber-400">First "I Love You"</div>
-                            <div class="font-cormorant text-lg text-rose-300">The most beautiful words</div>
-                          </div>
-                          <div class="text-3xl">💕</div>
-                        </div>
-                        <p class="font-cormorant text-lg text-white">The day you said "I love you" back, the universe seemed to stand still. Nothing has been the same since, in the most beautiful way.</p>
-                      </div>
-                    </div>
-                    <div class="w-8 h-8 rounded-full bg-amber-500 border-4 border-white absolute left-1/2 transform -translate-x-1/2"></div>
-                    <div class="w-1/2"></div>
-                  </div>
-
-                  <!-- Memory 3 -->
-                  <div class="flex items-center gap-8">
-                    <div class="w-1/2"></div>
-                    <div class="w-8 h-8 rounded-full bg-pink-500 border-4 border-white absolute left-1/2 transform -translate-x-1/2"></div>
-                    <div class="w-1/2 pl-12">
-                      <div class="p-6 rounded-2xl bg-gradient-to-r from-rose-900/30 to-purple-900/30 border-2 border-rose-400/30 hover:border-rose-400 transition-all duration-300 hover:scale-[1.02]">
-                        <div class="flex items-center gap-4 mb-4">
-                          <div class="text-3xl">🌟</div>
-                          <div>
-                            <div class="font-playfair text-2xl text-amber-400">Growing Together</div>
-                            <div class="font-cormorant text-lg text-rose-300">Every day better than the last</div>
-                          </div>
-                        </div>
-                        <p class="font-cormorant text-lg text-white">Watching our love grow stronger with each passing day has been the greatest blessing. You make me want to be a better man.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- Final Love Declaration -->
-          <section class="py-32 px-4 bg-gradient-to-b from-slate-900/50 to-rose-900/30 backdrop-blur-sm relative overflow-hidden">
-            <!-- Floating Hearts -->
-            <div class="absolute inset-0 overflow-hidden">
-              <div class="absolute animate-float" style="left: 15%; top: 20%; animation-duration: 8s;">💖</div>
-              <div class="absolute animate-float" style="left: 85%; top: 40%; animation-duration: 7s; animation-delay: 1s;">💗</div>
-              <div class="absolute animate-float" style="left: 25%; top: 80%; animation-duration: 9s; animation-delay: 2s;">💓</div>
-              <div class="absolute animate-float" style="left: 75%; top: 10%; animation-duration: 6s; animation-delay: 3s;">💞</div>
             </div>
             
-            <div class="max-w-4xl mx-auto text-center space-y-12 relative z-10">
-              <h2 class="font-playfair text-5xl md:text-7xl font-bold">
-                <span class="bg-gradient-to-r from-amber-400 via-rose-400 to-pink-500 bg-clip-text text-transparent animate-shimmer bg-[length:200%_auto]">My Love For You Is Eternal</span>
-              </h2>
-              
-              <p class="font-cormorant text-2xl md:text-3xl text-amber-300 animate-pulseLove">
-                In every lifetime, in every universe,<br/>
-                I would find you and choose you.
-              </p>
-              
-              <div class="pt-16 border-t-2 border-rose-400/30">
-                <button id="final-surprise" class="group px-12 py-6 text-2xl font-playfair font-bold rounded-full bg-gradient-to-r from-rose-600 via-pink-600 to-purple-600 text-white shadow-2xl hover:shadow-[0_0_50px_rgba(236,72,153,0.7)] transition-all duration-300 hover:scale-110 animate-heartbeat">
-                  <span class="flex items-center justify-center gap-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-hover:rotate-12 transition-transform">
-                      <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
-                    </svg>
-                    Click For My Heart's Final Surprise
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-hover:-rotate-12 transition-transform">
-                      <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
-                    </svg>
-                  </span>
-                </button>
-              </div>
-              
-              <div class="mt-16 pt-16 border-t-2 border-amber-400/30">
-                <p class="font-great-vibes text-4xl md:text-5xl text-rose-400 animate-glow">
-                  Yours Forever,<br/>
-                  <span class="text-3xl md:text-4xl">Nawaz</span>
-                </p>
+            <!-- Promise 2 -->
+            <div class="promise-card group h-80 perspective-1000" data-delay="0.1">
+              <div class="relative w-full h-full preserve-3d transition-all duration-700 group-hover:rotate-y-180">
+                <div class="absolute inset-0 backface-hidden rounded-2xl bg-gradient-to-br from-rose-900/40 to-purple-900/40 border-2 border-rose-400/30 p-8 flex flex-col items-center justify-center shadow-xl">
+                  <div class="text-6xl mb-6 text-rose-400 animate-pulse">
+                    <i class="fas fa-shield-alt"></i>
+                  </div>
+                  <h3 class="font-playfair text-2xl text-center text-amber-300 mb-4">Promise Two</h3>
+                  <p class="font-cormorant text-lg text-center text-rose-200">To Protect Your Heart</p>
+                  <div class="absolute bottom-4 text-rose-400/50">
+                    <i class="fas fa-hand-point-up animate-bounceSlow"></i> Click to reveal
+                  </div>
+                </div>
+                
+                <div class="absolute inset-0 backface-hidden rotate-y-180 rounded-2xl bg-gradient-to-br from-purple-900/50 to-rose-900/50 border-2 border-amber-400/30 p-8 flex flex-col items-center justify-center shadow-xl">
+                  <div class="text-4xl mb-4 text-amber-300">
+                    <i class="fas fa-shield-alt"></i>
+                  </div>
+                  <p class="font-cormorant text-xl text-center text-white leading-relaxed">
+                    I promise to be your safe harbor in every storm, protecting your heart as my most precious treasure.
+                  </p>
+                </div>
               </div>
             </div>
-          </section>
+            
+            <!-- Promise 3 -->
+            <div class="promise-card group h-80 perspective-1000" data-delay="0.2">
+              <div class="relative w-full h-full preserve-3d transition-all duration-700 group-hover:rotate-y-180">
+                <div class="absolute inset-0 backface-hidden rounded-2xl bg-gradient-to-br from-rose-900/40 to-purple-900/40 border-2 border-rose-400/30 p-8 flex flex-col items-center justify-center shadow-xl">
+                  <div class="text-6xl mb-6 text-rose-400 animate-pulse">
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <h3 class="font-playfair text-2xl text-center text-amber-300 mb-4">Promise Three</h3>
+                  <p class="font-cormorant text-lg text-center text-rose-200">To Cherish Always</p>
+                  <div class="absolute bottom-4 text-rose-400/50">
+                    <i class="fas fa-hand-point-up animate-bounceSlow"></i> Click to reveal
+                  </div>
+                </div>
+                
+                <div class="absolute inset-0 backface-hidden rotate-y-180 rounded-2xl bg-gradient-to-br from-purple-900/50 to-rose-900/50 border-2 border-amber-400/30 p-8 flex flex-col items-center justify-center shadow-xl">
+                  <div class="text-4xl mb-4 text-amber-300">
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <p class="font-cormorant text-xl text-center text-white leading-relaxed">
+                    I promise to cherish every laugh, every tear, and every moment with you as priceless gifts.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Promise 4 -->
+            <div class="promise-card group h-80 perspective-1000" data-delay="0.3">
+              <div class="relative w-full h-full preserve-3d transition-all duration-700 group-hover:rotate-y-180">
+                <div class="absolute inset-0 backface-hidden rounded-2xl bg-gradient-to-br from-rose-900/40 to-purple-900/40 border-2 border-rose-400/30 p-8 flex flex-col items-center justify-center shadow-xl">
+                  <div class="text-6xl mb-6 text-rose-400 animate-pulse">
+                    <i class="fas fa-hand-holding-heart"></i>
+                  </div>
+                  <h3 class="font-playfair text-2xl text-center text-amber-300 mb-4">Promise Four</h3>
+                  <p class="font-cormorant text-lg text-center text-rose-200">To Grow Together</p>
+                  <div class="absolute bottom-4 text-rose-400/50">
+                    <i class="fas fa-hand-point-up animate-bounceSlow"></i> Click to reveal
+                  </div>
+                </div>
+                
+                <div class="absolute inset-0 backface-hidden rotate-y-180 rounded-2xl bg-gradient-to-br from-purple-900/50 to-rose-900/50 border-2 border-amber-400/30 p-8 flex flex-col items-center justify-center shadow-xl">
+                  <div class="text-4xl mb-4 text-amber-300">
+                    <i class="fas fa-hand-holding-heart"></i>
+                  </div>
+                  <p class="font-cormorant text-xl text-center text-white leading-relaxed">
+                    I promise to grow with you, learn with you, and build a beautiful future together.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Promise 5 -->
+            <div class="promise-card group h-80 perspective-1000" data-delay="0.4">
+              <div class="relative w-full h-full preserve-3d transition-all duration-700 group-hover:rotate-y-180">
+                <div class="absolute inset-0 backface-hidden rounded-2xl bg-gradient-to-br from-rose-900/40 to-purple-900/40 border-2 border-rose-400/30 p-8 flex flex-col items-center justify-center shadow-xl">
+                  <div class="text-6xl mb-6 text-rose-400 animate-pulse">
+                    <i class="fas fa-infinity"></i>
+                  </div>
+                  <h3 class="font-playfair text-2xl text-center text-amber-300 mb-4">Promise Five</h3>
+                  <p class="font-cormorant text-lg text-center text-rose-200">To Choose You Always</p>
+                  <div class="absolute bottom-4 text-rose-400/50">
+                    <i class="fas fa-hand-point-up animate-bounceSlow"></i> Click to reveal
+                  </div>
+                </div>
+                
+                <div class="absolute inset-0 backface-hidden rotate-y-180 rounded-2xl bg-gradient-to-br from-purple-900/50 to-rose-900/50 border-2 border-amber-400/30 p-8 flex flex-col items-center justify-center shadow-xl">
+                  <div class="text-4xl mb-4 text-amber-300">
+                    <i class="fas fa-infinity"></i>
+                  </div>
+                  <p class="font-cormorant text-xl text-center text-white leading-relaxed">
+                    I promise to choose you every single day, in every lifetime, in every universe.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Promise 6 -->
+            <div class="promise-card group h-80 perspective-1000" data-delay="0.5">
+              <div class="relative w-full h-full preserve-3d transition-all duration-700 group-hover:rotate-y-180">
+                <div class="absolute inset-0 backface-hidden rounded-2xl bg-gradient-to-br from-rose-900/40 to-purple-900/40 border-2 border-rose-400/30 p-8 flex flex-col items-center justify-center shadow-xl">
+                  <div class="text-6xl mb-6 text-rose-400 animate-pulse">
+                    <i class="fas fa-gem"></i>
+                  </div>
+                  <h3 class="font-playfair text-2xl text-center text-amber-300 mb-4">Promise Six</h3>
+                  <p class="font-cormorant text-lg text-center text-rose-200">To Honor Our Love</p>
+                  <div class="absolute bottom-4 text-rose-400/50">
+                    <i class="fas fa-hand-point-up animate-bounceSlow"></i> Click to reveal
+                  </div>
+                </div>
+                
+                <div class="absolute inset-0 backface-hidden rotate-y-180 rounded-2xl bg-gradient-to-br from-purple-900/50 to-rose-900/50 border-2 border-amber-400/30 p-8 flex flex-col items-center justify-center shadow-xl">
+                  <div class="text-4xl mb-4 text-amber-300">
+                    <i class="fas fa-gem"></i>
+                  </div>
+                  <p class="font-cormorant text-xl text-center text-white leading-relaxed">
+                    I promise to honor our love, nurture it, and let it be my guiding light forever.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="text-center mt-16 animate-fadeInUp">
+            <button id="promises-confetti" class="px-8 py-4 rounded-full bg-gradient-to-r from-amber-500 to-rose-500 text-white font-playfair text-xl hover:shadow-[0_0_30px_rgba(245,158,11,0.6)] transition-all duration-300 hover:scale-105">
+              <i class="fas fa-sparkles mr-3"></i> Celebrate Our Promises
+            </button>
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+
+      <!-- Love Letter Section -->
+      <section id="letter" class="py-24 px-4 relative">
+        <div class="absolute inset-0 bg-love-pattern opacity-10"></div>
+        <div class="max-w-4xl mx-auto relative">
+          <!-- Decorative Corner Elements -->
+          <div class="absolute -top-6 -left-6 text-5xl text-rose-400/20 animate-twinkle">
+            <i class="fas fa-heart"></i>
+          </div>
+          <div class="absolute -bottom-6 -right-6 text-5xl text-rose-400/20 animate-twinkle" style="animation-delay: 0.5s">
+            <i class="fas fa-heart"></i>
+          </div>
+          
+          <div class="envelope animate-fadeInUp">
+            <!-- Wax Seal -->
+            <div class="absolute -top-4 -right-4 w-20 h-20 rounded-full bg-gradient-to-br from-amber-400 to-rose-500 flex items-center justify-center shadow-2xl animate-pulseLove z-10">
+              <span class="text-3xl">💌</span>
+              <div class="absolute inset-0 rounded-full border-4 border-amber-300/50 animate-ping"></div>
+            </div>
+            
+            <div class="font-cormorant text-xl md:text-2xl leading-relaxed space-y-8">
+              <p class="font-great-vibes text-5xl text-rose-600 mb-8 text-center animate-fadeInUp">
+                My Dearest Momina,
+              </p>
+              
+              <p class="animate-fadeInUp" style="animation-delay: 0.2s">
+                As I sit to write these words, my heart overflows with emotions that no language can fully capture. 
+                You are not just a person in my life; you are the melody that makes my soul dance, the light that guides me through darkness, 
+                and the warmth that makes every moment worth living.
+              </p>
+              
+              <p class="animate-fadeInUp" style="animation-delay: 0.4s">
+                I remember the first time our eyes met, and in that moment, I knew my search was over. 
+                The universe had conspired to bring us together, and every day since has been a beautiful chapter in our love story.
+              </p>
+              
+              <div class="bg-rose-50/10 p-6 rounded-xl border-l-4 border-rose-500 my-8 animate-fadeInUp" style="animation-delay: 0.6s">
+                <p class="text-rose-800 font-semibold text-2xl italic text-center">
+                  "Your smile is my favorite sunrise, your laughter my favorite symphony, and your love my greatest treasure."
+                </p>
+              </div>
+              
+              <p class="animate-fadeInUp" style="animation-delay: 0.8s">
+                I promise to hold your hand through every storm, to wipe your tears when you're sad, 
+                to celebrate your victories as if they were my own, and to love you more deeply with each passing day.
+              </p>
+              
+              <p class="animate-fadeInUp" style="animation-delay: 1s">
+                With you, I've found a love that feels like home—a safe, warm, and beautiful place where I can be my true self. 
+                You've seen me at my best and my worst, and yet your love remains constant, unwavering, and pure.
+              </p>
+              
+              <div class="pt-12 border-t border-rose-300/30 animate-fadeInUp" style="animation-delay: 1.2s">
+                <p class="text-right font-great-vibes text-4xl text-rose-600">
+                  Forever and Always,
+                </p>
+                <p class="text-right font-great-vibes text-3xl text-amber-600 mt-2">
+                  Your Nawaz
+                </p>
+                <div class="text-right mt-6">
+                  <button id="kiss-letter" class="px-6 py-3 rounded-full bg-gradient-to-r from-rose-500 to-pink-500 text-white font-cormorant text-lg hover:shadow-[0_0_20px_rgba(236,72,153,0.6)] transition-all duration-300 hover:scale-105">
+                    <i class="fas fa-kiss-wink-heart mr-2"></i> Send a Kiss Back
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Love Meter Section -->
+      <section id="love-meter" class="py-24 px-4 bg-gradient-to-b from-purple-900/20 to-rose-900/20">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="font-playfair text-4xl md:text-5xl font-bold text-center mb-16 animate-fadeInUp">
+            <span class="bg-gradient-to-r from-amber-400 to-rose-400 bg-clip-text text-transparent">Our Love Meter</span>
+          </h2>
+          
+          <div class="space-y-12">
+            <!-- Love Compatibility -->
+            <div class="animate-fadeInUp">
+              <div class="flex justify-between mb-2">
+                <span class="font-cormorant text-xl text-rose-300">Our Connection</span>
+                <span class="font-cormorant text-xl text-amber-300">100%</span>
+              </div>
+              <div class="h-4 bg-rose-900/30 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-rose-500 to-pink-500 rounded-full animate-pulseLove" style="width: 100%"></div>
+              </div>
+            </div>
+            
+            <!-- Happiness Level -->
+            <div class="animate-fadeInUp" style="animation-delay: 0.2s">
+              <div class="flex justify-between mb-2">
+                <span class="font-cormorant text-xl text-rose-300">Happiness Together</span>
+                <span class="font-cormorant text-xl text-amber-300">∞</span>
+              </div>
+              <div class="h-4 bg-rose-900/30 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-amber-500 to-rose-500 rounded-full animate-pulseLove" style="width: 100%"></div>
+              </div>
+            </div>
+            
+            <!-- Forever Commitment -->
+            <div class="animate-fadeInUp" style="animation-delay: 0.4s">
+              <div class="flex justify-between mb-2">
+                <span class="font-cormorant text-xl text-rose-300">Forever Commitment</span>
+                <span class="font-cormorant text-xl text-amber-300">Eternal</span>
+              </div>
+              <div class="h-4 bg-rose-900/30 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-purple-500 to-rose-500 rounded-full animate-pulseLove" style="width: 100%"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="text-center mt-16">
+            <button id="increase-love" class="px-10 py-4 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-playfair text-xl hover:shadow-[0_0_30px_rgba(192,132,252,0.6)] transition-all duration-300 hover:scale-105 group">
+              <i class="fas fa-heartbeat mr-3 group-hover:scale-125 transition-transform"></i>
+              Increase Our Love Level
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final Declaration -->
+      <section id="finale" class="py-32 px-4 bg-gradient-to-b from-slate-900/50 to-rose-900/30 relative overflow-hidden">
+        <!-- Floating Elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+          <div class="absolute animate-float" style="left: 10%; top: 15%; animation-duration: 7s;">💖</div>
+          <div class="absolute animate-float" style="left: 85%; top: 35%; animation-duration: 9s; animation-delay: 1s;">💗</div>
+          <div class="absolute animate-float" style="left: 20%; top: 75%; animation-duration: 8s; animation-delay: 2s;">💓</div>
+          <div class="absolute animate-float" style="left: 70%; top: 10%; animation-duration: 10s; animation-delay: 3s;">💞</div>
+          <div class="absolute animate-float" style="left: 40%; top: 50%; animation-duration: 6s; animation-delay: 0.5s;">💕</div>
+        </div>
+        
+        <div class="max-w-5xl mx-auto text-center space-y-12 relative z-10">
+          <h2 class="font-playfair text-5xl md:text-7xl font-bold animate-fadeInUp">
+            <span class="bg-gradient-to-r from-amber-400 via-rose-400 to-pink-500 bg-clip-text text-transparent animate-shimmer bg-[length:200%_auto]">
+              My Love For You Is Eternal
+            </span>
+          </h2>
+          
+          <p class="font-cormorant text-2xl md:text-3xl text-amber-300 animate-pulseLove">
+            "In every lifetime, in every universe,<br/>
+            I would find you and choose you, again and again."
+          </p>
+          
+          <div class="flex flex-wrap justify-center gap-6 mt-12 animate-fadeInUp" style="animation-delay: 0.3s">
+            <div class="p-6 rounded-2xl bg-gradient-to-br from-rose-900/30 to-purple-900/30 border border-rose-400/30 hover:border-rose-400 transition-all duration-300 hover:scale-105">
+              <i class="fas fa-infinity text-5xl text-amber-400 mb-4"></i>
+              <p class="font-cormorant text-xl">Forever Yours</p>
+            </div>
+            <div class="p-6 rounded-2xl bg-gradient-to-br from-rose-900/30 to-purple-900/30 border border-rose-400/30 hover:border-rose-400 transition-all duration-300 hover:scale-105">
+              <i class="fas fa-heart text-5xl text-rose-400 mb-4"></i>
+              <p class="font-cormorant text-xl">Always Loving</p>
+            </div>
+            <div class="p-6 rounded-2xl bg-gradient-to-br from-rose-900/30 to-purple-900/30 border border-rose-400/30 hover:border-rose-400 transition-all duration-300 hover:scale-105">
+              <i class="fas fa-star text-5xl text-amber-300 mb-4"></i>
+              <p class="font-cormorant text-xl">Endlessly Adoring</p>
+            </div>
+          </div>
+          
+          <div class="pt-16 animate-fadeInUp" style="animation-delay: 0.6s">
+            <button id="final-surprise" class="group px-14 py-7 text-2xl font-playfair font-bold rounded-full bg-gradient-to-r from-rose-600 via-pink-600 to-purple-600 text-white shadow-2xl hover:shadow-[0_0_60px_rgba(236,72,153,0.8)] transition-all duration-500 hover:scale-110 animate-heartbeat">
+              <span class="flex items-center justify-center gap-6">
+                <i class="fas fa-gem text-3xl group-hover:rotate-180 transition-transform duration-1000"></i>
+                <span>Click For My Heart's Ultimate Surprise</span>
+                <i class="fas fa-gem text-3xl group-hover:rotate-180 transition-transform duration-1000"></i>
+              </span>
+            </button>
+          </div>
+          
+          <div class="mt-20 pt-16 border-t-2 border-amber-400/30 animate-fadeInUp" style="animation-delay: 0.9s">
+            <p class="font-great-vibes text-5xl md:text-6xl text-rose-400 animate-glow">
+              Yours Forever,<br/>
+              <span class="text-4xl md:text-5xl text-amber-400">Nawaz</span>
+            </p>
+            <div class="mt-8">
+              <button id="reset-experience" class="px-8 py-3 rounded-full bg-gradient-to-r from-slate-700 to-slate-800 text-white font-cormorant text-lg hover:shadow-[0_0_20px_rgba(148,163,184,0.5)] transition-all duration-300 hover:scale-105">
+                <i class="fas fa-redo mr-2"></i> Relive This Love Journey
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <!-- Love Message Modal -->
-    <div id="love-modal" class="fixed inset-0 z-[60] bg-black/90 hidden flex items-center justify-center p-4">
+    <div id="love-modal" class="fixed inset-0 z-50 bg-black/80 hidden flex items-center justify-center p-4">
       <div class="bg-gradient-to-br from-slate-900 to-purple-900/90 backdrop-blur-md p-8 rounded-3xl text-center border-2 border-rose-400 max-w-md w-full animate-pulseLove shadow-[0_0_50px_rgba(244,63,94,0.5)]">
-        <div class="text-8xl mb-6 animate-bounce">💘</div>
+        <div class="text-8xl mb-6 animate-bounceSlow">
+          <i class="fas fa-heart-circle-check"></i>
+        </div>
         <h3 class="font-playfair text-3xl text-rose-400 mb-4">My Eternal Love</h3>
         <p class="font-cormorant text-2xl text-white mb-6">You are the reason my heart beats, my love.</p>
         <p class="font-cormorant text-lg text-amber-300 mb-8">Every moment with you is a treasure I'll cherish forever.</p>
-        <button onclick="document.getElementById('love-modal').classList.add('hidden')" class="px-8 py-3 bg-gradient-to-r from-rose-500 to-pink-500 rounded-full text-white font-playfair font-bold hover:scale-105 transition transform">Keep Forever In Your Heart</button>
+        <button id="close-modal" class="px-8 py-3 bg-gradient-to-r from-rose-500 to-pink-500 rounded-full text-white font-playfair font-bold hover:scale-105 transition-transform">
+          Keep Forever In Your Heart
+        </button>
       </div>
     </div>
 
-    <!-- Hidden Audio Elements -->
+    <!-- Audio Elements -->
     <audio id="heartbeat-audio" preload="auto">
       <source src="https://assets.mixkit.co/sfx/preview/mixkit-heartbeat-1180.mp3" type="audio/mpeg">
     </audio>
     <audio id="love-music" loop preload="auto">
       <source src="https://assets.mixkit.co/music/preview/mixkit-loving-you-117.mp3" type="audio/mpeg">
     </audio>
+    <audio id="kiss-audio" preload="auto">
+      <source src="https://assets.mixkit.co/sfx/preview/mixkit-kiss-2016.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Floating Action Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 z-40 w-14 h-14 rounded-full bg-gradient-to-br from-rose-500 to-pink-600 text-white flex items-center justify-center shadow-2xl hover:shadow-[0_0_20px_rgba(236,72,153,0.8)] transition-all duration-300 hover:scale-110 hidden">
+      <i class="fas fa-chevron-up text-xl"></i>
+    </button>
 
     <script>
       // Initialize variables
       let isMusicPlaying = false;
       let isDarkMode = true;
-      let answeredCount = 0;
+      let arePetalsFalling = false;
+      let loveLevel = 100;
       const loveMusic = document.getElementById('love-music');
       const heartbeatAudio = document.getElementById('heartbeat-audio');
+      const kissAudio = document.getElementById('kiss-audio');
+
+      // DOM Elements
+      const countdownOverlay = document.getElementById('countdown-overlay');
+      const countdownNumber = document.getElementById('countdown-number');
+      const countdownText = document.getElementById('countdown-text');
+      const progressBar = document.getElementById('progress-bar');
+      const backToTopBtn = document.getElementById('back-to-top');
+      const rosePetalsContainer = document.getElementById('rose-petals');
 
       // Countdown Logic
-      const overlay = document.getElementById('countdown-overlay');
-      const countEl = document.getElementById('countdown-number');
       let count = 5;
-      
-      const timer = setInterval(() => {
+      const countdownTimer = setInterval(() => {
         count--;
-        if (countEl) {
-          countEl.innerHTML = `<div class="absolute inset-0 text-rose-500/30 blur-sm">${count}</div><div class="relative">${count}</div>`;
+        if (countdownNumber) {
+          countdownNumber.innerHTML = `
+            <div class="absolute inset-0 text-rose-500/30 blur-xl animate-pulse">${count}</div>
+            <div class="font-great-vibes text-9xl text-rose-200 relative animate-heartbeat">${count}</div>
+          `;
         }
+        
+        if (count === 3) {
+          countdownText.classList.remove('opacity-0');
+          countdownText.classList.add('opacity-100');
+        }
+        
         if (count <= 0) {
-          clearInterval(timer);
-          if (overlay) {
-            overlay.style.opacity = '0';
+          clearInterval(countdownTimer);
+          if (countdownOverlay) {
+            countdownOverlay.style.opacity = '0';
             setTimeout(() => {
-              overlay.style.display = 'none';
+              countdownOverlay.style.display = 'none';
               // Start background music softly
               loveMusic.volume = 0.3;
               loveMusic.play().catch(e => console.log("Autoplay prevented:", e));
               isMusicPlaying = true;
+              // Initialize promises animation
+              initializePromises();
             }, 1000);
           }
         }
       }, 1000);
+
+      // Initialize promises with staggered animation
+      function initializePromises() {
+        const promiseCards = document.querySelectorAll('.promise-card');
+        promiseCards.forEach(card => {
+          const delay = card.getAttribute('data-delay');
+          card.style.animationDelay = `${delay}s`;
+          card.classList.add('animate-fadeInUp');
+        });
+      }
 
       // Theme Toggle
       document.getElementById('theme-toggle').addEventListener('click', () => {
@@ -495,12 +816,22 @@
         document.documentElement.classList.toggle('light', !isDarkMode);
         
         // Update icon
-        const icon = document.querySelector('#theme-toggle svg');
+        const icon = document.querySelector('#theme-toggle i');
         if (isDarkMode) {
-          icon.innerHTML = '<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>';
+          icon.classList.remove('fa-sun');
+          icon.classList.add('fa-moon');
         } else {
-          icon.innerHTML = '<circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>';
+          icon.classList.remove('fa-moon');
+          icon.classList.add('fa-sun');
         }
+        
+        // Confetti effect
+        confetti({
+          particleCount: 50,
+          spread: 70,
+          origin: { y: 0.6 },
+          colors: ['#f472b6', '#ec4899', '#db2777']
+        });
       });
 
       // Music Toggle
@@ -515,9 +846,58 @@
         
         // Visual feedback
         const button = document.getElementById('music-toggle');
-        button.classList.add('scale-125');
-        setTimeout(() => button.classList.remove('scale-125'), 300);
+        button.classList.add('scale-125', 'bg-rose-500/40');
+        setTimeout(() => {
+          button.classList.remove('scale-125', 'bg-rose-500/40');
+        }, 300);
       });
+
+      // Petal Toggle
+      document.getElementById('petal-toggle').addEventListener('click', () => {
+        arePetalsFalling = !arePetalsFalling;
+        
+        if (arePetalsFalling) {
+          startRosePetals();
+          document.getElementById('petal-toggle').classList.add('bg-rose-500/40');
+        } else {
+          stopRosePetals();
+          document.getElementById('petal-toggle').classList.remove('bg-rose-500/40');
+        }
+      });
+
+      // Rose Petals Animation
+      function startRosePetals() {
+        const petalIcons = ['💖', '💗', '💓', '💞', '💕', '🌸', '🌹'];
+        
+        function createPetal() {
+          const petal = document.createElement('div');
+          petal.className = 'rose-petal';
+          petal.innerHTML = petalIcons[Math.floor(Math.random() * petalIcons.length)];
+          petal.style.left = Math.random() * 100 + 'vw';
+          petal.style.fontSize = Math.random() * 20 + 20 + 'px';
+          petal.style.animationDuration = Math.random() * 3 + 5 + 's';
+          petal.style.animationDelay = Math.random() * 2 + 's';
+          
+          rosePetalsContainer.appendChild(petal);
+          
+          // Remove petal after animation completes
+          setTimeout(() => {
+            petal.remove();
+          }, 8000);
+        }
+        
+        // Create initial petals
+        for (let i = 0; i < 15; i++) {
+          setTimeout(createPetal, i * 300);
+        }
+        
+        // Continue creating petals
+        window.petalInterval = setInterval(createPetal, 500);
+      }
+      
+      function stopRosePetals() {
+        clearInterval(window.petalInterval);
+      }
 
       // Heartbeat Sound
       document.getElementById('love-sound').addEventListener('click', () => {
@@ -537,107 +917,105 @@
           origin: { y: 0.6 },
           colors: ['#f472b6', '#ec4899', '#db2777']
         });
+        
+        // Visual feedback
+        const button = document.getElementById('love-sound');
+        button.classList.add('scale-125', 'shadow-[0_0_60px_rgba(236,72,153,1)]');
+        setTimeout(() => {
+          button.classList.remove('scale-125', 'shadow-[0_0_60px_rgba(236,72,153,1)]');
+        }, 500);
       });
 
-      // Quiz Questions
-      const questions = [
-        { 
-          q: "What color reminds me of your eyes?", 
-          a: ["Amber like sunset", "Brown like chocolate", "Sparkling like stars"],
-          correct: 0
-        },
-        { 
-          q: "What's my favorite thing about your smile?", 
-          a: ["How it lights up rooms", "The cute dimple", "Its pure innocence"],
-          correct: 0
-        },
-        { 
-          q: "Where would I take you for our dream date?", 
-          a: ["Under the stars", "Paris at night", "A quiet beach"],
-          correct: 0
-        },
-        { 
-          q: "What song reminds me of us?", 
-          a: ["Our special song", "Any love song", "Your favorite tune"],
-          correct: 0
-        },
-        { 
-          q: "How do you make me feel?", 
-          a: ["Like I'm home", "Happy and loved", "Complete"],
-          correct: 0
+      // Promises Confetti
+      document.getElementById('promises-confetti').addEventListener('click', () => {
+        // Multiple confetti bursts
+        for (let i = 0; i < 5; i++) {
+          setTimeout(() => {
+            confetti({
+              particleCount: 100,
+              angle: 60 + (i * 15),
+              spread: 55,
+              origin: { x: 0.5, y: 0.6 },
+              colors: ['#f472b6', '#ec4899', '#db2777', '#fbbf24']
+            });
+          }, i * 200);
         }
-      ];
+        
+        // Play a sweet sound
+        const audio = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-achievement-bell-600.mp3');
+        audio.volume = 0.3;
+        audio.play();
+      });
 
-      // Initialize Quiz
-      const quizContainer = document.getElementById('quiz-container');
-      if (quizContainer) {
-        questions.forEach((item, index) => {
-          const card = document.createElement('div');
-          card.className = "bg-white/5 p-6 rounded-3xl border border-rose-400/20 hover:border-rose-400/50 transition-all duration-500 animate-fadeInUp";
-          card.style.animationDelay = `${index * 0.2}s`;
+      // Kiss Letter Button
+      document.getElementById('kiss-letter').addEventListener('click', () => {
+        kissAudio.currentTime = 0;
+        kissAudio.play();
+        
+        // Show kiss animation
+        const kiss = document.createElement('div');
+        kiss.className = 'fixed inset-0 z-40 flex items-center justify-center pointer-events-none';
+        kiss.innerHTML = `
+          <div class="text-9xl animate-bounceSlow">
+            <i class="fas fa-kiss-wink-heart text-rose-500"></i>
+          </div>
+        `;
+        document.body.appendChild(kiss);
+        
+        setTimeout(() => {
+          kiss.style.opacity = '0';
+          kiss.style.transform = 'scale(2)';
+          setTimeout(() => kiss.remove(), 500);
+        }, 2000);
+        
+        // Heart confetti
+        confetti({
+          particleCount: 150,
+          spread: 60,
+          origin: { y: 0.6 },
+          colors: ['#f472b6', '#ec4899', '#db2777']
+        });
+      });
+
+      // Increase Love Level
+      document.getElementById('increase-love').addEventListener('click', () => {
+        if (loveLevel < 1000) {
+          loveLevel += 100;
           
-          const title = document.createElement('h3');
-          title.className = "font-playfair text-2xl md:text-3xl text-amber-300 mb-6";
-          title.textContent = `${index + 1}. ${item.q}`;
+          // Update UI
+          const loveLevelElement = document.querySelector('.love-level');
+          if (!loveLevelElement) {
+            const meterSection = document.getElementById('love-meter');
+            const newElement = document.createElement('div');
+            newElement.className = 'love-level text-center mt-8 animate-fadeInUp';
+            newElement.innerHTML = `
+              <div class="font-great-vibes text-4xl text-rose-400">Love Level</div>
+              <div class="font-playfair text-6xl text-amber-400 animate-pulseLove">${loveLevel}%</div>
+            `;
+            meterSection.appendChild(newElement);
+          } else {
+            loveLevelElement.querySelector('.text-6xl').textContent = `${loveLevel}%`;
+          }
           
-          const optionsDiv = document.createElement('div');
-          optionsDiv.className = "grid grid-cols-1 md:grid-cols-3 gap-4";
-          
-          item.a.forEach((opt, optIndex) => {
-            const btn = document.createElement('button');
-            btn.className = "px-4 py-3 rounded-xl bg-slate-800/50 hover:bg-rose-500/30 border border-slate-600 hover:border-rose-400 transition-all duration-300 text-md font-cormorant text-gray-200 hover:scale-105";
-            btn.textContent = opt;
-            btn.onclick = function() {
-              if (this.disabled) return;
-              const allBtns = optionsDiv.querySelectorAll('button');
-              allBtns.forEach(b => { 
-                b.disabled = true; 
-                b.classList.add('opacity-50');
-                b.classList.remove('hover:scale-105', 'hover:bg-rose-500/30');
-              });
-              
-              // Mark correct answer
-              allBtns[item.correct].classList.remove('opacity-50', 'bg-slate-800/50');
-              allBtns[item.correct].classList.add('bg-gradient-to-r', 'from-emerald-600', 'to-green-500', 'text-white', 'scale-105', 'border-transparent', 'shadow-lg');
-              allBtns[item.correct].innerHTML += ' 💖';
-              
-              // Mark selected answer
-              if (optIndex === item.correct) {
-                this.classList.remove('opacity-50', 'bg-slate-800/50');
-                this.classList.add('bg-gradient-to-r', 'from-emerald-600', 'to-green-500', 'text-white', 'scale-105', 'border-transparent', 'shadow-lg');
-                this.innerHTML += ' 💖';
-              } else {
-                this.classList.remove('bg-slate-800/50');
-                this.classList.add('bg-gradient-to-r', 'from-rose-600', 'to-pink-600', 'text-white');
-              }
-              
-              answeredCount++;
-              if (answeredCount === questions.length) {
-                setTimeout(() => {
-                  document.getElementById('love-modal').classList.remove('hidden');
-                  // Special confetti celebration
-                  confetti({
-                    particleCount: 300,
-                    spread: 100,
-                    origin: { y: 0.6 },
-                    colors: ['#f472b6', '#ec4899', '#db2777', '#be185d', '#fbbf24']
-                  });
-                }, 1000);
-              }
-            };
-            optionsDiv.appendChild(btn);
+          // Special confetti
+          confetti({
+            particleCount: 200,
+            spread: 100,
+            origin: { y: 0.6 },
+            colors: ['#f472b6', '#ec4899', '#db2777', '#fbbf24', '#a855f7']
           });
           
-          card.appendChild(title);
-          card.appendChild(optionsDiv);
-          quizContainer.appendChild(card);
-        });
-      }
+          // Play level up sound
+          const audio = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3');
+          audio.volume = 0.3;
+          audio.play();
+        }
+      });
 
       // Final Surprise Button
       document.getElementById('final-surprise').addEventListener('click', () => {
         // Grand finale confetti
-        const duration = 5 * 1000;
+        const duration = 8 * 1000;
         const animationEnd = Date.now() + duration;
         
         function frame() {
@@ -645,15 +1023,15 @@
           
           if (timeLeft <= 0) return;
           
-          const particleCount = 50 * (timeLeft / duration);
+          const particleCount = 80 * (timeLeft / duration);
           
-          // Heart-shaped confetti
+          // Heart-shaped confetti from both sides
           confetti({
             particleCount: Math.floor(particleCount / 2),
             angle: 60,
             spread: 55,
             origin: { x: 0 },
-            colors: ['#f472b6', '#ec4899', '#db2777']
+            colors: ['#f472b6', '#ec4899', '#db2777', '#fbbf24']
           });
           
           confetti({
@@ -661,15 +1039,15 @@
             angle: 120,
             spread: 55,
             origin: { x: 1 },
-            colors: ['#f472b6', '#ec4899', '#db2777']
+            colors: ['#f472b6', '#ec4899', '#db2777', '#fbbf24']
           });
           
-          // More confetti from bottom
+          // Confetti from bottom
           confetti({
             particleCount: Math.floor(particleCount / 3),
             spread: 100,
             origin: { y: 0.8 },
-            colors: ['#fbbf24', '#f59e0b', '#d97706']
+            colors: ['#a855f7', '#8b5cf6', '#7c3aed']
           });
           
           requestAnimationFrame(frame);
@@ -680,105 +1058,160 @@
         // Show love message
         setTimeout(() => {
           document.getElementById('love-modal').classList.remove('hidden');
-        }, 2000);
+        }, 3000);
         
         // Play romantic sound
         const audio = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-romantic-heart-beat-1258.mp3');
         audio.volume = 0.5;
         audio.play();
+        
+        // Start rose petals if not already
+        if (!arePetalsFalling) {
+          startRosePetals();
+          arePetalsFalling = true;
+          document.getElementById('petal-toggle').classList.add('bg-rose-500/40');
+        }
       });
 
-      // Reveal Love Message Button
-      document.getElementById('reveal-love').addEventListener('click', () => {
-        const messages = [
-          "Every atom of my being loves you",
-          "You're the first and last thought of my day",
-          "My love for you grows stronger every second",
-          "You're my forever and always",
-          "In your eyes, I found my home"
-        ];
+      // Close Modal
+      document.getElementById('close-modal').addEventListener('click', () => {
+        document.getElementById('love-modal').classList.add('hidden');
+      });
+
+      // Reset Experience
+      document.getElementById('reset-experience').addEventListener('click', () => {
+        location.reload();
+      });
+
+      // Scroll Progress Indicator
+      window.addEventListener('scroll', () => {
+        // Show/hide back to top button
+        if (window.scrollY > 500) {
+          backToTopBtn.classList.remove('hidden');
+        } else {
+          backToTopBtn.classList.add('hidden');
+        }
         
-        const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+        // Update progress bar
+        const winHeight = window.innerHeight;
+        const docHeight = document.documentElement.scrollHeight;
+        const scrollTop = window.pageYOffset;
+        const trackLength = docHeight - winHeight;
+        const percentage = Math.floor((scrollTop / trackLength) * 100);
         
-        // Create floating message
-        const messageEl = document.createElement('div');
-        messageEl.className = "fixed inset-0 flex items-center justify-center z-50 pointer-events-none";
-        messageEl.innerHTML = `
-          <div class="bg-gradient-to-br from-rose-900/90 to-purple-900/90 backdrop-blur-md p-8 rounded-3xl border-2 border-amber-400/50 animate-pulseLove max-w-md">
-            <p class="font-great-vibes text-3xl text-amber-300 text-center">${randomMessage}</p>
-          </div>
-        `;
-        
-        document.body.appendChild(messageEl);
-        
-        // Remove after animation
-        setTimeout(() => {
-          messageEl.style.opacity = '0';
-          messageEl.style.transform = 'scale(0.9)';
-          setTimeout(() => messageEl.remove(), 500);
-        }, 3000);
-        
-        // Heart confetti
-        confetti({
-          particleCount: 150,
-          spread: 70,
-          origin: { y: 0.6 },
-          colors: ['#f472b6', '#ec4899', '#db2777']
+        if (progressBar) {
+          progressBar.style.height = `${percentage}%`;
+        }
+      });
+
+      // Back to Top
+      backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
         });
       });
 
-      // Mouse follower effect
-      document.addEventListener('mousemove', (e) => {
-        const follower = document.createElement('div');
-        follower.className = 'fixed w-2 h-2 bg-rose-400/50 rounded-full pointer-events-none z-40';
-        follower.style.left = e.pageX + 'px';
-        follower.style.top = e.pageY + 'px';
-        document.body.appendChild(follower);
-        
-        // Remove after animation
-        setTimeout(() => {
-          follower.style.opacity = '0';
-          follower.style.transform = 'scale(0)';
-          setTimeout(() => follower.remove(), 500);
-        }, 1000);
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        });
       });
 
-      // Add some CSS for 3D effects
-      const style = document.createElement('style');
-      style.textContent = `
-        .perspective-1000 {
-          perspective: 1000px;
+      // Mouse follower hearts
+      document.addEventListener('mousemove', (e) => {
+        // Only create hearts occasionally
+        if (Math.random() > 0.7) {
+          const heart = document.createElement('div');
+          heart.className = 'fixed w-6 h-6 text-rose-400/50 pointer-events-none z-30 animate-float';
+          heart.innerHTML = '<i class="fas fa-heart"></i>';
+          heart.style.left = e.pageX - 8 + 'px';
+          heart.style.top = e.pageY - 8 + 'px';
+          heart.style.fontSize = Math.random() * 10 + 12 + 'px';
+          heart.style.animationDuration = Math.random() * 2 + 2 + 's';
+          document.body.appendChild(heart);
+          
+          // Remove after animation
+          setTimeout(() => {
+            heart.style.opacity = '0';
+            heart.style.transform = 'scale(0)';
+            setTimeout(() => heart.remove(), 500);
+          }, 2000);
         }
-        .transform-style-preserve-3d {
-          transform-style: preserve-3d;
-        }
-        .backface-hidden {
-          backface-visibility: hidden;
-        }
-        .rotate-y-180 {
-          transform: rotateY(180deg);
-        }
+      });
+
+      // Initialize on load
+      window.addEventListener('load', () => {
+        // Add loaded class for animations
+        document.body.classList.add('loaded');
+        
+        // Initialize tooltips
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(button => {
+          button.addEventListener('mouseenter', () => {
+            button.classList.add('ring-2', 'ring-rose-400/30');
+          });
+          button.addEventListener('mouseleave', () => {
+            button.classList.remove('ring-2', 'ring-rose-400/30');
+          });
+        });
+      });
+
+      // Add CSS for light theme
+      const lightThemeStyles = `
         .light {
-          background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+          background: linear-gradient(135deg, #fdf2f8 0%, #faf5ff 50%, #fef3c7 100%);
           color: #1f2937;
         }
         .light .text-white {
           color: #1f2937;
         }
-        .light .text-gray-200 {
-          color: #4b5563;
+        .light .text-rose-200 {
+          color: #9d174d;
+        }
+        .light .text-rose-300 {
+          color: #be185d;
         }
         .light .bg-slate-900 {
           background-color: #f8fafc;
         }
-        .light .bg-purple-900\/20 {
+        .light .bg-purple-900\\/20 {
           background-color: rgba(192, 132, 252, 0.1);
+        }
+        .light .bg-rose-900\\/20 {
+          background-color: rgba(244, 114, 182, 0.1);
         }
         .light .border-slate-600 {
           border-color: #cbd5e1;
         }
+        .light .glass-effect {
+          background: rgba(255, 255, 255, 0.8);
+          border: 1px solid rgba(244, 114, 182, 0.3);
+        }
+        .light .envelope {
+          background: linear-gradient(145deg, #ffffff, #f8fafc);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        .light ::-webkit-scrollbar-track {
+          background: rgba(244, 114, 182, 0.1);
+        }
       `;
-      document.head.appendChild(style);
+      
+      // Add light theme styles
+      const styleSheet = document.createElement('style');
+      styleSheet.textContent = lightThemeStyles;
+      document.head.appendChild(styleSheet);
     </script>
 </body>
 </html>
