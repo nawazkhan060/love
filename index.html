@@ -1,1217 +1,578 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To My Love Momina - A Letter From My Heart</title>
-    <meta property="og:image" content="https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Momina ❤️</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            fontFamily: {
-              playfair: ['"Playfair Display"', 'serif'],
-              'great-vibes': ['"Great Vibes"', 'cursive'],
-              cormorant: ['"Cormorant Garamond"', 'serif'],
-            },
-            animation: {
-              float: 'float 6s ease-in-out infinite',
-              fadeInUp: 'fadeInUp 1s ease-out forwards',
-              heartbeat: 'heartbeat 1.5s ease-in-out infinite',
-              slideInLeft: 'slideInLeft 1s ease-out forwards',
-              glow: 'glow 2s ease-in-out infinite',
-              pulseLove: 'pulseLove 2s ease-in-out infinite',
-              shimmer: 'shimmer 3s ease-in-out infinite',
-              twinkle: 'twinkle 1.5s ease-in-out infinite',
-              bounceSlow: 'bounceSlow 2s ease-in-out infinite',
-              spinSlow: 'spinSlow 20s linear infinite',
-              wave: 'wave 1.5s ease-in-out infinite',
-              ripple: 'ripple 2s linear infinite',
-            },
-            keyframes: {
-              float: {
-                '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
-                '50%': { transform: 'translateY(-20px) rotate(5deg)' },
-              },
-              fadeInUp: {
-                '0%': { opacity: '0', transform: 'translateY(30px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
-              },
-              heartbeat: {
-                '0%, 100%': { transform: 'scale(1)' },
-                '25%': { transform: 'scale(1.1)' },
-                '50%': { transform: 'scale(1)' },
-                '75%': { transform: 'scale(1.05)' },
-              },
-              slideInLeft: {
-                '0%': { opacity: '0', transform: 'translateX(-50px)' },
-                '100%': { opacity: '1', transform: 'translateX(0)' },
-              },
-              glow: {
-                '0%, 100%': { 
-                  textShadow: '0 0 5px rgba(251, 191, 36, 0.5), 0 0 10px rgba(251, 191, 36, 0.3)',
-                  boxShadow: '0 0 5px rgba(251, 191, 36, 0.5)'
-                },
-                '50%': { 
-                  textShadow: '0 0 20px rgba(251, 191, 36, 0.8), 0 0 30px rgba(251, 191, 36, 0.6)',
-                  boxShadow: '0 0 20px rgba(251, 191, 36, 0.8)'
-                },
-              },
-              pulseLove: {
-                '0%, 100%': { transform: 'scale(1)', opacity: '1' },
-                '50%': { transform: 'scale(1.05)', opacity: '0.8' },
-              },
-              shimmer: {
-                '0%, 100%': { backgroundPosition: '0% 50%' },
-                '50%': { backgroundPosition: '100% 50%' },
-              },
-              twinkle: {
-                '0%, 100%': { opacity: '1', transform: 'scale(1)' },
-                '50%': { opacity: '0.3', transform: 'scale(0.95)' },
-              },
-              bounceSlow: {
-                '0%, 100%': { transform: 'translateY(0)' },
-                '50%': { transform: 'translateY(-10px)' },
-              },
-              spinSlow: {
-                '0%': { transform: 'rotate(0deg)' },
-                '100%': { transform: 'rotate(360deg)' },
-              },
-              wave: {
-                '0%, 100%': { transform: 'rotate(0deg)' },
-                '25%': { transform: 'rotate(5deg)' },
-                '75%': { transform: 'rotate(-5deg)' },
-              },
-              ripple: {
-                '0%': { 
-                  transform: 'scale(0.8)',
-                  opacity: '1'
-                },
-                '100%': { 
-                  transform: 'scale(2)',
-                  opacity: '0'
-                },
-              },
-            },
-            backgroundImage: {
-              'romantic-gradient': 'linear-gradient(135deg, #f9a8d4 0%, #f472b6 25%, #ec4899 50%, #db2777 75%, #be185d 100%)',
-              'love-pattern': 'radial-gradient(circle at 20% 30%, rgba(251, 191, 36, 0.1) 0%, transparent 20%), radial-gradient(circle at 80% 70%, rgba(244, 114, 182, 0.1) 0%, transparent 20%)',
-              'velvet-texture': 'linear-gradient(rgba(30, 27, 75, 0.9), rgba(30, 27, 75, 0.9)), url("https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80")',
-            },
-          },
-        },
-      }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
     <style>
-      /* Custom Cursor */
-      .romantic-cursor {
-        cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath fill='%23ec4899' d='M23.6,2c-2.4,0-4.6,1-6.2,2.8c-0.4,0.4-0.3,1.1,0.1,1.4c0.4,0.4,1.1,0.3,1.4-0.1C20.2,4.5,21.8,4,23.6,4 c4.4,0,8,3.6,8,8c0,4.4-3.6,8-8,8c-1.8,0-3.5-0.6-4.8-1.6c-0.4-0.3-1.1-0.3-1.4,0.1c-0.3,0.4-0.3,1.1,0.1,1.4 C18.9,29,21.2,30,23.6,30c5.5,0,10-4.5,10-10C33.6,14.5,29.1,10,23.6,10z'/%3E%3C/svg%3E") 16 16, auto;
-      }
-      
-      .love-text-shadow {
-        text-shadow: 0 0 10px rgba(236, 72, 153, 0.5), 0 0 20px rgba(236, 72, 153, 0.3);
-      }
-      
-      .romantic-border {
-        border-image: linear-gradient(45deg, #f9a8d4, #ec4899, #f472b6) 1;
-      }
-      
-      /* Smooth scrolling */
-      html {
-        scroll-behavior: smooth;
-      }
-      
-      /* Hide scrollbar but keep functionality */
-      .hide-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-      .hide-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
-      
-      /* Custom scrollbar for love theme */
-      ::-webkit-scrollbar {
-        width: 10px;
-      }
-      ::-webkit-scrollbar-track {
-        background: rgba(244, 114, 182, 0.1);
-        border-radius: 10px;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: linear-gradient(to bottom, #f472b6, #ec4899);
-        border-radius: 10px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(to bottom, #ec4899, #db2777);
-      }
-      
-      /* Glass effect */
-      .glass-effect {
-        background: rgba(15, 23, 42, 0.7);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(244, 114, 182, 0.2);
-      }
-      
-      /* Heartbeat animation for elements */
-      @keyframes heartbeat-element {
-        0%, 100% { transform: scale(1); }
-        25% { transform: scale(1.1); }
-        50% { transform: scale(1); }
-        75% { transform: scale(1.05); }
-      }
-      
-      .heartbeat-element {
-        animation: heartbeat-element 1.5s ease-in-out infinite;
-      }
-      
-      /* Rose petal animation */
-      @keyframes fall {
-        0% {
-          top: -10%;
-          opacity: 1;
-          transform: rotate(0deg);
+        body {
+            background: linear-gradient(135deg, #fff0f5 0%, #ffe4e1 100%);
+            font-family: 'Quicksand', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
         }
-        100% {
-          top: 100%;
-          opacity: 0;
-          transform: rotate(360deg);
+        .falling-heart {
+            position: fixed;
+            top: -50px;
+            opacity: 0.25;
+            z-index: -1;
+            animation: fall linear infinite;
+            pointer-events: none;
         }
-      }
-      
-      .rose-petal {
-        position: fixed;
-        top: -10%;
-        z-index: 9999;
-        pointer-events: none;
-        animation-name: fall;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-      }
-      
-      /* Love letter envelope effect */
-      .envelope {
-        position: relative;
-        background: linear-gradient(145deg, #f8fafc, #e2e8f0);
-        border-radius: 10px;
-        padding: 2rem;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        transform-style: preserve-3d;
-      }
-      
-      .envelope:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 20px;
-        background: linear-gradient(145deg, #f472b6, #ec4899);
-        border-radius: 10px 10px 0 0;
-      }
-      
-      /* Fix for 3D cards */
-      .preserve-3d {
-        transform-style: preserve-3d;
-      }
-      
-      .backface-hidden {
-        backface-visibility: hidden;
-      }
-      
-      .rotate-y-180 {
-        transform: rotateY(180deg);
-      }
-      
-      /* Love message typing effect */
-      .typewriter {
-        overflow: hidden;
-        border-right: .15em solid #f472b6;
-        white-space: nowrap;
-        margin: 0 auto;
-        letter-spacing: .15em;
-        animation: 
-          typing 3.5s steps(40, end),
-          blink-caret .75s step-end infinite;
-      }
-      
-      @keyframes typing {
-        from { width: 0 }
-        to { width: 100% }
-      }
-      
-      @keyframes blink-caret {
-        from, to { border-color: transparent }
-        50% { border-color: #f472b6; }
-      }
+        @keyframes fall {
+            to { transform: translateY(100vh) rotate(360deg); }
+        }
+        .heartbeat {
+            animation: heartbeat 1.4s ease-in-out infinite;
+        }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            14%, 42% { transform: scale(1.2); }
+            28%, 56% { transform: scale(1); }
+        }
+        .page-container {
+            max-width: 95%;
+            width: 100%;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 32px;
+            box-shadow: 0 20px 50px rgba(220, 20, 60, 0.15);
+            backdrop-filter: blur(10px);
+            transform: perspective(1000px) rotateX(0);
+            transition: transform 0.4s ease;
+            border: 3px solid #ffb6c1;
+        }
+        .page-container:hover {
+            transform: perspective(1000px) rotateX(-2deg) scale(1.01);
+        }
+        .qna-card {
+            background: #fff9e6;
+            border: 4px double #ffb74d;
+            border-radius: 24px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            min-height: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+        @media (min-width: 768px) {
+            .qna-card { padding: 2.5rem; min-height: 550px; }
+        }
+        .qna-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(to right, #ffb74d, #ff9800, #ffb74d);
+        }
+        .qna-card::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(to right, #ffb74d, #ff9800, #ffb74d);
+        }
+        .qna-question {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #c2185b;
+            text-align: center;
+            line-height: 1.3;
+            min-height: 80px;
+        }
+        @media (min-width: 768px) {
+            .qna-question { font-size: 2.8rem; margin-bottom: 2.5rem; min-height: 120px; }
+        }
+        .qna-options {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .qna-options { gap: 1.8rem; margin-top: 2rem; }
+        }
+        .qna-option {
+            background: white;
+            border: 3px solid #ffb74d;
+            border-radius: 20px;
+            padding: 1rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.35s ease;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.07);
+            font-family: 'Quicksand', sans-serif;
+        }
+        @media (min-width: 768px) {
+            .qna-option { padding: 1.8rem; font-size: 1.9rem; }
+        }
+        .qna-option:hover {
+            transform: translateY(-6px);
+            border-color: #ff9800;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+            background: #fff3e0;
+        }
+        .qna-option.correct {
+            background: #e8f5e9;
+            border-color: #4caf50;
+            transform: scale(1.03);
+            box-shadow: 0 0 25px rgba(76, 175, 80, 0.4);
+        }
+        .qna-option.incorrect {
+            background: #ffebee;
+            border-color: #f44336;
+            animation: shake 0.6s;
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-12px); }
+            40%, 80% { transform: translateX(12px); }
+        }
+        .qna-progress {
+            height: 14px;
+            background: #e0e0e0;
+            border-radius: 7px;
+            margin: 1.8rem 0;
+            overflow: hidden;
+            border: 2px solid #bdbdbd;
+        }
+        .qna-progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(to right, #ff9800, #e64a19);
+            border-radius: 7px;
+            transition: width 0.6s ease;
+        }
+        .story-page {
+            background: #f8f4e9;
+            border: 4px double #d4a76a;
+            border-radius: 24px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            min-height: auto;
+            position: relative;
+            font-family: 'Playfair Display', serif;
+            line-height: 1.7;
+            font-size: 1.1rem;
+            color: #5d4037;
+        }
+        @media (min-width: 768px) {
+            .story-page { font-size: 1.6rem; padding: 2.5rem; min-height: 550px; }
+        }
+        .story-page::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(to right, #d4a76a, #a57c3d, #d4a76a);
+        }
+        .story-page::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(to right, #d4a76a, #a57c3d, #d4a76a);
+        }
+        .story-highlight {
+            background: linear-gradient(120deg, rgba(255,215,0,0.2), rgba(255,235,59,0.2));
+            padding: 0.3rem 0.6rem;
+            border-radius: 8px;
+            font-weight: 700;
+            color: #c62828;
+        }
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: #c2185b;
+            text-align: right;
+            margin-top: 2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        @media (min-width: 768px) {
+            .signature { font-size: 3.2rem; }
+        }
+        .final-message {
+            background: linear-gradient(135deg, #ff99cc 0%, #ff66b3 100%);
+            color: white;
+            border-radius: 28px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+            position: relative;
+            overflow: hidden;
+        }
+        @media (min-width: 768px) {
+            .final-message { padding: 3rem; }
+        }
+        .final-message::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+        }
+        .sparkle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: sparkle 3s infinite;
+        }
+        @keyframes sparkle {
+            0% { transform: scale(0) translate(0, 0); opacity: 0.8; }
+            50% { transform: scale(1) translate(var(--tx), var(--ty)); opacity: 1; }
+            100% { transform: scale(0) translate(var(--tx), var(--ty)); opacity: 0; }
+        }
     </style>
 </head>
-<body class="romantic-cursor bg-gradient-to-br from-slate-900 via-purple-900/30 to-rose-900/20 text-white overflow-x-hidden">
-    <!-- Countdown Overlay -->
-    <div id="countdown-overlay" class="fixed inset-0 z-50 bg-gradient-to-br from-purple-900 via-pink-900 to-rose-900 flex flex-col items-center justify-center transition-all duration-1000">
-      <div class="relative">
-        <!-- Ripple effect -->
-        <div class="absolute -inset-8">
-          <div class="absolute inset-0 rounded-full bg-rose-500/20 animate-ripple"></div>
-          <div class="absolute inset-0 rounded-full bg-rose-500/20 animate-ripple" style="animation-delay: 0.5s"></div>
-          <div class="absolute inset-0 rounded-full bg-rose-500/20 animate-ripple" style="animation-delay: 1s"></div>
-        </div>
-        
-        <h1 class="font-playfair text-4xl md:text-6xl text-rose-100 mb-8 text-center px-4 relative animate-pulseLove">
-          <span class="bg-gradient-to-r from-rose-200 to-pink-200 bg-clip-text text-transparent">My Dearest Momina</span>
-        </h1>
-      </div>
-      <div id="countdown-number" class="relative">
-        <div class="absolute inset-0 text-rose-500/30 blur-xl animate-pulse">5</div>
-        <div class="font-great-vibes text-9xl text-rose-200 relative animate-heartbeat">5</div>
-      </div>
-      <p class="font-cormorant text-xl text-rose-300 mt-8 animate-pulse opacity-0" id="countdown-text">This letter is for you, my love...</p>
+<body class="min-h-screen flex items-center justify-center p-6">
+    <!-- Falling hearts background - SVG Hearts -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <svg class="falling-heart" style="left: 8%; animation-duration: 22s; animation-delay: 0s; width: 36px; height: 36px;" viewBox="0 0 24 24">
+            <path fill="#e91e63" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+        <svg class="falling-heart" style="left: 22%; animation-duration: 18s; animation-delay: 2s; width: 32px; height: 32px;" viewBox="0 0 24 24">
+            <path fill="#e91e63" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+        <svg class="falling-heart" style="left: 35%; animation-duration: 26s; animation-delay: 1s; width: 40px; height: 40px;" viewBox="0 0 24 24">
+            <path fill="#e91e63" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+        <svg class="falling-heart" style="left: 58%; animation-duration: 20s; animation-delay: 3s; width: 28px; height: 28px;" viewBox="0 0 24 24">
+            <path fill="#e91e63" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+        <svg class="falling-heart" style="left: 72%; animation-duration: 24s; animation-delay: 4s; width: 34px; height: 34px;" viewBox="0 0 24 24">
+            <path fill="#e91e63" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+        <svg class="falling-heart" style="left: 88%; animation-duration: 30s; animation-delay: 5s; width: 38px; height: 38px;" viewBox="0 0 24 24">
+            <path fill="#e91e63" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
     </div>
 
-    <!-- Rose Petals Container -->
-    <div id="rose-petals"></div>
-
-    <!-- Navigation Menu -->
-    <nav class="fixed top-0 left-0 right-0 z-40 glass-effect py-4 px-6 flex justify-between items-center">
-      <div class="font-great-vibes text-2xl text-rose-400 animate-glow">
-        <i class="fas fa-heart mr-2"></i> For Momina
-      </div>
-      <div class="flex items-center space-x-4">
-        <button id="theme-toggle" class="p-2 rounded-full bg-rose-500/20 hover:bg-rose-500/30 transition-all duration-300 hover:scale-110 group">
-          <i class="fas fa-moon text-rose-300 group-hover:rotate-12 transition-transform"></i>
-        </button>
-        <button id="music-toggle" class="p-2 rounded-full bg-rose-500/20 hover:bg-rose-500/30 transition-all duration-300 hover:scale-110 group">
-          <i class="fas fa-music text-rose-300"></i>
-        </button>
-        <button id="petal-toggle" class="p-2 rounded-full bg-rose-500/20 hover:bg-rose-500/30 transition-all duration-300 hover:scale-110 group">
-          <i class="fas fa-feather-alt text-rose-300"></i>
-        </button>
-      </div>
-    </nav>
-
-    <!-- Progress Indicator -->
-    <div class="fixed top-20 right-6 z-30 hidden md:block">
-      <div class="flex flex-col items-center space-y-2">
-        <div class="h-40 w-1 bg-rose-900/30 rounded-full overflow-hidden">
-          <div id="progress-bar" class="w-full bg-gradient-to-b from-rose-500 to-pink-500 rounded-full transition-all duration-300" style="height: 0%"></div>
+    <!-- Page 1: Initial Question -->
+    <div id="page1" class="page-container text-center p-4 sm:p-6 md:p-14 relative z-10">
+        <div class="heartbeat mb-8">
+            <div class="text-6xl md:text-8xl">❤️</div>
         </div>
-        <span class="font-cormorant text-sm text-rose-300">Our Love Journey</span>
-      </div>
+        <h1 class="text-3xl sm:text-4xl md:text-7xl font-bold mb-6 md:mb-8 text-pink-700 font-playfair">Will you please forgive me, Momina?</h1>
+        <p class="mb-6 md:mb-12 text-lg sm:text-xl md:text-3xl text-gray-700">I know I've hurt you so many times, but my heart belongs only to you forever.</p>
+        <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-12 mt-8">
+            <button id="yes1" class="bg-pink-500 hover:bg-pink-600 text-white px-8 py-3 sm:px-10 sm:py-4 md:px-14 md:py-7 rounded-full text-xl sm:text-2xl md:text-4xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg w-full md:w-auto">YES</button>
+            <button id="no1" class="bg-purple-500 hover:bg-purple-600 text-white px-8 py-3 sm:px-10 sm:py-4 md:px-14 md:py-7 rounded-full text-xl sm:text-2xl md:text-4xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg w-full md:w-auto">NO</button>
+        </div>
     </div>
 
-    <!-- Main Content -->
-    <main class="relative z-10">
-      <!-- Hero Section -->
-      <section id="hero" class="min-h-screen flex flex-col items-center justify-center px-4 py-20 relative">
-        <!-- Background Decorative Elements -->
-        <div class="absolute top-1/4 left-10 text-rose-400/10 text-8xl animate-spinSlow">
-          <i class="fas fa-heart"></i>
+    <!-- Page 2: First "NO" Response -->
+    <div id="page2" class="page-container text-center p-4 sm:p-6 md:p-14 hidden relative z-10">
+        <div class="heartbeat mb-8">
+            <div class="text-6xl md:text-8xl">🥺</div>
         </div>
-        <div class="absolute bottom-1/4 right-10 text-pink-400/10 text-6xl animate-spinSlow" style="animation-direction: reverse">
-          <i class="fas fa-heart"></i>
+        <h1 class="text-3xl sm:text-4xl md:text-7xl font-bold mb-6 md:mb-8 text-pink-700 font-playfair">Please, my love, think again?</h1>
+        <p class="mb-6 md:mb-12 text-lg sm:text-xl md:text-3xl text-gray-700">Every moment without your forgiveness feels like an eternity. I can't live without you.</p>
+        <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-12 mt-8">
+            <button id="yes2" class="bg-pink-500 hover:bg-pink-600 text-white px-8 py-3 sm:px-10 sm:py-4 md:px-14 md:py-7 rounded-full text-xl sm:text-2xl md:text-4xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg w-full md:w-auto">YES</button>
+            <button id="no2" class="bg-purple-500 hover:bg-purple-600 text-white px-8 py-3 sm:px-10 sm:py-4 md:px-14 md:py-7 rounded-full text-xl sm:text-2xl md:text-3xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg w-full md:w-auto">NO</button>
         </div>
-        
-        <div class="text-center max-w-5xl space-y-10">
-          <div class="animate-fadeInUp">
-            <h1 class="font-playfair text-5xl md:text-7xl lg:text-8xl font-bold mb-4">
-              <span class="bg-gradient-to-r from-rose-300 via-pink-400 to-rose-500 bg-clip-text text-transparent animate-shimmer bg-[length:200%_auto]">
-                My Eternal Love
-              </span>
-            </h1>
-            <div class="h-1 w-32 bg-gradient-to-r from-rose-500 to-pink-500 mx-auto my-6"></div>
-            <h2 class="font-great-vibes text-5xl md:text-7xl text-rose-300 animate-heartbeat">
-              For Momina
-            </h2>
-          </div>
-          
-          <div class="font-cormorant text-xl md:text-2xl lg:text-3xl space-y-6 animate-fadeInUp" style="animation-delay: 0.3s">
-            <p class="text-rose-200">"In a world of billions, I found my universe in you."</p>
-            <p class="text-rose-200 italic">"This isn't just a page, it's a piece of my heart."</p>
-            <p class="text-amber-300 font-semibold text-3xl animate-glow mt-8">
-              "You are my today and all of my tomorrows."
-            </p>
-          </div>
-          
-          <div class="pt-12 animate-fadeInUp" style="animation-delay: 0.6s">
-            <button id="love-sound" class="group px-10 py-5 rounded-full bg-gradient-to-r from-rose-500 via-pink-500 to-rose-600 text-white font-playfair text-xl hover:shadow-[0_0_40px_rgba(236,72,153,0.7)] transition-all duration-500 hover:scale-110 transform hover:-translate-y-1">
-              <span class="flex items-center justify-center gap-4">
-                <i class="fas fa-heartbeat text-2xl group-hover:scale-125 transition-transform"></i>
-                <span>Hear My Heartbeat For You</span>
-                <i class="fas fa-heart text-2xl group-hover:scale-125 transition-transform"></i>
-              </span>
-            </button>
-          </div>
-          
-          <div class="animate-fadeInUp" style="animation-delay: 0.9s">
-            <a href="#promises" class="inline-block mt-12 animate-bounceSlow">
-              <i class="fas fa-chevron-down text-rose-400 text-3xl"></i>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Promises Section (Fixed) -->
-      <section id="promises" class="py-24 px-4 bg-gradient-to-b from-rose-900/20 via-purple-900/20 to-slate-900/10">
-        <div class="max-w-7xl mx-auto">
-          <div class="text-center mb-16 animate-fadeInUp">
-            <h2 class="font-playfair text-4xl md:text-6xl font-bold mb-6">
-              <span class="bg-gradient-to-r from-amber-300 to-rose-400 bg-clip-text text-transparent">
-                My Sacred Promises To You
-              </span>
-            </h2>
-            <p class="font-cormorant text-xl md:text-2xl text-rose-200 max-w-3xl mx-auto">
-              These are not just words, but vows from the deepest corners of my heart
-            </p>
-          </div>
-          
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Promise 1 -->
-            <div class="promise-card group h-80 perspective-1000" data-delay="0">
-              <div class="relative w-full h-full preserve-3d transition-all duration-700 group-hover:rotate-y-180">
-                <!-- Front -->
-                <div class="absolute inset-0 backface-hidden rounded-2xl bg-gradient-to-br from-rose-900/40 to-purple-900/40 border-2 border-rose-400/30 p-8 flex flex-col items-center justify-center shadow-xl">
-                  <div class="text-6xl mb-6 text-rose-400 animate-pulse">
-                    <i class="fas fa-heart"></i>
-                  </div>
-                  <h3 class="font-playfair text-2xl text-center text-amber-300 mb-4">Promise One</h3>
-                  <p class="font-cormorant text-lg text-center text-rose-200">To Love You Eternally</p>
-                  <div class="absolute bottom-4 text-rose-400/50">
-                    <i class="fas fa-hand-point-up animate-bounceSlow"></i> Click to reveal
-                  </div>
-                </div>
-                
-                <!-- Back -->
-                <div class="absolute inset-0 backface-hidden rotate-y-180 rounded-2xl bg-gradient-to-br from-purple-900/50 to-rose-900/50 border-2 border-amber-400/30 p-8 flex flex-col items-center justify-center shadow-xl">
-                  <div class="text-4xl mb-4 text-amber-300">
-                    <i class="fas fa-heart"></i>
-                  </div>
-                  <p class="font-cormorant text-xl text-center text-white leading-relaxed">
-                    I promise to love you more with each sunrise, cherishing every moment we share.
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Promise 2 -->
-            <div class="promise-card group h-80 perspective-1000" data-delay="0.1">
-              <div class="relative w-full h-full preserve-3d transition-all duration-700 group-hover:rotate-y-180">
-                <div class="absolute inset-0 backface-hidden rounded-2xl bg-gradient-to-br from-rose-900/40 to-purple-900/40 border-2 border-rose-400/30 p-8 flex flex-col items-center justify-center shadow-xl">
-                  <div class="text-6xl mb-6 text-rose-400 animate-pulse">
-                    <i class="fas fa-shield-alt"></i>
-                  </div>
-                  <h3 class="font-playfair text-2xl text-center text-amber-300 mb-4">Promise Two</h3>
-                  <p class="font-cormorant text-lg text-center text-rose-200">To Protect Your Heart</p>
-                  <div class="absolute bottom-4 text-rose-400/50">
-                    <i class="fas fa-hand-point-up animate-bounceSlow"></i> Click to reveal
-                  </div>
-                </div>
-                
-                <div class="absolute inset-0 backface-hidden rotate-y-180 rounded-2xl bg-gradient-to-br from-purple-900/50 to-rose-900/50 border-2 border-amber-400/30 p-8 flex flex-col items-center justify-center shadow-xl">
-                  <div class="text-4xl mb-4 text-amber-300">
-                    <i class="fas fa-shield-alt"></i>
-                  </div>
-                  <p class="font-cormorant text-xl text-center text-white leading-relaxed">
-                    I promise to be your safe harbor in every storm, protecting your heart as my most precious treasure.
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Promise 3 -->
-            <div class="promise-card group h-80 perspective-1000" data-delay="0.2">
-              <div class="relative w-full h-full preserve-3d transition-all duration-700 group-hover:rotate-y-180">
-                <div class="absolute inset-0 backface-hidden rounded-2xl bg-gradient-to-br from-rose-900/40 to-purple-900/40 border-2 border-rose-400/30 p-8 flex flex-col items-center justify-center shadow-xl">
-                  <div class="text-6xl mb-6 text-rose-400 animate-pulse">
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <h3 class="font-playfair text-2xl text-center text-amber-300 mb-4">Promise Three</h3>
-                  <p class="font-cormorant text-lg text-center text-rose-200">To Cherish Always</p>
-                  <div class="absolute bottom-4 text-rose-400/50">
-                    <i class="fas fa-hand-point-up animate-bounceSlow"></i> Click to reveal
-                  </div>
-                </div>
-                
-                <div class="absolute inset-0 backface-hidden rotate-y-180 rounded-2xl bg-gradient-to-br from-purple-900/50 to-rose-900/50 border-2 border-amber-400/30 p-8 flex flex-col items-center justify-center shadow-xl">
-                  <div class="text-4xl mb-4 text-amber-300">
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <p class="font-cormorant text-xl text-center text-white leading-relaxed">
-                    I promise to cherish every laugh, every tear, and every moment with you as priceless gifts.
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Promise 4 -->
-            <div class="promise-card group h-80 perspective-1000" data-delay="0.3">
-              <div class="relative w-full h-full preserve-3d transition-all duration-700 group-hover:rotate-y-180">
-                <div class="absolute inset-0 backface-hidden rounded-2xl bg-gradient-to-br from-rose-900/40 to-purple-900/40 border-2 border-rose-400/30 p-8 flex flex-col items-center justify-center shadow-xl">
-                  <div class="text-6xl mb-6 text-rose-400 animate-pulse">
-                    <i class="fas fa-hand-holding-heart"></i>
-                  </div>
-                  <h3 class="font-playfair text-2xl text-center text-amber-300 mb-4">Promise Four</h3>
-                  <p class="font-cormorant text-lg text-center text-rose-200">To Grow Together</p>
-                  <div class="absolute bottom-4 text-rose-400/50">
-                    <i class="fas fa-hand-point-up animate-bounceSlow"></i> Click to reveal
-                  </div>
-                </div>
-                
-                <div class="absolute inset-0 backface-hidden rotate-y-180 rounded-2xl bg-gradient-to-br from-purple-900/50 to-rose-900/50 border-2 border-amber-400/30 p-8 flex flex-col items-center justify-center shadow-xl">
-                  <div class="text-4xl mb-4 text-amber-300">
-                    <i class="fas fa-hand-holding-heart"></i>
-                  </div>
-                  <p class="font-cormorant text-xl text-center text-white leading-relaxed">
-                    I promise to grow with you, learn with you, and build a beautiful future together.
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Promise 5 -->
-            <div class="promise-card group h-80 perspective-1000" data-delay="0.4">
-              <div class="relative w-full h-full preserve-3d transition-all duration-700 group-hover:rotate-y-180">
-                <div class="absolute inset-0 backface-hidden rounded-2xl bg-gradient-to-br from-rose-900/40 to-purple-900/40 border-2 border-rose-400/30 p-8 flex flex-col items-center justify-center shadow-xl">
-                  <div class="text-6xl mb-6 text-rose-400 animate-pulse">
-                    <i class="fas fa-infinity"></i>
-                  </div>
-                  <h3 class="font-playfair text-2xl text-center text-amber-300 mb-4">Promise Five</h3>
-                  <p class="font-cormorant text-lg text-center text-rose-200">To Choose You Always</p>
-                  <div class="absolute bottom-4 text-rose-400/50">
-                    <i class="fas fa-hand-point-up animate-bounceSlow"></i> Click to reveal
-                  </div>
-                </div>
-                
-                <div class="absolute inset-0 backface-hidden rotate-y-180 rounded-2xl bg-gradient-to-br from-purple-900/50 to-rose-900/50 border-2 border-amber-400/30 p-8 flex flex-col items-center justify-center shadow-xl">
-                  <div class="text-4xl mb-4 text-amber-300">
-                    <i class="fas fa-infinity"></i>
-                  </div>
-                  <p class="font-cormorant text-xl text-center text-white leading-relaxed">
-                    I promise to choose you every single day, in every lifetime, in every universe.
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Promise 6 -->
-            <div class="promise-card group h-80 perspective-1000" data-delay="0.5">
-              <div class="relative w-full h-full preserve-3d transition-all duration-700 group-hover:rotate-y-180">
-                <div class="absolute inset-0 backface-hidden rounded-2xl bg-gradient-to-br from-rose-900/40 to-purple-900/40 border-2 border-rose-400/30 p-8 flex flex-col items-center justify-center shadow-xl">
-                  <div class="text-6xl mb-6 text-rose-400 animate-pulse">
-                    <i class="fas fa-gem"></i>
-                  </div>
-                  <h3 class="font-playfair text-2xl text-center text-amber-300 mb-4">Promise Six</h3>
-                  <p class="font-cormorant text-lg text-center text-rose-200">To Honor Our Love</p>
-                  <div class="absolute bottom-4 text-rose-400/50">
-                    <i class="fas fa-hand-point-up animate-bounceSlow"></i> Click to reveal
-                  </div>
-                </div>
-                
-                <div class="absolute inset-0 backface-hidden rotate-y-180 rounded-2xl bg-gradient-to-br from-purple-900/50 to-rose-900/50 border-2 border-amber-400/30 p-8 flex flex-col items-center justify-center shadow-xl">
-                  <div class="text-4xl mb-4 text-amber-300">
-                    <i class="fas fa-gem"></i>
-                  </div>
-                  <p class="font-cormorant text-xl text-center text-white leading-relaxed">
-                    I promise to honor our love, nurture it, and let it be my guiding light forever.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="text-center mt-16 animate-fadeInUp">
-            <button id="promises-confetti" class="px-8 py-4 rounded-full bg-gradient-to-r from-amber-500 to-rose-500 text-white font-playfair text-xl hover:shadow-[0_0_30px_rgba(245,158,11,0.6)] transition-all duration-300 hover:scale-105">
-              <i class="fas fa-sparkles mr-3"></i> Celebrate Our Promises
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- Love Letter Section -->
-      <section id="letter" class="py-24 px-4 relative">
-        <div class="absolute inset-0 bg-love-pattern opacity-10"></div>
-        <div class="max-w-4xl mx-auto relative">
-          <!-- Decorative Corner Elements -->
-          <div class="absolute -top-6 -left-6 text-5xl text-rose-400/20 animate-twinkle">
-            <i class="fas fa-heart"></i>
-          </div>
-          <div class="absolute -bottom-6 -right-6 text-5xl text-rose-400/20 animate-twinkle" style="animation-delay: 0.5s">
-            <i class="fas fa-heart"></i>
-          </div>
-          
-          <div class="envelope animate-fadeInUp">
-            <!-- Wax Seal -->
-            <div class="absolute -top-4 -right-4 w-20 h-20 rounded-full bg-gradient-to-br from-amber-400 to-rose-500 flex items-center justify-center shadow-2xl animate-pulseLove z-10">
-              <span class="text-3xl">💌</span>
-              <div class="absolute inset-0 rounded-full border-4 border-amber-300/50 animate-ping"></div>
-            </div>
-            
-            <div class="font-cormorant text-xl md:text-2xl leading-relaxed space-y-8">
-              <p class="font-great-vibes text-5xl text-rose-600 mb-8 text-center animate-fadeInUp">
-                My Dearest Momina,
-              </p>
-              
-              <p class="animate-fadeInUp" style="animation-delay: 0.2s">
-                As I sit to write these words, my heart overflows with emotions that no language can fully capture. 
-                You are not just a person in my life; you are the melody that makes my soul dance, the light that guides me through darkness, 
-                and the warmth that makes every moment worth living.
-              </p>
-              
-              <p class="animate-fadeInUp" style="animation-delay: 0.4s">
-                I remember the first time our eyes met, and in that moment, I knew my search was over. 
-                The universe had conspired to bring us together, and every day since has been a beautiful chapter in our love story.
-              </p>
-              
-              <div class="bg-rose-50/10 p-6 rounded-xl border-l-4 border-rose-500 my-8 animate-fadeInUp" style="animation-delay: 0.6s">
-                <p class="text-rose-800 font-semibold text-2xl italic text-center">
-                  "Your smile is my favorite sunrise, your laughter my favorite symphony, and your love my greatest treasure."
-                </p>
-              </div>
-              
-              <p class="animate-fadeInUp" style="animation-delay: 0.8s">
-                I promise to hold your hand through every storm, to wipe your tears when you're sad, 
-                to celebrate your victories as if they were my own, and to love you more deeply with each passing day.
-              </p>
-              
-              <p class="animate-fadeInUp" style="animation-delay: 1s">
-                With you, I've found a love that feels like home—a safe, warm, and beautiful place where I can be my true self. 
-                You've seen me at my best and my worst, and yet your love remains constant, unwavering, and pure.
-              </p>
-              
-              <div class="pt-12 border-t border-rose-300/30 animate-fadeInUp" style="animation-delay: 1.2s">
-                <p class="text-right font-great-vibes text-4xl text-rose-600">
-                  Forever and Always,
-                </p>
-                <p class="text-right font-great-vibes text-3xl text-amber-600 mt-2">
-                  Your Nawaz
-                </p>
-                <div class="text-right mt-6">
-                  <button id="kiss-letter" class="px-6 py-3 rounded-full bg-gradient-to-r from-rose-500 to-pink-500 text-white font-cormorant text-lg hover:shadow-[0_0_20px_rgba(236,72,153,0.6)] transition-all duration-300 hover:scale-105">
-                    <i class="fas fa-kiss-wink-heart mr-2"></i> Send a Kiss Back
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Love Meter Section -->
-      <section id="love-meter" class="py-24 px-4 bg-gradient-to-b from-purple-900/20 to-rose-900/20">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="font-playfair text-4xl md:text-5xl font-bold text-center mb-16 animate-fadeInUp">
-            <span class="bg-gradient-to-r from-amber-400 to-rose-400 bg-clip-text text-transparent">Our Love Meter</span>
-          </h2>
-          
-          <div class="space-y-12">
-            <!-- Love Compatibility -->
-            <div class="animate-fadeInUp">
-              <div class="flex justify-between mb-2">
-                <span class="font-cormorant text-xl text-rose-300">Our Connection</span>
-                <span class="font-cormorant text-xl text-amber-300">100%</span>
-              </div>
-              <div class="h-4 bg-rose-900/30 rounded-full overflow-hidden">
-                <div class="h-full bg-gradient-to-r from-rose-500 to-pink-500 rounded-full animate-pulseLove" style="width: 100%"></div>
-              </div>
-            </div>
-            
-            <!-- Happiness Level -->
-            <div class="animate-fadeInUp" style="animation-delay: 0.2s">
-              <div class="flex justify-between mb-2">
-                <span class="font-cormorant text-xl text-rose-300">Happiness Together</span>
-                <span class="font-cormorant text-xl text-amber-300">∞</span>
-              </div>
-              <div class="h-4 bg-rose-900/30 rounded-full overflow-hidden">
-                <div class="h-full bg-gradient-to-r from-amber-500 to-rose-500 rounded-full animate-pulseLove" style="width: 100%"></div>
-              </div>
-            </div>
-            
-            <!-- Forever Commitment -->
-            <div class="animate-fadeInUp" style="animation-delay: 0.4s">
-              <div class="flex justify-between mb-2">
-                <span class="font-cormorant text-xl text-rose-300">Forever Commitment</span>
-                <span class="font-cormorant text-xl text-amber-300">Eternal</span>
-              </div>
-              <div class="h-4 bg-rose-900/30 rounded-full overflow-hidden">
-                <div class="h-full bg-gradient-to-r from-purple-500 to-rose-500 rounded-full animate-pulseLove" style="width: 100%"></div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="text-center mt-16">
-            <button id="increase-love" class="px-10 py-4 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-playfair text-xl hover:shadow-[0_0_30px_rgba(192,132,252,0.6)] transition-all duration-300 hover:scale-105 group">
-              <i class="fas fa-heartbeat mr-3 group-hover:scale-125 transition-transform"></i>
-              Increase Our Love Level
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- Final Declaration -->
-      <section id="finale" class="py-32 px-4 bg-gradient-to-b from-slate-900/50 to-rose-900/30 relative overflow-hidden">
-        <!-- Floating Elements -->
-        <div class="absolute inset-0 overflow-hidden pointer-events-none">
-          <div class="absolute animate-float" style="left: 10%; top: 15%; animation-duration: 7s;">💖</div>
-          <div class="absolute animate-float" style="left: 85%; top: 35%; animation-duration: 9s; animation-delay: 1s;">💗</div>
-          <div class="absolute animate-float" style="left: 20%; top: 75%; animation-duration: 8s; animation-delay: 2s;">💓</div>
-          <div class="absolute animate-float" style="left: 70%; top: 10%; animation-duration: 10s; animation-delay: 3s;">💞</div>
-          <div class="absolute animate-float" style="left: 40%; top: 50%; animation-duration: 6s; animation-delay: 0.5s;">💕</div>
-        </div>
-        
-        <div class="max-w-5xl mx-auto text-center space-y-12 relative z-10">
-          <h2 class="font-playfair text-5xl md:text-7xl font-bold animate-fadeInUp">
-            <span class="bg-gradient-to-r from-amber-400 via-rose-400 to-pink-500 bg-clip-text text-transparent animate-shimmer bg-[length:200%_auto]">
-              My Love For You Is Eternal
-            </span>
-          </h2>
-          
-          <p class="font-cormorant text-2xl md:text-3xl text-amber-300 animate-pulseLove">
-            "In every lifetime, in every universe,<br/>
-            I would find you and choose you, again and again."
-          </p>
-          
-          <div class="flex flex-wrap justify-center gap-6 mt-12 animate-fadeInUp" style="animation-delay: 0.3s">
-            <div class="p-6 rounded-2xl bg-gradient-to-br from-rose-900/30 to-purple-900/30 border border-rose-400/30 hover:border-rose-400 transition-all duration-300 hover:scale-105">
-              <i class="fas fa-infinity text-5xl text-amber-400 mb-4"></i>
-              <p class="font-cormorant text-xl">Forever Yours</p>
-            </div>
-            <div class="p-6 rounded-2xl bg-gradient-to-br from-rose-900/30 to-purple-900/30 border border-rose-400/30 hover:border-rose-400 transition-all duration-300 hover:scale-105">
-              <i class="fas fa-heart text-5xl text-rose-400 mb-4"></i>
-              <p class="font-cormorant text-xl">Always Loving</p>
-            </div>
-            <div class="p-6 rounded-2xl bg-gradient-to-br from-rose-900/30 to-purple-900/30 border border-rose-400/30 hover:border-rose-400 transition-all duration-300 hover:scale-105">
-              <i class="fas fa-star text-5xl text-amber-300 mb-4"></i>
-              <p class="font-cormorant text-xl">Endlessly Adoring</p>
-            </div>
-          </div>
-          
-          <div class="pt-16 animate-fadeInUp" style="animation-delay: 0.6s">
-            <button id="final-surprise" class="group px-14 py-7 text-2xl font-playfair font-bold rounded-full bg-gradient-to-r from-rose-600 via-pink-600 to-purple-600 text-white shadow-2xl hover:shadow-[0_0_60px_rgba(236,72,153,0.8)] transition-all duration-500 hover:scale-110 animate-heartbeat">
-              <span class="flex items-center justify-center gap-6">
-                <i class="fas fa-gem text-3xl group-hover:rotate-180 transition-transform duration-1000"></i>
-                <span>Click For My Heart's Ultimate Surprise</span>
-                <i class="fas fa-gem text-3xl group-hover:rotate-180 transition-transform duration-1000"></i>
-              </span>
-            </button>
-          </div>
-          
-          <div class="mt-20 pt-16 border-t-2 border-amber-400/30 animate-fadeInUp" style="animation-delay: 0.9s">
-            <p class="font-great-vibes text-5xl md:text-6xl text-rose-400 animate-glow">
-              Yours Forever,<br/>
-              <span class="text-4xl md:text-5xl text-amber-400">Nawaz</span>
-            </p>
-            <div class="mt-8">
-              <button id="reset-experience" class="px-8 py-3 rounded-full bg-gradient-to-r from-slate-700 to-slate-800 text-white font-cormorant text-lg hover:shadow-[0_0_20px_rgba(148,163,184,0.5)] transition-all duration-300 hover:scale-105">
-                <i class="fas fa-redo mr-2"></i> Relive This Love Journey
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- Love Message Modal -->
-    <div id="love-modal" class="fixed inset-0 z-50 bg-black/80 hidden flex items-center justify-center p-4">
-      <div class="bg-gradient-to-br from-slate-900 to-purple-900/90 backdrop-blur-md p-8 rounded-3xl text-center border-2 border-rose-400 max-w-md w-full animate-pulseLove shadow-[0_0_50px_rgba(244,63,94,0.5)]">
-        <div class="text-8xl mb-6 animate-bounceSlow">
-          <i class="fas fa-heart-circle-check"></i>
-        </div>
-        <h3 class="font-playfair text-3xl text-rose-400 mb-4">My Eternal Love</h3>
-        <p class="font-cormorant text-2xl text-white mb-6">You are the reason my heart beats, my love.</p>
-        <p class="font-cormorant text-lg text-amber-300 mb-8">Every moment with you is a treasure I'll cherish forever.</p>
-        <button id="close-modal" class="px-8 py-3 bg-gradient-to-r from-rose-500 to-pink-500 rounded-full text-white font-playfair font-bold hover:scale-105 transition-transform">
-          Keep Forever In Your Heart
-        </button>
-      </div>
     </div>
 
-    <!-- Audio Elements -->
-    <audio id="heartbeat-audio" preload="auto">
-      <source src="https://assets.mixkit.co/sfx/preview/mixkit-heartbeat-1180.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="love-music" loop preload="auto">
-      <source src="https://assets.mixkit.co/music/preview/mixkit-loving-you-117.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="kiss-audio" preload="auto">
-      <source src="https://assets.mixkit.co/sfx/preview/mixkit-kiss-2016.mp3" type="audio/mpeg">
-    </audio>
+    <!-- Page 3: Second "NO" Response -->
+    <div id="page3" class="page-container text-center p-4 sm:p-6 md:p-14 hidden relative z-10">
+        <div class="heartbeat mb-8">
+            <div class="text-6xl md:text-8xl">😢</div>
+        </div>
+        <h1 class="text-3xl sm:text-4xl md:text-7xl font-bold mb-6 md:mb-8 text-pink-700 font-playfair">Are you sure, Momina?</h1>
+        <p class="mb-6 md:mb-12 text-lg sm:text-xl md:text-3xl text-gray-700">You've forgiven me every time before. My heart is breaking, please don't leave me like this.</p>
+        <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-12 mt-8">
+            <button id="yes3" class="bg-pink-500 hover:bg-pink-600 text-white px-8 py-3 sm:px-10 sm:py-4 md:px-14 md:py-7 rounded-full text-2xl sm:text-3xl md:text-5xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg w-full md:w-auto">YES</button>
+            <button id="no3" class="bg-purple-500 hover:bg-purple-600 text-white px-8 py-3 sm:px-10 sm:py-4 md:px-14 md:py-7 rounded-full text-lg sm:text-xl md:text-2xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg w-full md:w-auto">NO</button>
+        </div>
+    </div>
 
-    <!-- Floating Action Button -->
-    <button id="back-to-top" class="fixed bottom-8 right-8 z-40 w-14 h-14 rounded-full bg-gradient-to-br from-rose-500 to-pink-600 text-white flex items-center justify-center shadow-2xl hover:shadow-[0_0_20px_rgba(236,72,153,0.8)] transition-all duration-300 hover:scale-110 hidden">
-      <i class="fas fa-chevron-up text-xl"></i>
-    </button>
+    <!-- Page 4: Third "NO" Response -->
+    <div id="page4" class="page-container text-center p-4 sm:p-6 md:p-14 hidden relative z-10">
+        <div class="heartbeat mb-8">
+            <div class="text-6xl md:text-8xl">💔</div>
+        </div>
+        <h1 class="text-3xl sm:text-4xl md:text-7xl font-bold mb-6 md:mb-8 text-pink-700 font-playfair">Please... just forgive me?</h1>
+        <p class="mb-6 md:mb-12 text-lg sm:text-xl md:text-3xl text-gray-700">I promise to never hurt you again. You're my everything, Momina.</p>
+        <button id="yes4" class="bg-pink-500 hover:bg-pink-600 text-white px-8 py-4 sm:px-10 sm:py-5 md:px-16 md:py-9 rounded-full text-2xl sm:text-3xl md:text-6xl font-bold transition-all duration-300 transform hover:scale-105 shadow-xl mt-6 w-full md:w-auto">YES</button>
+    </div>
+
+    <!-- Page 5: Forgiveness Confirmed -->
+    <div id="page5" class="page-container text-center p-4 sm:p-6 md:p-14 hidden relative z-10">
+        <div class="heartbeat mb-8">
+            <div class="text-7xl md:text-9xl">💖</div>
+        </div>
+        <h1 class="text-3xl sm:text-4xl md:text-7xl font-bold mb-6 text-pink-700 font-playfair">Thank you for forgiving me, Momina!</h1>
+        <p class="mb-6 md:mb-10 text-lg sm:text-xl md:text-3xl text-gray-700">You've made me the happiest and most grateful person alive! ❤️</p>
+        <button id="gifts" class="bg-pink-500 hover:bg-pink-600 text-white px-8 py-4 md:px-16 md:py-8 rounded-full text-lg sm:text-xl md:text-4xl font-bold transition-all duration-300 transform hover:scale-105 shadow-xl mt-4 w-full md:w-auto">Discover Our Journey →</button>
+    </div>
+
+    <!-- Page 6: Q&A Challenge -->
+    <div id="page6" class="page-container hidden relative z-10 p-3 sm:p-4 md:p-8">
+        <div class="qna-card">
+            <div class="text-xl sm:text-2xl md:text-4xl font-bold mb-4 md:mb-6 text-center text-pink-700 font-playfair">Our Love Story Q&A</div>
+            <div class="qna-progress">
+                <div class="qna-progress-bar" id="qna-progress"></div>
+            </div>
+            
+            <div id="qna-question" class="qna-question">
+                Who loves you most in this entire world?
+            </div>
+            
+            <div class="qna-options" id="qna-options">
+                <div class="qna-option" data-answer="0">Asad</div>
+                <div class="qna-option" data-answer="1">Moiz</div>
+                <div class="qna-option" data-answer="2">Momina</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 7: Our Story -->
+    <div id="page7" class="page-container hidden relative z-10 p-4 sm:p-6 md:p-10">
+        <div class="story-page">
+            <h1 class="text-2xl sm:text-3xl md:text-5xl font-bold mb-6 md:mb-8 text-center text-brown-800 font-playfair">Our Beautiful Journey</h1>
+            
+            <p class="mb-6">Do you remember when it all began? That online group chat arranged by our mutual friend <span class="story-highlight">Hania</span> that brought us together...</p>
+            
+            <p class="mb-6">From that first conversation in the GC, my world changed forever. Every message, every laugh, every shared moment became a treasure I hold close to my heart.</p>
+            
+            <p class="mb-6">After exactly one year of getting to know each other, on <span class="story-highlight">April 15, 2025</span>, I finally gathered the courage to confess my love to you. That day changed my life forever.</p>
+            
+            <p class="mb-6">I know I've hurt you so many times, Momina. But you've always been there, forgiving me every single time I asked for sorry. Your patience and love have been my greatest blessings.</p>
+            
+            <p class="mb-6">I still cherish all those beautiful moments we shared - watching <span class="story-highlight">movies together</span>, binge-watching <span class="story-highlight">dramas</span>, our special <span class="story-highlight">online dates</span>, and those precious <span class="story-highlight">late night calls</span> where we would talk for hours about everything and nothing.</p>
+            
+            <p class="mb-6">Every moment with you has been magical, not because of what we did, but because we were together. You make even the simplest things feel extraordinary.</p>
+            
+            <p class="mb-6">From that first message in Hania's GC to the day I confessed my love on April 15, 2025 - every second has been a gift that I will never take for granted again.</p>
+            
+            <p class="mb-6">I love you more than words can express, Momina. You are my heart, my soul, my everything. I promise to spend the rest of my life making you happy and never hurting you again.</p>
+            
+            <div class="signature">- Your Nawaz Khan</div>
+        </div>
+        <button id="final-button" class="bg-pink-500 hover:bg-pink-600 text-white px-8 py-4 md:px-14 md:py-7 rounded-full text-lg sm:text-xl md:text-3xl font-bold transition-all duration-300 transform hover:scale-105 shadow-xl mt-8 block mx-auto w-full md:w-fit">Our Forever Promise →</button>
+    </div>
+
+    <!-- Page 8: Final Message -->
+    <div id="page8" class="page-container hidden relative z-10 p-4 sm:p-6 md:p-10">
+        <div class="final-message">
+            <div id="sparkle-container" class="absolute inset-0 pointer-events-none"></div>
+            <div class="text-3xl sm:text-4xl md:text-7xl font-bold mb-6 font-playfair">I Choose You</div>
+            <div class="text-lg sm:text-xl md:text-4xl mb-8">Today, tomorrow, and for all our tomorrows</div>
+            <div class="text-xl sm:text-2xl md:text-5xl font-bold mb-10">Momina ❤️ Nawaz</div>
+            <div class="text-base sm:text-lg md:text-3xl italic">"In your forgiveness, I found my second chance at love."</div>
+        </div>
+    </div>
 
     <script>
-      // Initialize variables
-      let isMusicPlaying = false;
-      let isDarkMode = true;
-      let arePetalsFalling = false;
-      let loveLevel = 100;
-      const loveMusic = document.getElementById('love-music');
-      const heartbeatAudio = document.getElementById('heartbeat-audio');
-      const kissAudio = document.getElementById('kiss-audio');
-
-      // DOM Elements
-      const countdownOverlay = document.getElementById('countdown-overlay');
-      const countdownNumber = document.getElementById('countdown-number');
-      const countdownText = document.getElementById('countdown-text');
-      const progressBar = document.getElementById('progress-bar');
-      const backToTopBtn = document.getElementById('back-to-top');
-      const rosePetalsContainer = document.getElementById('rose-petals');
-
-      // Countdown Logic
-      let count = 5;
-      const countdownTimer = setInterval(() => {
-        count--;
-        if (countdownNumber) {
-          countdownNumber.innerHTML = `
-            <div class="absolute inset-0 text-rose-500/30 blur-xl animate-pulse">${count}</div>
-            <div class="font-great-vibes text-9xl text-rose-200 relative animate-heartbeat">${count}</div>
-          `;
+        // Create sparkles for final page
+        function createSparkles() {
+            const container = document.getElementById('sparkle-container');
+            if (!container) return;
+            
+            for (let i = 0; i < 40; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = `${Math.random() * 100}%`;
+                sparkle.style.top = `${Math.random() * 100}%`;
+                sparkle.style.setProperty('--tx', `${(Math.random() - 0.5) * 200}px`);
+                sparkle.style.setProperty('--ty', `${(Math.random() - 0.5) * 200}px`);
+                sparkle.style.animationDelay = `${Math.random() * 3}s`;
+                container.appendChild(sparkle);
+            }
         }
-        
-        if (count === 3) {
-          countdownText.classList.remove('opacity-0');
-          countdownText.classList.add('opacity-100');
-        }
-        
-        if (count <= 0) {
-          clearInterval(countdownTimer);
-          if (countdownOverlay) {
-            countdownOverlay.style.opacity = '0';
-            setTimeout(() => {
-              countdownOverlay.style.display = 'none';
-              // Start background music softly
-              loveMusic.volume = 0.3;
-              loveMusic.play().catch(e => console.log("Autoplay prevented:", e));
-              isMusicPlaying = true;
-              // Initialize promises animation
-              initializePromises();
-            }, 1000);
-          }
-        }
-      }, 1000);
 
-      // Initialize promises with staggered animation
-      function initializePromises() {
-        const promiseCards = document.querySelectorAll('.promise-card');
-        promiseCards.forEach(card => {
-          const delay = card.getAttribute('data-delay');
-          card.style.animationDelay = `${delay}s`;
-          card.classList.add('animate-fadeInUp');
-        });
-      }
+        // Initialize with page 1 visible
+        document.getElementById('page1').classList.remove('hidden');
 
-      // Theme Toggle
-      document.getElementById('theme-toggle').addEventListener('click', () => {
-        isDarkMode = !isDarkMode;
-        document.documentElement.classList.toggle('dark', isDarkMode);
-        document.documentElement.classList.toggle('light', !isDarkMode);
-        
-        // Update icon
-        const icon = document.querySelector('#theme-toggle i');
-        if (isDarkMode) {
-          icon.classList.remove('fa-sun');
-          icon.classList.add('fa-moon');
-        } else {
-          icon.classList.remove('fa-moon');
-          icon.classList.add('fa-sun');
-        }
-        
-        // Confetti effect
-        confetti({
-          particleCount: 50,
-          spread: 70,
-          origin: { y: 0.6 },
-          colors: ['#f472b6', '#ec4899', '#db2777']
-        });
-      });
-
-      // Music Toggle
-      document.getElementById('music-toggle').addEventListener('click', () => {
-        if (isMusicPlaying) {
-          loveMusic.pause();
-          isMusicPlaying = false;
-        } else {
-          loveMusic.play();
-          isMusicPlaying = true;
-        }
-        
-        // Visual feedback
-        const button = document.getElementById('music-toggle');
-        button.classList.add('scale-125', 'bg-rose-500/40');
-        setTimeout(() => {
-          button.classList.remove('scale-125', 'bg-rose-500/40');
-        }, 300);
-      });
-
-      // Petal Toggle
-      document.getElementById('petal-toggle').addEventListener('click', () => {
-        arePetalsFalling = !arePetalsFalling;
-        
-        if (arePetalsFalling) {
-          startRosePetals();
-          document.getElementById('petal-toggle').classList.add('bg-rose-500/40');
-        } else {
-          stopRosePetals();
-          document.getElementById('petal-toggle').classList.remove('bg-rose-500/40');
-        }
-      });
-
-      // Rose Petals Animation
-      function startRosePetals() {
-        const petalIcons = ['💖', '💗', '💓', '💞', '💕', '🌸', '🌹'];
-        
-        function createPetal() {
-          const petal = document.createElement('div');
-          petal.className = 'rose-petal';
-          petal.innerHTML = petalIcons[Math.floor(Math.random() * petalIcons.length)];
-          petal.style.left = Math.random() * 100 + 'vw';
-          petal.style.fontSize = Math.random() * 20 + 20 + 'px';
-          petal.style.animationDuration = Math.random() * 3 + 5 + 's';
-          petal.style.animationDelay = Math.random() * 2 + 's';
-          
-          rosePetalsContainer.appendChild(petal);
-          
-          // Remove petal after animation completes
-          setTimeout(() => {
-            petal.remove();
-          }, 8000);
-        }
-        
-        // Create initial petals
-        for (let i = 0; i < 15; i++) {
-          setTimeout(createPetal, i * 300);
-        }
-        
-        // Continue creating petals
-        window.petalInterval = setInterval(createPetal, 500);
-      }
-      
-      function stopRosePetals() {
-        clearInterval(window.petalInterval);
-      }
-
-      // Heartbeat Sound
-      document.getElementById('love-sound').addEventListener('click', () => {
-        heartbeatAudio.currentTime = 0;
-        heartbeatAudio.play();
-        
-        // Create heartbeat effect
-        document.body.style.transform = 'scale(1.02)';
-        setTimeout(() => {
-          document.body.style.transform = 'scale(1)';
-        }, 100);
-        
-        // Heartbeat confetti
-        confetti({
-          particleCount: 100,
-          spread: 70,
-          origin: { y: 0.6 },
-          colors: ['#f472b6', '#ec4899', '#db2777']
-        });
-        
-        // Visual feedback
-        const button = document.getElementById('love-sound');
-        button.classList.add('scale-125', 'shadow-[0_0_60px_rgba(236,72,153,1)]');
-        setTimeout(() => {
-          button.classList.remove('scale-125', 'shadow-[0_0_60px_rgba(236,72,153,1)]');
-        }, 500);
-      });
-
-      // Promises Confetti
-      document.getElementById('promises-confetti').addEventListener('click', () => {
-        // Multiple confetti bursts
-        for (let i = 0; i < 5; i++) {
-          setTimeout(() => {
-            confetti({
-              particleCount: 100,
-              angle: 60 + (i * 15),
-              spread: 55,
-              origin: { x: 0.5, y: 0.6 },
-              colors: ['#f472b6', '#ec4899', '#db2777', '#fbbf24']
+        // Function to show a specific page
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = ['page1', 'page2', 'page3', 'page4', 'page5', 'page6', 'page7', 'page8'];
+            pages.forEach(page => {
+                document.getElementById(page).classList.add('hidden');
             });
-          }, i * 200);
+            
+            // Show requested page
+            document.getElementById(pageId).classList.remove('hidden');
+            
+            // Special handling for final page
+            if (pageId === 'page8') {
+                setTimeout(createSparkles, 100);
+            }
         }
-        
-        // Play a sweet sound
-        const audio = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-achievement-bell-600.mp3');
-        audio.volume = 0.3;
-        audio.play();
-      });
 
-      // Kiss Letter Button
-      document.getElementById('kiss-letter').addEventListener('click', () => {
-        kissAudio.currentTime = 0;
-        kissAudio.play();
+        // Set up button interactions for YES/NO escalation
+        document.getElementById('no1').addEventListener('click', () => showPage('page2'));
+        document.getElementById('yes1').addEventListener('click', () => showPage('page5'));
         
-        // Show kiss animation
-        const kiss = document.createElement('div');
-        kiss.className = 'fixed inset-0 z-40 flex items-center justify-center pointer-events-none';
-        kiss.innerHTML = `
-          <div class="text-9xl animate-bounceSlow">
-            <i class="fas fa-kiss-wink-heart text-rose-500"></i>
-          </div>
-        `;
-        document.body.appendChild(kiss);
+        document.getElementById('no2').addEventListener('click', () => showPage('page3'));
+        document.getElementById('yes2').addEventListener('click', () => showPage('page5'));
         
-        setTimeout(() => {
-          kiss.style.opacity = '0';
-          kiss.style.transform = 'scale(2)';
-          setTimeout(() => kiss.remove(), 500);
-        }, 2000);
+        document.getElementById('no3').addEventListener('click', () => showPage('page4'));
+        document.getElementById('yes3').addEventListener('click', () => showPage('page5'));
         
-        // Heart confetti
-        confetti({
-          particleCount: 150,
-          spread: 60,
-          origin: { y: 0.6 },
-          colors: ['#f472b6', '#ec4899', '#db2777']
+        document.getElementById('yes4').addEventListener('click', () => showPage('page5'));
+        
+        // Gifts button leads to Q&A
+        document.getElementById('gifts').addEventListener('click', () => {
+            showPage('page6');
+            initQnA();
         });
-      });
+        
+        // Final button leads to story
+        document.getElementById('final-button').addEventListener('click', () => showPage('page8'));
 
-      // Increase Love Level
-      document.getElementById('increase-love').addEventListener('click', () => {
-        if (loveLevel < 1000) {
-          loveLevel += 100;
-          
-          // Update UI
-          const loveLevelElement = document.querySelector('.love-level');
-          if (!loveLevelElement) {
-            const meterSection = document.getElementById('love-meter');
-            const newElement = document.createElement('div');
-            newElement.className = 'love-level text-center mt-8 animate-fadeInUp';
-            newElement.innerHTML = `
-              <div class="font-great-vibes text-4xl text-rose-400">Love Level</div>
-              <div class="font-playfair text-6xl text-amber-400 animate-pulseLove">${loveLevel}%</div>
-            `;
-            meterSection.appendChild(newElement);
-          } else {
-            loveLevelElement.querySelector('.text-6xl').textContent = `${loveLevel}%`;
-          }
-          
-          // Special confetti
-          confetti({
-            particleCount: 200,
-            spread: 100,
-            origin: { y: 0.6 },
-            colors: ['#f472b6', '#ec4899', '#db2777', '#fbbf24', '#a855f7']
-          });
-          
-          // Play level up sound
-          const audio = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3');
-          audio.volume = 0.3;
-          audio.play();
+        // Q&A Challenge Implementation
+        const questions = [
+            {
+                question: "Who loves you most in this entire world?",
+                options: [
+                    "Asad",
+                    "Moiz",
+                    "Momina"
+                ],
+                correct: 2
+            },
+            {
+                question: "Who is the biggest love of Nawaz's life?",
+                options: [
+                    "Asad",
+                    "Moiz",
+                    "Momina"
+                ],
+                correct: 2
+            },
+            {
+                question: "In whom will Nawaz kiss first in his life?",
+                options: [
+                    "Asad",
+                    "Moiz",
+                    "Momina (and only Momina forever)"
+                ],
+                correct: 2
+            },
+            {
+                question: "Where did our beautiful story begin?",
+                options: [
+                    "At a café",
+                    "In an online GC by Hania (our mutual friend)",
+                    "At school"
+                ],
+                correct: 1
+            },
+            {
+                question: "When did we confess our love to each other?",
+                options: [
+                    "January 2025",
+                    "April 15, 2025",
+                    "December 2025"
+                ],
+                correct: 1
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let correctAnswers = 0;
+
+        function initQnA() {
+            currentQuestionIndex = 0;
+            correctAnswers = 0;
+            updateQnAProgress();
+            showQuestion();
         }
-      });
 
-      // Final Surprise Button
-      document.getElementById('final-surprise').addEventListener('click', () => {
-        // Grand finale confetti
-        const duration = 8 * 1000;
-        const animationEnd = Date.now() + duration;
-        
-        function frame() {
-          const timeLeft = animationEnd - Date.now();
-          
-          if (timeLeft <= 0) return;
-          
-          const particleCount = 80 * (timeLeft / duration);
-          
-          // Heart-shaped confetti from both sides
-          confetti({
-            particleCount: Math.floor(particleCount / 2),
-            angle: 60,
-            spread: 55,
-            origin: { x: 0 },
-            colors: ['#f472b6', '#ec4899', '#db2777', '#fbbf24']
-          });
-          
-          confetti({
-            particleCount: Math.floor(particleCount / 2),
-            angle: 120,
-            spread: 55,
-            origin: { x: 1 },
-            colors: ['#f472b6', '#ec4899', '#db2777', '#fbbf24']
-          });
-          
-          // Confetti from bottom
-          confetti({
-            particleCount: Math.floor(particleCount / 3),
-            spread: 100,
-            origin: { y: 0.8 },
-            colors: ['#a855f7', '#8b5cf6', '#7c3aed']
-          });
-          
-          requestAnimationFrame(frame);
-        }
-        
-        frame();
-        
-        // Show love message
-        setTimeout(() => {
-          document.getElementById('love-modal').classList.remove('hidden');
-        }, 3000);
-        
-        // Play romantic sound
-        const audio = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-romantic-heart-beat-1258.mp3');
-        audio.volume = 0.5;
-        audio.play();
-        
-        // Start rose petals if not already
-        if (!arePetalsFalling) {
-          startRosePetals();
-          arePetalsFalling = true;
-          document.getElementById('petal-toggle').classList.add('bg-rose-500/40');
-        }
-      });
-
-      // Close Modal
-      document.getElementById('close-modal').addEventListener('click', () => {
-        document.getElementById('love-modal').classList.add('hidden');
-      });
-
-      // Reset Experience
-      document.getElementById('reset-experience').addEventListener('click', () => {
-        location.reload();
-      });
-
-      // Scroll Progress Indicator
-      window.addEventListener('scroll', () => {
-        // Show/hide back to top button
-        if (window.scrollY > 500) {
-          backToTopBtn.classList.remove('hidden');
-        } else {
-          backToTopBtn.classList.add('hidden');
-        }
-        
-        // Update progress bar
-        const winHeight = window.innerHeight;
-        const docHeight = document.documentElement.scrollHeight;
-        const scrollTop = window.pageYOffset;
-        const trackLength = docHeight - winHeight;
-        const percentage = Math.floor((scrollTop / trackLength) * 100);
-        
-        if (progressBar) {
-          progressBar.style.height = `${percentage}%`;
-        }
-      });
-
-      // Back to Top
-      backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      });
-
-      // Smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          const targetId = this.getAttribute('href');
-          if (targetId === '#') return;
-          
-          const targetElement = document.querySelector(targetId);
-          if (targetElement) {
-            window.scrollTo({
-              top: targetElement.offsetTop - 80,
-              behavior: 'smooth'
+        function showQuestion() {
+            const question = questions[currentQuestionIndex];
+            document.getElementById('qna-question').textContent = question.question;
+            
+            const optionsContainer = document.getElementById('qna-options');
+            optionsContainer.innerHTML = '';
+            
+            question.options.forEach((option, index) => {
+                const optionElement = document.createElement('div');
+                optionElement.className = 'qna-option';
+                optionElement.textContent = option;
+                optionElement.setAttribute('data-answer', index);
+                optionElement.addEventListener('click', () => checkAnswer(index));
+                optionsContainer.appendChild(optionElement);
             });
-          }
+        }
+
+        function checkAnswer(selectedIndex) {
+            const question = questions[currentQuestionIndex];
+            const options = document.querySelectorAll('.qna-option');
+            
+            // Disable all options while processing
+            options.forEach(opt => opt.style.pointerEvents = 'none');
+            
+            // Check if correct
+            if (selectedIndex === question.correct) {
+                // Correct answer
+                options[selectedIndex].classList.add('correct');
+                correctAnswers++;
+                updateQnAProgress();
+                
+                // Move to next question after delay or show story page
+                setTimeout(() => {
+                    currentQuestionIndex++;
+                    if (currentQuestionIndex < questions.length) {
+                        showQuestion();
+                    } else {
+                        // All questions answered correctly - show story page
+                        showPage('page7');
+                    }
+                    // Re-enable options for next question
+                    document.querySelectorAll('.qna-option').forEach(opt => {
+                        opt.style.pointerEvents = 'auto';
+                        opt.classList.remove('correct', 'incorrect');
+                    });
+                }, 1200);
+            } else {
+                // Incorrect answer
+                options[selectedIndex].classList.add('incorrect');
+                
+                // Reset after delay
+                setTimeout(() => {
+                    options[selectedIndex].classList.remove('incorrect');
+                    options.forEach(opt => opt.style.pointerEvents = 'auto');
+                }, 1500);
+            }
+        }
+
+        function updateQnAProgress() {
+            const progress = (correctAnswers / questions.length) * 100;
+            document.getElementById('qna-progress').style.width = `${progress}%`;
+        }
+
+        // Initialize sparkles on final page load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Preload fonts
+            const link = document.createElement('link');
+            link.href = 'https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;700&family=Quicksand:wght@400;600&display=swap';
+            link.rel = 'stylesheet';
+            document.head.appendChild(link);
         });
-      });
-
-      // Mouse follower hearts
-      document.addEventListener('mousemove', (e) => {
-        // Only create hearts occasionally
-        if (Math.random() > 0.7) {
-          const heart = document.createElement('div');
-          heart.className = 'fixed w-6 h-6 text-rose-400/50 pointer-events-none z-30 animate-float';
-          heart.innerHTML = '<i class="fas fa-heart"></i>';
-          heart.style.left = e.pageX - 8 + 'px';
-          heart.style.top = e.pageY - 8 + 'px';
-          heart.style.fontSize = Math.random() * 10 + 12 + 'px';
-          heart.style.animationDuration = Math.random() * 2 + 2 + 's';
-          document.body.appendChild(heart);
-          
-          // Remove after animation
-          setTimeout(() => {
-            heart.style.opacity = '0';
-            heart.style.transform = 'scale(0)';
-            setTimeout(() => heart.remove(), 500);
-          }, 2000);
-        }
-      });
-
-      // Initialize on load
-      window.addEventListener('load', () => {
-        // Add loaded class for animations
-        document.body.classList.add('loaded');
-        
-        // Initialize tooltips
-        const buttons = document.querySelectorAll('button');
-        buttons.forEach(button => {
-          button.addEventListener('mouseenter', () => {
-            button.classList.add('ring-2', 'ring-rose-400/30');
-          });
-          button.addEventListener('mouseleave', () => {
-            button.classList.remove('ring-2', 'ring-rose-400/30');
-          });
-        });
-      });
-
-      // Add CSS for light theme
-      const lightThemeStyles = `
-        .light {
-          background: linear-gradient(135deg, #fdf2f8 0%, #faf5ff 50%, #fef3c7 100%);
-          color: #1f2937;
-        }
-        .light .text-white {
-          color: #1f2937;
-        }
-        .light .text-rose-200 {
-          color: #9d174d;
-        }
-        .light .text-rose-300 {
-          color: #be185d;
-        }
-        .light .bg-slate-900 {
-          background-color: #f8fafc;
-        }
-        .light .bg-purple-900\\/20 {
-          background-color: rgba(192, 132, 252, 0.1);
-        }
-        .light .bg-rose-900\\/20 {
-          background-color: rgba(244, 114, 182, 0.1);
-        }
-        .light .border-slate-600 {
-          border-color: #cbd5e1;
-        }
-        .light .glass-effect {
-          background: rgba(255, 255, 255, 0.8);
-          border: 1px solid rgba(244, 114, 182, 0.3);
-        }
-        .light .envelope {
-          background: linear-gradient(145deg, #ffffff, #f8fafc);
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        }
-        .light ::-webkit-scrollbar-track {
-          background: rgba(244, 114, 182, 0.1);
-        }
-      `;
-      
-      // Add light theme styles
-      const styleSheet = document.createElement('style');
-      styleSheet.textContent = lightThemeStyles;
-      document.head.appendChild(styleSheet);
     </script>
 </body>
 </html>
