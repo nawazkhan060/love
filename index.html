@@ -2,577 +2,755 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For My Momina ❤️</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>For Momina | Eid Mubarak ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Cinzel:wght@400;700&family=Great+Vibes&family=Noto+Nastaliq+Urdu:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --deep-emerald: #1a4d41;
+            --rich-gold: #c9a959;
+            --soft-gold: #e8d5a3;
+            --warm-cream: #faf8f3;
+            --paper-white: #fffefb;
+            --text-primary: #3d342a;
+            --text-secondary: #6b5f52;
+            --shadow-soft: 0 10px 40px rgba(26, 77, 65, 0.15);
+            --shadow-glow: 0 0 60px rgba(201, 169, 89, 0.25);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        html { scroll-behavior: smooth; }
+        
+        html.no-scroll, html.no-scroll body {
+            overflow: hidden;
+            height: 100%;
+            position: fixed;
+            width: 100%;
+        }
+
         body {
-            background: linear-gradient(135deg, #fff0f5 0%, #ffe4e1 100%);
-            font-family: 'Quicksand', sans-serif;
-            overflow-x: hidden;
+            background: linear-gradient(135deg, var(--deep-emerald) 0%, #2d5a50 50%, var(--deep-emerald) 100%);
+            font-family: 'Playfair Display', serif;
+            color: var(--text-primary);
             min-height: 100vh;
             position: relative;
+            overflow-x: hidden;
+            line-height: 1.7;
+            padding: 20px 0 100px;
         }
-        .falling-heart {
+
+        /* ==================== PRELOADER ==================== */
+        .preloader {
             position: fixed;
-            top: -50px;
-            opacity: 0.25;
-            z-index: -1;
-            animation: fall linear infinite;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, var(--deep-emerald) 0%, #0d2e27 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        .preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
             pointer-events: none;
         }
-        @keyframes fall {
-            to { transform: translateY(100vh) rotate(360deg); }
+
+        .preloader .countdown-number {
+            font-family: 'Cinzel', serif;
+            font-size: 10rem;
+            color: var(--rich-gold);
+            text-shadow: 0 0 40px rgba(201, 169, 89, 0.8), 0 0 80px rgba(201, 169, 89, 0.4);
+            animation: pulseNumber 1s ease-in-out;
+            opacity: 0;
+            transform: scale(0.5);
         }
-        .heartbeat {
-            animation: heartbeat 1.4s ease-in-out infinite;
+
+        .preloader .countdown-number.active { opacity: 1; transform: scale(1); }
+        .preloader .countdown-number.fade { animation: fadeOutNumber 0.4s ease forwards; }
+
+        @keyframes pulseNumber {
+            0% { transform: scale(0.5); opacity: 0; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
         }
-        @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            14%, 42% { transform: scale(1.2); }
-            28%, 56% { transform: scale(1); }
+        @keyframes fadeOutNumber { to { transform: scale(1.5); opacity: 0; } }
+
+        .preloader .eid-reveal {
+            font-family: 'Great Vibes', cursive;
+            font-size: 5rem;
+            color: var(--soft-gold);
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+            text-shadow: 0 0 30px rgba(232, 213, 163, 0.7);
+            display: none;
         }
-        .page-container {
-            max-width: 95%;
-            width: 100%;
-            max-width: 800px;
-            background: rgba(255, 255, 255, 0.85);
-            border-radius: 32px;
-            box-shadow: 0 20px 50px rgba(220, 20, 60, 0.15);
-            backdrop-filter: blur(10px);
-            transform: perspective(1000px) rotateX(0);
-            transition: transform 0.4s ease;
-            border: 3px solid #ffb6c1;
+
+        .preloader .eid-reveal.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            animation: glowText 2s ease-in-out infinite;
         }
-        .page-container:hover {
-            transform: perspective(1000px) rotateX(-2deg) scale(1.01);
+
+        @keyframes glowText {
+            0%, 100% { text-shadow: 0 0 30px rgba(232, 213, 163, 0.7); }
+            50% { text-shadow: 0 0 60px rgba(232, 213, 163, 1), 0 0 90px rgba(201, 169, 89, 0.8); }
         }
-        .qna-card {
-            background: #fff9e6;
-            border: 4px double #ffb74d;
-            border-radius: 24px;
-            padding: 1.5rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            min-height: 400px;
-            position: relative;
+
+        .preloader .moon-animate {
+            font-size: 6rem;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: none;
+        }
+
+        .preloader .moon-animate.active {
+            opacity: 1;
+            animation: moonPop 0.6s ease forwards, moonGlow 2s ease-in-out infinite 0.6s;
+        }
+
+        @keyframes moonPop {
+            0% { transform: scale(0) rotate(-180deg); opacity: 0; }
+            50% { transform: scale(1.2) rotate(10deg); }
+            100% { transform: scale(1) rotate(0deg); opacity: 1; }
+        }
+        @keyframes moonGlow {
+            0%, 100% { filter: drop-shadow(0 0 20px rgba(201, 169, 89, 0.5)); }
+            50% { filter: drop-shadow(0 0 50px rgba(201, 169, 89, 0.9)); }
+        }
+
+        .preloader .tap-hint {
+            position: absolute;
+            bottom: 40px;
+            color: rgba(255,255,255,0.7);
+            font-size: 1rem;
+            font-style: italic;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards 2s;
+        }
+        @keyframes fadeIn { to { opacity: 1; } }
+
+        /* Background decorations */
+        .bg-decoration {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
             overflow: hidden;
         }
-        @media (min-width: 768px) {
-            .qna-card { padding: 2.5rem; min-height: 550px; }
-        }
-        .qna-card::before {
-            content: "";
+
+        .bg-star {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: linear-gradient(to right, #ffb74d, #ff9800, #ffb74d);
-        }
-        .qna-card::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: linear-gradient(to right, #ffb74d, #ff9800, #ffb74d);
-        }
-        .qna-question {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: #c2185b;
-            text-align: center;
-            line-height: 1.3;
-            min-height: 80px;
-        }
-        @media (min-width: 768px) {
-            .qna-question { font-size: 2.8rem; margin-bottom: 2.5rem; min-height: 120px; }
-        }
-        .qna-options {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-        @media (min-width: 768px) {
-            .qna-options { gap: 1.8rem; margin-top: 2rem; }
-        }
-        .qna-option {
-            background: white;
-            border: 3px solid #ffb74d;
-            border-radius: 20px;
-            padding: 1rem;
-            font-size: 1.2rem;
-            font-weight: 700;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.35s ease;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.07);
-            font-family: 'Quicksand', sans-serif;
-        }
-        @media (min-width: 768px) {
-            .qna-option { padding: 1.8rem; font-size: 1.9rem; }
-        }
-        .qna-option:hover {
-            transform: translateY(-6px);
-            border-color: #ff9800;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-            background: #fff3e0;
-        }
-        .qna-option.correct {
-            background: #e8f5e9;
-            border-color: #4caf50;
-            transform: scale(1.03);
-            box-shadow: 0 0 25px rgba(76, 175, 80, 0.4);
-        }
-        .qna-option.incorrect {
-            background: #ffebee;
-            border-color: #f44336;
-            animation: shake 0.6s;
-        }
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            20%, 60% { transform: translateX(-12px); }
-            40%, 80% { transform: translateX(12px); }
-        }
-        .qna-progress {
-            height: 14px;
-            background: #e0e0e0;
-            border-radius: 7px;
-            margin: 1.8rem 0;
-            overflow: hidden;
-            border: 2px solid #bdbdbd;
-        }
-        .qna-progress-bar {
-            height: 100%;
-            width: 0%;
-            background: linear-gradient(to right, #ff9800, #e64a19);
-            border-radius: 7px;
-            transition: width 0.6s ease;
-        }
-        .story-page {
-            background: #f8f4e9;
-            border: 4px double #d4a76a;
-            border-radius: 24px;
-            padding: 1.5rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            min-height: auto;
-            position: relative;
-            font-family: 'Playfair Display', serif;
-            line-height: 1.7;
-            font-size: 1.1rem;
-            color: #5d4037;
-        }
-        @media (min-width: 768px) {
-            .story-page { font-size: 1.6rem; padding: 2.5rem; min-height: 550px; }
-        }
-        .story-page::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: linear-gradient(to right, #d4a76a, #a57c3d, #d4a76a);
-        }
-        .story-page::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: linear-gradient(to right, #d4a76a, #a57c3d, #d4a76a);
-        }
-        .story-highlight {
-            background: linear-gradient(120deg, rgba(255,215,0,0.2), rgba(255,235,59,0.2));
-            padding: 0.3rem 0.6rem;
-            border-radius: 8px;
-            font-weight: 700;
-            color: #c62828;
-        }
-        .signature {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2rem;
-            color: #c2185b;
-            text-align: right;
-            margin-top: 2rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-        @media (min-width: 768px) {
-            .signature { font-size: 3.2rem; }
-        }
-        .final-message {
-            background: linear-gradient(135deg, #ff99cc 0%, #ff66b3 100%);
-            color: white;
-            border-radius: 28px;
-            padding: 1.5rem;
-            text-align: center;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-            position: relative;
-            overflow: hidden;
-        }
-        @media (min-width: 768px) {
-            .final-message { padding: 3rem; }
-        }
-        .final-message::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
-        }
-        .sparkle {
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            background: white;
+            width: 4px; height: 4px;
+            background: var(--soft-gold);
             border-radius: 50%;
-            opacity: 0.8;
-            animation: sparkle 3s infinite;
+            opacity: 0.7;
+            animation: twinkle var(--duration, 4s) ease-in-out infinite;
+            box-shadow: 0 0 10px var(--rich-gold);
         }
-        @keyframes sparkle {
-            0% { transform: scale(0) translate(0, 0); opacity: 0.8; }
-            50% { transform: scale(1) translate(var(--tx), var(--ty)); opacity: 1; }
-            100% { transform: scale(0) translate(var(--tx), var(--ty)); opacity: 0; }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
         }
+
+        .bg-crescent {
+            position: absolute;
+            font-size: 3rem;
+            color: var(--soft-gold);
+            opacity: 0.15;
+            animation: floatGentle 20s ease-in-out infinite;
+        }
+        @keyframes floatGentle {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            33% { transform: translateY(-30px) rotate(2deg); }
+            66% { transform: translateY(15px) rotate(-1deg); }
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+            opacity: 0;
+            transform: scale(0.98);
+            transition: opacity 1s ease 0.3s, transform 1s ease 0.3s;
+        }
+
+        .container.revealed { opacity: 1; transform: scale(1); }
+
+        .hero {
+            text-align: center;
+            padding: 30px 0 40px;
+            animation: fadeInDown 1s ease forwards;
+            animation-delay: 0.5s;
+            opacity: 0;
+        }
+        .container.revealed .hero { opacity: 1; }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-moon {
+            font-size: 4.5rem;
+            color: var(--soft-gold);
+            margin-bottom: 15px;
+            display: inline-block;
+            animation: moonGlow 3s ease-in-out infinite;
+            text-shadow: 0 0 30px rgba(201, 169, 89, 0.6);
+        }
+        @keyframes moonGlow {
+            0%, 100% { filter: drop-shadow(0 0 20px rgba(201, 169, 89, 0.4)); }
+            50% { filter: drop-shadow(0 0 40px rgba(201, 169, 89, 0.8)); }
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            color: var(--paper-white);
+            margin-bottom: 8px;
+            letter-spacing: 4px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .hero .subtitle {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.4rem;
+            color: var(--soft-gold);
+            margin-bottom: 5px;
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.85);
+            font-style: italic;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards 0.5s;
+        }
+
+        .eid-card {
+            background: var(--paper-white);
+            border-radius: 20px;
+            padding: 45px 35px;
+            margin: 20px 0;
+            box-shadow: var(--shadow-soft), var(--shadow-glow);
+            border: 2px solid rgba(201, 169, 89, 0.4);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease 0.6s, transform 0.8s ease 0.6s;
+        }
+        .container.revealed .eid-card { opacity: 1; transform: translateY(0); }
+
+        .eid-card::before, .eid-card::after {
+            content: "✦";
+            position: absolute;
+            font-size: 1.8rem;
+            color: var(--rich-gold);
+            opacity: 0.7;
+            z-index: 1;
+        }
+        .eid-card::before { top: 20px; left: 25px; }
+        .eid-card::after { bottom: 20px; right: 25px; transform: rotate(180deg); }
+        .eid-card::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--rich-gold), transparent);
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin: 30px 0 35px;
+            width: 100%;
+        }
+
+        .image-frame {
+            background: var(--paper-white);
+            border-radius: 12px;
+            padding: 10px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            border: 3px solid var(--warm-cream);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1 / 1;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: var(--transition), opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .container.revealed .image-frame:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.8s; }
+        .container.revealed .image-frame:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 1s; }
+        .container.revealed .image-frame:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 1.2s; }
+
+        .image-frame:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2), 0 0 30px rgba(201, 169, 89, 0.3);
+            border-color: var(--rich-gold);
+            z-index: 5;
+        }
+
+        .image-frame img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            display: block;
+            transition: var(--transition);
+            filter: sepia(25%) contrast(1.05);
+        }
+        .image-frame:hover img {
+            filter: sepia(0%) contrast(1);
+            transform: scale(1.05);
+        }
+
+        .image-caption {
+            position: absolute;
+            bottom: 12px; left: 0; right: 0;
+            text-align: center;
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.2rem;
+            color: var(--deep-emerald);
+            background: rgba(250, 248, 243, 0.92);
+            padding: 4px 8px;
+            border-radius: 20px;
+            margin: 0 10px;
+            font-weight: 500;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: var(--transition);
+        }
+        .image-frame:hover .image-caption { opacity: 1; transform: translateY(0); }
+
+        /* Large Message */
+        .big-message {
+            text-align: center;
+            margin: 35px 0 30px;
+            padding: 25px 20px;
+            background: linear-gradient(135deg, rgba(201, 169, 89, 0.08), rgba(26, 77, 65, 0.05));
+            border-radius: 16px;
+            border-left: 4px solid var(--rich-gold);
+            border-right: 4px solid var(--rich-gold);
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease 1.4s, transform 0.8s ease 1.4s;
+        }
+        .container.revealed .big-message { opacity: 1; transform: translateY(0); }
+
+        .big-message::before {
+            content: """;
+            position: absolute;
+            top: -15px; left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Georgia', serif;
+            font-size: 5rem;
+            color: var(--rich-gold);
+            opacity: 0.25;
+            line-height: 1;
+            font-weight: bold;
+        }
+
+        .message-text {
+            font-size: 1.35rem;
+            color: var(--text-primary);
+            font-style: italic;
+            line-height: 2.2;
+            position: relative;
+            z-index: 1;
+        }
+
+        .message-highlight {
+            display: block;
+            font-family: 'Amiri', serif;
+            font-size: 1.5rem;
+            color: var(--deep-emerald);
+            font-weight: 600;
+            margin: 15px 0;
+            padding: 12px;
+            background: rgba(201, 169, 89, 0.12);
+            border-radius: 10px;
+            border-left: 3px solid var(--rich-gold);
+        }
+
+        /* Signature */
+        .signature-section {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px dashed rgba(201, 169, 89, 0.5);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease 1.6s, transform 0.8s ease 1.6s;
+        }
+        .container.revealed .signature-section { opacity: 1; transform: translateY(0); }
+
+        .signature {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.8rem;
+            color: var(--deep-emerald);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .signature-note {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.95rem;
+            opacity: 0;
+            animation: fadeIn 1.5s ease forwards 1.5s;
+        }
+        .footer-heart {
+            color: var(--soft-gold);
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        /* ✅ FIXED: Music Button - Now Independent of Container */
+        .music-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            padding: 14px 30px;
+            background: var(--rich-gold);
+            color: var(--deep-emerald);
+            border: none;
+            border-radius: 50px;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 8px 30px rgba(201, 169, 89, 0.5);
+            transition: var(--transition);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            /* Start hidden */
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+        }
+
+        /* ✅ FIXED: Show button when body has 'revealed' class */
+        body.page-revealed .music-btn {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .music-btn:hover {
+            transform: translateY(-4px) scale(1.05);
+            background: var(--soft-gold);
+            box-shadow: 0 12px 40px rgba(201, 169, 89, 0.7);
+        }
+        .music-btn:active { transform: translateY(-1px); }
+        .music-btn.playing {
+            background: var(--deep-emerald);
+            color: var(--soft-gold);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            body { padding: 15px 0 100px; }
+            .hero h1 { font-size: 2.4rem; letter-spacing: 2px; }
+            .hero .subtitle { font-size: 2rem; }
+            .hero-moon { font-size: 3.5rem; }
+            .eid-card { padding: 35px 25px; margin: 15px 0; border-radius: 16px; }
+            .image-gallery { grid-template-columns: 1fr; gap: 22px; margin: 25px 0 30px; }
+            .image-frame { aspect-ratio: 4/3; padding: 8px; }
+            .image-caption { font-size: 1.3rem; bottom: 10px; }
+            .big-message { padding: 30px 25px; margin: 30px 0 25px; }
+            .message-text { font-size: 1.45rem; line-height: 2.4; }
+            .message-highlight { font-size: 1.6rem; padding: 15px; }
+            .signature { font-size: 3rem; }
+            .music-btn { bottom: 20px; right: 20px; padding: 12px 26px; font-size: 0.95rem; }
+            .preloader .countdown-number { font-size: 7rem; }
+            .preloader .eid-reveal { font-size: 3.5rem; }
+            .preloader .moon-animate { font-size: 4.5rem; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2rem; }
+            .hero .subtitle { font-size: 1.8rem; }
+            .eid-card { padding: 30px 20px; }
+            .image-frame { aspect-ratio: 3/2; }
+            .message-text { font-size: 1.35rem; }
+            .message-highlight { font-size: 1.45rem; }
+            .signature { font-size: 2.6rem; }
+            .preloader .countdown-number { font-size: 5.5rem; }
+            .preloader .eid-reveal { font-size: 2.8rem; }
+        }
+
+        img, video, iframe { max-width: 100%; height: auto; display: block; }
+        @supports (-webkit-touch-callout: none) { .eid-card { transform: translateZ(0); } }
     </style>
 </head>
-<body class="min-h-screen flex items-center justify-center p-6">
-    <!-- Falling hearts background - SVG Hearts -->
-    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        <svg class="falling-heart" style="left: 8%; animation-duration: 22s; animation-delay: 0s; width: 36px; height: 36px;" viewBox="0 0 24 24">
-            <path fill="#e91e63" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-        </svg>
-        <svg class="falling-heart" style="left: 22%; animation-duration: 18s; animation-delay: 2s; width: 32px; height: 32px;" viewBox="0 0 24 24">
-            <path fill="#e91e63" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-        </svg>
-        <svg class="falling-heart" style="left: 35%; animation-duration: 26s; animation-delay: 1s; width: 40px; height: 40px;" viewBox="0 0 24 24">
-            <path fill="#e91e63" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-        </svg>
-        <svg class="falling-heart" style="left: 58%; animation-duration: 20s; animation-delay: 3s; width: 28px; height: 28px;" viewBox="0 0 24 24">
-            <path fill="#e91e63" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-        </svg>
-        <svg class="falling-heart" style="left: 72%; animation-duration: 24s; animation-delay: 4s; width: 34px; height: 34px;" viewBox="0 0 24 24">
-            <path fill="#e91e63" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-        </svg>
-        <svg class="falling-heart" style="left: 88%; animation-duration: 30s; animation-delay: 5s; width: 38px; height: 38px;" viewBox="0 0 24 24">
-            <path fill="#e91e63" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-        </svg>
+<body>
+
+    <!-- ==================== COUNTDOWN PRELOADER ==================== -->
+    <div class="preloader" id="preloader">
+        <div class="moon-animate" id="preloader-moon">🌙</div>
+        <div class="countdown-number" id="countdown">3</div>
+        <div class="eid-reveal" id="eid-reveal">Eid Mubarak<br><span style="font-size: 2rem; font-family: 'Great Vibes';">Meri Momina ❤️</span></div>
+        <p class="tap-hint">Tap anywhere to begin ✨</p>
     </div>
 
-    <!-- Page 1: Initial Question -->
-    <div id="page1" class="page-container text-center p-4 sm:p-6 md:p-14 relative z-10">
-        <div class="heartbeat mb-8">
-            <div class="text-6xl md:text-8xl">❤️</div>
-        </div>
-        <h1 class="text-3xl sm:text-4xl md:text-7xl font-bold mb-6 md:mb-8 text-pink-700 font-playfair">Will you please forgive me, Momina?</h1>
-        <p class="mb-6 md:mb-12 text-lg sm:text-xl md:text-3xl text-gray-700">I know I've hurt you so many times, but my heart belongs only to you forever.</p>
-        <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-12 mt-8">
-            <button id="yes1" class="bg-pink-500 hover:bg-pink-600 text-white px-8 py-3 sm:px-10 sm:py-4 md:px-14 md:py-7 rounded-full text-xl sm:text-2xl md:text-4xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg w-full md:w-auto">YES</button>
-            <button id="no1" class="bg-purple-500 hover:bg-purple-600 text-white px-8 py-3 sm:px-10 sm:py-4 md:px-14 md:py-7 rounded-full text-xl sm:text-2xl md:text-4xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg w-full md:w-auto">NO</button>
-        </div>
-    </div>
+    <!-- Background Decorations -->
+    <div class="bg-decoration" id="bg-decoration"></div>
 
-    <!-- Page 2: First "NO" Response -->
-    <div id="page2" class="page-container text-center p-4 sm:p-6 md:p-14 hidden relative z-10">
-        <div class="heartbeat mb-8">
-            <div class="text-6xl md:text-8xl">🥺</div>
-        </div>
-        <h1 class="text-3xl sm:text-4xl md:text-7xl font-bold mb-6 md:mb-8 text-pink-700 font-playfair">Please, my love, think again?</h1>
-        <p class="mb-6 md:mb-12 text-lg sm:text-xl md:text-3xl text-gray-700">Every moment without your forgiveness feels like an eternity. I can't live without you.</p>
-        <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-12 mt-8">
-            <button id="yes2" class="bg-pink-500 hover:bg-pink-600 text-white px-8 py-3 sm:px-10 sm:py-4 md:px-14 md:py-7 rounded-full text-xl sm:text-2xl md:text-4xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg w-full md:w-auto">YES</button>
-            <button id="no2" class="bg-purple-500 hover:bg-purple-600 text-white px-8 py-3 sm:px-10 sm:py-4 md:px-14 md:py-7 rounded-full text-xl sm:text-2xl md:text-3xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg w-full md:w-auto">NO</button>
-        </div>
-    </div>
+    <div class="container" id="main-content">
+        <header class="hero">
+            <div class="hero-moon">🌙</div>
+            <h1>EID MUBARAK</h1>
+            <div class="subtitle">Meri Pyaari Momina</div>
+            <p class="tagline">With all my love & prayers ✨</p>
+        </header>
 
-    <!-- Page 3: Second "NO" Response -->
-    <div id="page3" class="page-container text-center p-4 sm:p-6 md:p-14 hidden relative z-10">
-        <div class="heartbeat mb-8">
-            <div class="text-6xl md:text-8xl">😢</div>
-        </div>
-        <h1 class="text-3xl sm:text-4xl md:text-7xl font-bold mb-6 md:mb-8 text-pink-700 font-playfair">Are you sure, Momina?</h1>
-        <p class="mb-6 md:mb-12 text-lg sm:text-xl md:text-3xl text-gray-700">You've forgiven me every time before. My heart is breaking, please don't leave me like this.</p>
-        <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-12 mt-8">
-            <button id="yes3" class="bg-pink-500 hover:bg-pink-600 text-white px-8 py-3 sm:px-10 sm:py-4 md:px-14 md:py-7 rounded-full text-2xl sm:text-3xl md:text-5xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg w-full md:w-auto">YES</button>
-            <button id="no3" class="bg-purple-500 hover:bg-purple-600 text-white px-8 py-3 sm:px-10 sm:py-4 md:px-14 md:py-7 rounded-full text-lg sm:text-xl md:text-2xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg w-full md:w-auto">NO</button>
-        </div>
-    </div>
-
-    <!-- Page 4: Third "NO" Response -->
-    <div id="page4" class="page-container text-center p-4 sm:p-6 md:p-14 hidden relative z-10">
-        <div class="heartbeat mb-8">
-            <div class="text-6xl md:text-8xl">💔</div>
-        </div>
-        <h1 class="text-3xl sm:text-4xl md:text-7xl font-bold mb-6 md:mb-8 text-pink-700 font-playfair">Please... just forgive me?</h1>
-        <p class="mb-6 md:mb-12 text-lg sm:text-xl md:text-3xl text-gray-700">I promise to never hurt you again. You're my everything, Momina.</p>
-        <button id="yes4" class="bg-pink-500 hover:bg-pink-600 text-white px-8 py-4 sm:px-10 sm:py-5 md:px-16 md:py-9 rounded-full text-2xl sm:text-3xl md:text-6xl font-bold transition-all duration-300 transform hover:scale-105 shadow-xl mt-6 w-full md:w-auto">YES</button>
-    </div>
-
-    <!-- Page 5: Forgiveness Confirmed -->
-    <div id="page5" class="page-container text-center p-4 sm:p-6 md:p-14 hidden relative z-10">
-        <div class="heartbeat mb-8">
-            <div class="text-7xl md:text-9xl">💖</div>
-        </div>
-        <h1 class="text-3xl sm:text-4xl md:text-7xl font-bold mb-6 text-pink-700 font-playfair">Thank you for forgiving me, Momina!</h1>
-        <p class="mb-6 md:mb-10 text-lg sm:text-xl md:text-3xl text-gray-700">You've made me the happiest and most grateful person alive! ❤️</p>
-        <button id="gifts" class="bg-pink-500 hover:bg-pink-600 text-white px-8 py-4 md:px-16 md:py-8 rounded-full text-lg sm:text-xl md:text-4xl font-bold transition-all duration-300 transform hover:scale-105 shadow-xl mt-4 w-full md:w-auto">Discover Our Journey →</button>
-    </div>
-
-    <!-- Page 6: Q&A Challenge -->
-    <div id="page6" class="page-container hidden relative z-10 p-3 sm:p-4 md:p-8">
-        <div class="qna-card">
-            <div class="text-xl sm:text-2xl md:text-4xl font-bold mb-4 md:mb-6 text-center text-pink-700 font-playfair">Our Love Story Q&A</div>
-            <div class="qna-progress">
-                <div class="qna-progress-bar" id="qna-progress"></div>
+        <main class="eid-card">
+            <div class="image-gallery">
+                <div class="image-frame">
+                    <img src="Screenshot 2025-12-31 221515.png" alt="Beautiful Memory" loading="lazy">
+                    <div class="image-caption">Our Journey ✨</div>
+                </div>
+                <div class="image-frame">
+                    <img src="Untitled design (7).png" alt="Special Moment" loading="lazy">
+                    <div class="image-caption">Always Together 🤍</div>
+                </div>
+                <div class="image-frame">
+                    <img src="Untitled design (8).png" alt="Forever Love" loading="lazy">
+                    <div class="image-caption">My Everything 🌙</div>
+                </div>
             </div>
-            
-            <div id="qna-question" class="qna-question">
-                Who loves you most in this entire world?
+
+            <div class="big-message">
+                <p class="message-text">
+                    Is Eid ka chand jab nazar aaya,<br>
+                    Toh sabse pehla khayal aap ka aaya.<br><br>
+                    Pichle din khamoshi mein guzre,<br>
+                    par dil ki dhadkan mein sirf aap ka naam tha.<br><br>
+                    <span class="message-highlight">
+                        "Allah aap ko hamesha muskurata rakhe,<br>
+                        Aur meri zindagi ki har khushi ka wajah aap ko banaye."
+                    </span><br>
+                    Yeh Eid sirf ek tyohar nahi,<br>
+                    Ek waada hai humesha saath rehne ka. ❤️
+                </p>
             </div>
-            
-            <div class="qna-options" id="qna-options">
-                <div class="qna-option" data-answer="0">Asad</div>
-                <div class="qna-option" data-answer="1">Moiz</div>
-                <div class="qna-option" data-answer="2">nawaz khan (sabse worst)</div>
+
+            <div class="signature-section">
+                <span class="signature">Hamesha Aap Ka,<br>Nawaz</span>
+                <p class="signature-note">With endless love & duas 🤲</p>
             </div>
-        </div>
+        </main>
+
+        <footer class="footer">
+            <p>Crafted with <span class="footer-heart">❤️</span> for you • Eid 2026</p>
+            <p style="margin-top: 8px; font-size: 0.9rem; opacity: 0.9;">Aap hamesha meri duaon mein ho 🌙</p>
+        </footer>
     </div>
 
-    <!-- Page 7: Our Story -->
-    <div id="page7" class="page-container hidden relative z-10 p-4 sm:p-6 md:p-10">
-        <div class="story-page">
-            <h1 class="text-2xl sm:text-3xl md:text-5xl font-bold mb-6 md:mb-8 text-center text-brown-800 font-playfair">Our Beautiful Journey</h1>
-            
-            <p class="mb-6">Do you remember when it all began? That online group chat arranged by our Churai friend heheh hania sisters <span class="story-highlight">Hania</span> that brought us together...(But humre sath nhi rehti hehe)</p>
-            
-            <p class="mb-6">From that first conversation in the GC, my world changed forever. Every message, every laugh, every cry , evey maffi , every shared moment became a treasure I hold close to my heart.</p>
-            
-            <p class="mb-6">After exactly one year of getting to know each other, on <span class="story-highlight">April 15, 2025</span>, I finally gathered the courage to confess my love to you. That day changed my life forever. but i conffessd you before to haina</p>
-            
-            <p class="mb-6">I know I've hurt you so many times, Momina. But you've always been there, forgiving me every single time I asked for sorry. Your patience and love have been my greatest blessings but im worst men in this world who keeps hurting you again and again.</p>
-            
-            <p class="mb-6">I still cherish all those beautiful moments we shared - watching <span class="story-highlight">movies together (Let me eat your pancrease fav)</span>, binge-watching <span class="story-highlight">dramas (Business propasal)</span>, our special <span class="story-highlight">online dates hehe Card bhi behja tha</span>, and those precious <span class="story-highlight">late night calls</span> where we would talk for hours about everything and nothing whispers mai hehe.</p>
-            
-            <p class="mb-6">Every moment with you has been magical, not because of what we did, but because we were together. You make even the simplest things feel extraordinary.</p>
-            
-            <p class="mb-6">From that first message in Hania's GC to the day I confessed my love on April 15, 2025 - every second has been a gift that I will never take for granted again.</p>
-            
-            <p class="mb-6">I love you more than words can express, Momina. You are my heart, my soul, my everything. I promise to spend the rest of my life making you happy and never hurting you again Just this distance is making you feel that nawaz is worst in this world.</p>
-            
-            <div class="signature">- Your Nawaz Khan (sabse worst inssan)</div>
-        </div>
-        <button id="final-button" class="bg-pink-500 hover:bg-pink-600 text-white px-8 py-4 md:px-14 md:py-7 rounded-full text-lg sm:text-xl md:text-3xl font-bold transition-all duration-300 transform hover:scale-105 shadow-xl mt-8 block mx-auto w-full md:w-fit">Our Forever Promise →</button>
-    </div>
-
-    <!-- Page 8: Final Message -->
-    <div id="page8" class="page-container hidden relative z-10 p-4 sm:p-6 md:p-10">
-        <div class="final-message">
-            <div id="sparkle-container" class="absolute inset-0 pointer-events-none"></div>
-            <div class="text-3xl sm:text-4xl md:text-7xl font-bold mb-6 font-playfair">I Choose You</div>
-            <div class="text-lg sm:text-xl md:text-4xl mb-8">Today, tomorrow, and for all our tomorrows</div>
-            <div class="text-xl sm:text-2xl md:text-5xl font-bold mb-10">Momina ❤️ Nawaz</div>
-            <div class="text-base sm:text-lg md:text-3xl italic">"In your forgiveness, I found my second chance at love."</div>
-        </div>
-    </div>
+    <!-- ✅ Music Button - Now properly styled to appear after reveal -->
+    <button class="music-btn" id="musicBtn" onclick="toggleMusic()">
+        <span id="musicIcon">🎵</span>
+        <span id="musicText">Play Me Before Reading</span>
+    </button>
 
     <script>
-        // Create sparkles for final page
-        function createSparkles() {
-            const container = document.getElementById('sparkle-container');
+        // ==================== COUNTDOWN REVEAL ====================
+        function startCountdownReveal() {
+            const preloader = document.getElementById('preloader');
+            const countdownEl = document.getElementById('countdown');
+            const moonEl = document.getElementById('preloader-moon');
+            const revealEl = document.getElementById('eid-reveal');
+            const mainContent = document.getElementById('main-content');
+            const htmlEl = document.documentElement;
+            const bodyEl = document.body;
+
+            let count = 3;
+            countdownEl.textContent = count;
+            countdownEl.classList.add('active');
+            moonEl.classList.add('active');
+
+            const countdownInterval = setInterval(() => {
+                count--;
+                countdownEl.classList.add('fade');
+                
+                setTimeout(() => {
+                    if (count > 0) {
+                        countdownEl.textContent = count;
+                        countdownEl.classList.remove('fade', 'active');
+                        void countdownEl.offsetWidth;
+                        countdownEl.classList.add('active');
+                    } else {
+                        clearInterval(countdownInterval);
+                        countdownEl.style.display = 'none';
+                        moonEl.style.display = 'none';
+                        revealEl.classList.add('active');
+                        
+                        setTimeout(() => {
+                            // Unlock scroll
+                            htmlEl.classList.remove('no-scroll');
+                            bodyEl.classList.remove('no-scroll');
+                            bodyEl.style.position = '';
+                            bodyEl.style.height = '';
+                            
+                            // Hide preloader
+                            preloader.classList.add('hidden');
+                            
+                            // Reveal main content
+                            mainContent.classList.add('revealed');
+                            
+                            // ✅ FIXED: Add class to body to show music button
+                            bodyEl.classList.add('page-revealed');
+                            
+                            // Create background decorations
+                            createBackgroundDecorations();
+                            
+                        }, 1500);
+                    }
+                }, 400);
+            }, 1000);
+        }
+
+        let hasStarted = false;
+        function startExperience() {
+            if (hasStarted) return;
+            hasStarted = true;
+            
+            // Lock scroll at start
+            document.documentElement.classList.add('no-scroll');
+            document.body.classList.add('no-scroll');
+            
+            document.querySelector('.tap-hint').style.display = 'none';
+            startCountdownReveal();
+            
+            document.removeEventListener('click', startExperience);
+            document.removeEventListener('touchstart', startExperience);
+        }
+
+        document.addEventListener('click', startExperience);
+        document.addEventListener('touchstart', startExperience, { passive: true });
+
+        setTimeout(() => {
+            if (!hasStarted) startExperience();
+        }, 1000);
+
+        // Create background decorations
+        function createBackgroundDecorations() {
+            const container = document.getElementById('bg-decoration');
             if (!container) return;
             
             for (let i = 0; i < 40; i++) {
-                const sparkle = document.createElement('div');
-                sparkle.className = 'sparkle';
-                sparkle.style.left = `${Math.random() * 100}%`;
-                sparkle.style.top = `${Math.random() * 100}%`;
-                sparkle.style.setProperty('--tx', `${(Math.random() - 0.5) * 200}px`);
-                sparkle.style.setProperty('--ty', `${(Math.random() - 0.5) * 200}px`);
-                sparkle.style.animationDelay = `${Math.random() * 3}s`;
-                container.appendChild(sparkle);
+                const star = document.createElement('div');
+                star.className = 'bg-star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.setProperty('--duration', (Math.random() * 4 + 3) + 's');
+                star.style.animationDelay = Math.random() * 5 + 's';
+                container.appendChild(star);
             }
-        }
-
-        // Initialize with page 1 visible
-        document.getElementById('page1').classList.remove('hidden');
-
-        // Function to show a specific page
-        function showPage(pageId) {
-            // Hide all pages
-            const pages = ['page1', 'page2', 'page3', 'page4', 'page5', 'page6', 'page7', 'page8'];
-            pages.forEach(page => {
-                document.getElementById(page).classList.add('hidden');
-            });
             
-            // Show requested page
-            document.getElementById(pageId).classList.remove('hidden');
+            const crescentPositions = [
+                { top: '10%', left: '5%' },
+                { top: '25%', right: '8%' },
+                { bottom: '20%', left: '12%' },
+                { bottom: '35%', right: '5%' },
+                { top: '60%', left: '3%' }
+            ];
             
-            // Special handling for final page
-            if (pageId === 'page8') {
-                setTimeout(createSparkles, 100);
-            }
-        }
-
-        // Set up button interactions for YES/NO escalation
-        document.getElementById('no1').addEventListener('click', () => showPage('page2'));
-        document.getElementById('yes1').addEventListener('click', () => showPage('page5'));
-        
-        document.getElementById('no2').addEventListener('click', () => showPage('page3'));
-        document.getElementById('yes2').addEventListener('click', () => showPage('page5'));
-        
-        document.getElementById('no3').addEventListener('click', () => showPage('page4'));
-        document.getElementById('yes3').addEventListener('click', () => showPage('page5'));
-        
-        document.getElementById('yes4').addEventListener('click', () => showPage('page5'));
-        
-        // Gifts button leads to Q&A
-        document.getElementById('gifts').addEventListener('click', () => {
-            showPage('page6');
-            initQnA();
-        });
-        
-        // Final button leads to story
-        document.getElementById('final-button').addEventListener('click', () => showPage('page8'));
-
-        // Q&A Challenge Implementation
-        const questions = [
-            {
-                question: "Who loves you most in this entire world?",
-                options: [
-                    "Asad",
-                    "Moiz",
-                    "Nawaz sabse worst"
-                ],
-                correct: 2
-            },
-            {
-                question: "Who is the biggest love of Nawaz's life?",
-                options: [
-                    "Your dadi",
-                    "Moiz",
-                    "Nawaz"
-                ],
-                correct: 2
-            },
-            {
-                question: "In whom will Nawaz kiss first in his life?",
-                options: [
-                    "Asad",
-                    "Moiz",
-                    "Momina (and only Momina forever)"
-                ],
-                correct: 2
-            },
-            {
-                question: "Where did our beautiful story begin?",
-                options: [
-                    "At a café",
-                    "In an online GC by Hania (Joh abhi saath nhi heheh)",
-                    "At school"
-                ],
-                correct: 1
-            },
-            {
-                question: "When did we confess our love to each other?",
-                options: [
-                    "January 2025",
-                    "April 15, 2025",
-                    "December 2025"
-                ],
-                correct: 1
-            }
-        ];
-
-        let currentQuestionIndex = 0;
-        let correctAnswers = 0;
-
-        function initQnA() {
-            currentQuestionIndex = 0;
-            correctAnswers = 0;
-            updateQnAProgress();
-            showQuestion();
-        }
-
-        function showQuestion() {
-            const question = questions[currentQuestionIndex];
-            document.getElementById('qna-question').textContent = question.question;
-            
-            const optionsContainer = document.getElementById('qna-options');
-            optionsContainer.innerHTML = '';
-            
-            question.options.forEach((option, index) => {
-                const optionElement = document.createElement('div');
-                optionElement.className = 'qna-option';
-                optionElement.textContent = option;
-                optionElement.setAttribute('data-answer', index);
-                optionElement.addEventListener('click', () => checkAnswer(index));
-                optionsContainer.appendChild(optionElement);
+            crescentPositions.forEach((pos, index) => {
+                const crescent = document.createElement('div');
+                crescent.className = 'bg-crescent';
+                crescent.textContent = '🌙';
+                Object.assign(crescent.style, pos);
+                crescent.style.animationDelay = (index * 3) + 's';
+                container.appendChild(crescent);
             });
         }
 
-        function checkAnswer(selectedIndex) {
-            const question = questions[currentQuestionIndex];
-            const options = document.querySelectorAll('.qna-option');
-            
-            // Disable all options while processing
-            options.forEach(opt => opt.style.pointerEvents = 'none');
-            
-            // Check if correct
-            if (selectedIndex === question.correct) {
-                // Correct answer
-                options[selectedIndex].classList.add('correct');
-                correctAnswers++;
-                updateQnAProgress();
-                
-                // Move to next question after delay or show story page
-                setTimeout(() => {
-                    currentQuestionIndex++;
-                    if (currentQuestionIndex < questions.length) {
-                        showQuestion();
-                    } else {
-                        // All questions answered correctly - show story page
-                        showPage('page7');
-                    }
-                    // Re-enable options for next question
-                    document.querySelectorAll('.qna-option').forEach(opt => {
-                        opt.style.pointerEvents = 'auto';
-                        opt.classList.remove('correct', 'incorrect');
-                    });
-                }, 1200);
+        // Music toggle
+        let audioPlayer = null;
+        let isPlaying = false;
+
+        function toggleMusic() {
+            const btn = document.getElementById('musicBtn');
+            const icon = document.getElementById('musicIcon');
+            const text = document.getElementById('musicText');
+
+            if (!audioPlayer) {
+                audioPlayer = new Audio('1.mp3');
+                audioPlayer.loop = true;
+                audioPlayer.preload = 'auto';
+            }
+
+            if (isPlaying) {
+                audioPlayer.pause();
+                icon.textContent = '🎵';
+                text.textContent = 'Play Eid Naat';
+                btn.classList.remove('playing');
+                isPlaying = false;
             } else {
-                // Incorrect answer
-                options[selectedIndex].classList.add('incorrect');
-                
-                // Reset after delay
-                setTimeout(() => {
-                    options[selectedIndex].classList.remove('incorrect');
-                    options.forEach(opt => opt.style.pointerEvents = 'auto');
-                }, 1500);
+                audioPlayer.play().catch(error => {
+                    console.log('Audio playback requires user interaction:', error);
+                    alert('✨ Tap anywhere on the page first, then try playing the music!');
+                    return;
+                });
+                icon.textContent = '⏸️';
+                text.textContent = 'Pause';
+                btn.classList.add('playing');
+                isPlaying = true;
             }
         }
 
-        function updateQnAProgress() {
-            const progress = (correctAnswers / questions.length) * 100;
-            document.getElementById('qna-progress').style.width = `${progress}%`;
-        }
+        // Unlock audio on first touch
+        document.addEventListener('touchstart', function unlockAudio() {
+            if (audioPlayer) audioPlayer.load();
+        }, { once: true });
 
-        // Initialize sparkles on final page load
-        document.addEventListener('DOMContentLoaded', () => {
-            // Preload fonts
-            const link = document.createElement('link');
-            link.href = 'https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;700&family=Quicksand:wght@400;600&display=swap';
-            link.rel = 'stylesheet';
-            document.head.appendChild(link);
+        // Image touch enhancement
+        document.querySelectorAll('.image-frame').forEach(frame => {
+            frame.addEventListener('touchstart', function() {
+                this.style.transform = 'translateY(-8px) scale(1.03)';
+                this.style.zIndex = '5';
+            });
+            frame.addEventListener('touchend', function() {
+                this.style.transform = '';
+                this.style.zIndex = '';
+            });
         });
+
+        // Prevent zoom on mobile
+        document.addEventListener('touchmove', function(event) {
+            if (event.scale !== 1) event.preventDefault();
+        }, { passive: false });
     </script>
 </body>
 </html>
