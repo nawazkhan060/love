@@ -551,8 +551,14 @@
             .hero-moon { font-size: 4rem; }
             .eid-card { padding: 40px 30px; margin: 20px 0; border-radius: 16px; }
             
-            .image-gallery { grid-template-columns: 1fr; gap: 25px; margin: 30px 0 40px; }
-            .image-frame { aspect-ratio: 4/3; padding: 10px; }
+            .image-gallery { 
+                display: flex;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                gap: 15px;
+                padding-bottom: 10px;
+            }
+            .image-frame { min-width: 85%; scroll-snap-align: center; aspect-ratio: 4/3; padding: 10px; }
             .image-caption { font-size: 1.4rem; bottom: 12px; }
             
             .big-message { padding: 35px 25px; margin: 40px 0 30px; }
@@ -700,7 +706,7 @@
     <!-- ✅ Music Button -->
     <button class="music-btn" id="musicBtn" onclick="toggleMusic()">
         <span id="musicIcon">🎵</span>
-        <span id="musicText">A song for you</span>
+        <span id="musicText">Play Eid Naat</span>
     </button>
 
     <script>
