@@ -593,11 +593,29 @@
             document.getElementById('openingOverlay').classList.add('fade-out');
         }, 7000);
 
-        // Music toggle
+        // Music setup - AUTOPLAY at 60% volume
         const musicToggle = document.getElementById('musicToggle');
         const bgMusic = document.getElementById('bgMusic');
-        let isPlaying = false;
+        
+        // Set volume to 60%
+        bgMusic.volume = 0.6;
+        
+        // Try to autoplay music when page loads
+        window.addEventListener('load', () => {
+            bgMusic.play().catch(error => {
+                console.log('Autoplay prevented by browser. User interaction needed.');
+                // Music will start on first user interaction
+                document.addEventListener('click', () => {
+                    bgMusic.play();
+                }, { once: true });
+            });
+        });
+        
+        let isPlaying = true; // Start as playing since we autoplay
+        musicToggle.classList.add('playing');
+        musicToggle.textContent = '🔇';
 
+        // Music toggle
         musicToggle.addEventListener('click', () => {
             if (isPlaying) {
                 bgMusic.pause();
